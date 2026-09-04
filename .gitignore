@@ -1,0 +1,43 @@
+# Dependencias y build
+node_modules/
+dist/
+build/
+.turbo/
+.next/
+coverage/
+*.tsbuildinfo
+
+# Secretos y entorno
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets/
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.log
+
+# Material oficial con copyright (Duoc / PMI)
+# Se queda en el computador de cada integrante; no se sube al repo.
+Contenidos/
+Eva 01/*.pdf
+Eva 01/*.docx
+Programa de Asignatura GPY1102.pdf
+Resumen-PMBOK*.md
+
+# Canvas / artefactos locales de Cursor
+.cursor/
+canvases/
+
+# Temporales de Office y basura
+~$*
+*.tmp
+*.bak
