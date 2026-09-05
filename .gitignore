@@ -39,6 +39,10 @@ Resumen-PMBOK*.md
 .cursor/
 canvases/
 
+# HyperFrames: miniaturas y backups locales del Studio
+.thumbnails/
+.hyperframes/
+
 # Temporales de Office y basura
 ~$*
 *.tmp

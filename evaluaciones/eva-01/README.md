@@ -7,6 +7,7 @@
 - `planificacion/`: `Cronograma-Kiran.xml` (Project Libre), Gantt HTML y CSV.
 - `marca/final/`: logo definitivo, variantes y guía de uso.
 - `pitch/`: guion de la presentación a dirección.
+- `presentacion/`: deck interactivo HyperFrames, notas del oral y vista previa.
 - `material-oficial/`: rúbrica, caso y PPTs de Duoc. **Solo en tu computador**; Git los ignora.
 
 No publiques la rúbrica de Duoc, extractos del PMBOK ni datos reales de hogares.

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Isotipo Kiran</title>
+  <desc id="desc">Una letra K abstracta formada por una columna azul y dos haces de luz ámbar.</desc>
+  <g>
+    <rect x="34" y="28" width="48" height="184" rx="7" fill="#10263D"/>
+    <path d="M82 120L200 32V88L92 124Z" fill="#E59A24"/>
+    <path d="M82 120L200 208V152L92 116Z" fill="#E59A24"/>
+    <circle cx="86" cy="120" r="7" fill="#FFFFFF"/>
+  </g>
+</svg>
