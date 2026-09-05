@@ -9,7 +9,7 @@ En una región desfavorecida de India, muchas comunidades no tienen energía con
 
 ## Qué resuelve el software (nuestro proyecto)
 
-No instalamos paneles. **Kiran** (planificamos, en la Eva 1) cubre:
+No instalamos paneles. **Kiran** cubre:
 
 1. **Inventario** de comunidades, hogares y kits, con estado operativo (activo, en falla, dado de baja)
 2. **Tablero** para ver el estado general e individual
@@ -29,7 +29,7 @@ El software **no** resuelve esas tres por sí solo. Las **hace operables** en un
 - Patrocinadores: inversores de impacto, agencia de subsidios, empresas tecnológicas
 - Beneficiarios: comunidades y hogares (no necesariamente usuarios de la app)
 - Operación: soporte local
-- Equipo del proyecto (las cuatro integrantes)
+- Equipo del proyecto (los cuatro: Giannina, Nicolás, Ari, Skarlett)
 - Dirección de la empresa social
 
 ## Cómo se usa este caso en el semestre

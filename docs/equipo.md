@@ -1,11 +1,11 @@
 # Equipo
 
-| Nombre | GitHub | Fortaleza que aporta | Notas |
-|---|---|---|---|
-| Giannina Guerrero | ninnarouge | Repo, docs, alcance | Dueña del repositorio (cuenta Duoc) |
-| Ari Araya | _pendiente_ | _pendiente_ | Invitar cuando tenga usuario |
-| Nicolás Barra | _pendiente_ | _pendiente_ | Invitar cuando tenga usuario |
-| Skarlett Tropan | _pendiente_ | _pendiente_ | Invitar cuando tenga usuario |
+| Nombre | Rol en Kiran | GitHub | Fortaleza que aporta | Notas |
+|---|---|---|---|---|
+| Giannina Guerrero | Directora del proyecto y frontend | ninnarouge | Alcance, tablero, repo | Dueña del repositorio |
+| Nicolás Barra | Backend | _pendiente_ | Datos, inventario, tickets | Invitar cuando tenga usuario |
+| Ari Araya | Infraestructura y nube | _pendiente_ | Ambientes, despliegue, hosting | Invitar cuando tenga usuario |
+| Skarlett Tropan | Calidad e impacto | _pendiente_ | Pruebas, reportes, capacitación | Invitar cuando tenga usuario |
 
 ## Cómo invitar (dueña del repo)
 
@@ -15,16 +15,16 @@
 
 Cuando tengan usuario, editen esta tabla en un PR `docs/agregar-github-ari` (ejemplo).
 
-## Reparto sugerido Eva 1 (ajustable)
+## Quién sostiene qué (ajustable)
 
 | Bloque | Quién lidera | Quién revisa |
 |---|---|---|
-| Alcance + EDT | | |
-| Cronograma / ruta crítica | | |
-| Costos y recursos | | |
-| Factores ambientales y estándares | | |
-| Estrategia híbrida | | |
-| Herramientas y justificación | | |
-| Pitch analógico | Todas | — |
+| Alcance, EDT y tablero | Giannina | Nicolás |
+| Inventario, tickets y datos | Nicolás | Giannina |
+| Despliegue, accesos y presupuesto de nube | Ari | Nicolás |
+| Factores del entorno (financiamiento, conectividad, datos) | Ari | Giannina |
+| Reportes de impacto, pruebas y capacitación | Skarlett | Giannina |
+| Herramientas del plan (Project Libre, Trello) | Nicolás | Ari |
+| Presentación a dirección | Los cuatro | — |
 
-Liderar ≠ “solo esa persona sabe”. El oral pregunta **todo** a cada una.
+Liderar no es “solo esa persona sabe”. En la defensa, cada integrante puede responder el plan completo.

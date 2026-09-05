@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760" role="img" aria-labelledby="title desc">
+  <title id="title">Logo apilado Kiran</title>
+  <desc id="desc">Versión vertical de Kiran con su eslogan comercial.</desc>
+  <rect width="640" height="760" fill="#F7F3EA"/>
+  <g transform="translate(200 76)">
+    <rect x="34" y="28" width="48" height="184" rx="7" fill="#10263D"/>
+    <path d="M82 120L200 32V88L92 124Z" fill="#E59A24"/>
+    <path d="M82 120L200 208V152L92 116Z" fill="#E59A24"/>
+    <circle cx="86" cy="120" r="7" fill="#F7F3EA"/>
+  </g>
+  <g fill="#10263D" text-anchor="middle" font-family="'Aptos Display','Montserrat','Arial',sans-serif">
+    <text x="320" y="430" font-size="104" font-weight="700" letter-spacing="17">KIRAN</text>
+    <text x="320" y="505" font-size="27" font-weight="500">Visibilidad que mantiene</text>
+    <text x="320" y="543" font-size="27" font-weight="500">la energía activa.</text>
+  </g>
+  <rect x="268" y="592" width="104" height="6" rx="3" fill="#E59A24"/>
+</svg>

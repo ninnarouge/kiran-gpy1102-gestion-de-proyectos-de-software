@@ -6,15 +6,16 @@ Somos un equipo de ramo, no una empresa. Aun así, el repo es un espacio de trab
 
 - Hablar claro y con respeto, también cuando un PR está flojo
 - Avisar si no puedes avanzar (mejor un mensaje a tiempo que radio silencio)
-- Revisar el trabajo de las demás con comentarios concretos (“aquí falta la exclusión”, no “está mal”)
-- Repartir el oral: **todas** tienen que poder responder las seis preguntas de la Eva 1
+- Revisar el trabajo del resto con comentarios concretos (“aquí falta la exclusión”, no “está mal”)
+- Repartir la defensa: **los cuatro** tienen que poder responder el plan completo
 
 ## Lo que no
 
 - Insultos, bromas que dejan a alguien fuera, o “yo hice todo”
 - Subir trabajo de otra persona como propio
 - Dejar a un integrante sin voz en el pitch (la nota oral es individual)
-- Compartir este repo privado con gente fuera del equipo o del docente, sin acuerdo
+- Publicar material oficial de Duoc, datos personales o documentos internos que
+  no correspondan al repositorio público
 
 ## Si algo se pone pesado
 

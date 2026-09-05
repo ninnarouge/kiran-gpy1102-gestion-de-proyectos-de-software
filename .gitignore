@@ -28,8 +28,10 @@ Desktop.ini
 # Material oficial con copyright (Duoc / PMI)
 # Se queda en el computador de cada integrante; no se sube al repo.
 Contenidos/
-Eva 01/*.pdf
-Eva 01/*.docx
+Eva 01/
+evaluaciones/**/material-oficial/
+evaluaciones/**/entrega/
+evaluaciones/**/*-actualizado.docx
 Programa de Asignatura GPY1102.pdf
 Resumen-PMBOK*.md
 

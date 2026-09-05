@@ -14,7 +14,7 @@ Sin ese login, no puedo tocar tableros.
 
 ## Qué vamos a usar
 
-Un tablero **Kiran · GPY1102** con listas típicas de la Eva 1, por ejemplo:
+Un tablero **Kiran · piloto** con listas de flujo, por ejemplo:
 
 - Backlog
 - En curso

@@ -14,6 +14,7 @@ Instrucciones para agentes de IA (Cursor u otro) que trabajen **en este repo**.
 2. `README.md` — estructura
 3. `docs/caso-de-estudio.md`
 4. `CONTRIBUTING.md` — ramas y commits
+5. `scripts/` — generadores del informe y del cronograma (no editar copias sueltas fuera del repo)
 
 ## Reglas
 

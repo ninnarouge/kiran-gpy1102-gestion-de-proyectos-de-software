@@ -8,7 +8,7 @@ Resumen operativo para el equipo. La rúbrica oficial vive en Canvas / maleta di
 |---|---|
 | Semana | 5 (el caso se elige en la 4) |
 | Tiempo | 5 horas, Sala de Proyectos |
-| Equipo | 3 sugeridas; somos 4 → **todas hablan** en el oral |
+| Equipo | 3 sugeridas; somos 4 → **los cuatro hablan** en el oral |
 | Peso | 30% del bloque de parciales (≈ 18% de la nota final del ramo) |
 
 ## Qué se entrega
@@ -38,13 +38,16 @@ Dentro de la Eva 1: informe **30%** · oral **70%**.
 
 ## Archivos de entrega en este repo
 
-Carpeta `Eva 01/entrega/`:
+Carpeta `evaluaciones/eva-01/`:
 
-- Cronograma / XML de Project o Project Libre
-- Gantt o HTML de ruta crítica
+- `informe/`: documentos propios del informe ejecutivo (`Informe-Ejecutivo-Eva01.docx`, alcance/EDT).
+- `planificacion/`: `Cronograma-Kiran.xml` (Project Libre), Gantt HTML y CSV.
+- `marca/`: identidad visual de Kiran y recursos para el pitch.
+- `pitch/`: guion de las 6 preguntas del oral.
 
-El Word/PDF final del informe puede vivir aquí cuando esté listo (nombres claros: `informe-parcial-1.md` o `.pdf` **nuestro**, no la rúbrica de Duoc).
+El material oficial de Duoc se mantiene en `material-oficial/`, carpeta local
+ignorada por Git. No se publica la rúbrica ni material de la maleta didáctica.
 
 ## Guía de estudio
 
-`Unidad-1-Guia-Extensa.md` en la raíz. Ahí está el contenido de 1.1 a 1.4 aplicado al Caso 7.
+`docs/estudio/unidad-1-guia-extensa.md`. Ahí está el contenido de 1.1 a 1.4 aplicado al Caso 7.

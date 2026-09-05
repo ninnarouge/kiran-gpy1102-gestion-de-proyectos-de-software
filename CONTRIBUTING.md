@@ -1,6 +1,6 @@
 # Cómo colaborar
 
-Este repo lo usamos **cuatro personas**. Si cada una sube a `main` sin avisar, se pisan el trabajo. Estas reglas son cortas a propósito.
+Este repo lo usamos **cuatro personas**. Si alguien sube a `main` sin avisar, se pisan el trabajo. Estas reglas son cortas a propósito.
 
 ## 1. Antes de tocar algo
 

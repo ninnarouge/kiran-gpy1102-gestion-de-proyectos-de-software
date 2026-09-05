@@ -101,7 +101,7 @@ Los quizzes formativos (Eva For 1, 2 y 3) **no ponderan** en el programa.
 | Guía del PMBOK | **6ª, 2017** | Bibliografía obligatoria. Lenguaje de los PPTs 1.1, 1.2 y 1.3 (EDT, EEF, CPM, grupos de procesos). |
 | Guía SBOK | 4ª, 2023 | Bibliografía obligatoria. Nutre el enfoque **adaptativo** (Scrum). |
 | ITIL 4 (Baud) | 2020 | Bibliografía obligatoria. Aparece en la comparativa de estándares de 1.2. |
-| PMBOK | 7ª, 2021 | Aparece en `Eva 01/VALOR EN EL PROYECTO.pdf` (interesados y valor). Útil para el pitch. |
+| PMBOK | 7ª, 2021 | Aparece en el material oficial local de la Eva 1 (interesados y valor). Útil para el pitch. |
 | PMBOK | 8ª, 2025/26 | Resumen de apoyo en la carpeta. **No** es la biblio oficial. |
 
 Para prueba y rúbrica: habla **PMBOK 6**. Usa la 7ª cuando te pregunten por **valor** e **interesados**.
@@ -908,12 +908,12 @@ Si una pieza falta, la rúbrica lo ve:
 ## 8. Caso 7 · de principio a fin (síntesis aplicada)
 
 **Nombre:** Provisión de energía sostenible en comunidades desfavorecidas.  
-**Equipo en carpeta:** Ari Araya, Nicolás Barra, Giannina Guerrero, Skarlett Tropan.  
+**Equipo:** Giannina Guerrero (directora y frontend), Nicolás Barra (backend), Ari Araya (infraestructura y nube), Skarlett Tropan (calidad e impacto).  
 **Contexto:** región desfavorecida de India, sin energía confiable; alto potencial solar; infraestructura débil.
 
 **Problemas de negocio (no son el software):** falta de acceso a energía, desarrollo económico limitado, dependencia de fósiles.
 
-**Solución de software (esto sí es el proyecto GPY1102):** plataforma para registrar kits de una comunidad piloto, monitorear estado y rendimiento, gestionar mantención y generar reportes para la dirección e inversores.
+**Solución de software (esto sí es el proyecto GPY1102):** **Kiran**, plataforma para registrar kits de una comunidad piloto, monitorear estado y rendimiento, gestionar mantención y generar reportes para la dirección e inversores. Promesa: *visibilidad que mantiene la energía activa*.
 
 **Funcionalidades pedidas:**
 
@@ -924,17 +924,17 @@ Si una pieza falta, la rúbrica lo ve:
 
 ### 8.1 Alcance propuesto (borrador de enunciado)
 
-- **Producto:** sistema web (con posible apoyo móvil o carga offline) de operación de kits solares del piloto.
+- **Producto:** **Kiran**, sistema web (con posible apoyo móvil o carga offline) de operación de kits solares del piloto.
 - **Criterios de aceptación (ejemplos):** cada kit tiene dueño (hogar) y estado; un ticket se abre desde un kit en falla; un reporte mensual exportable llega a patrocinadores.
 - **Entregables:** módulos 1–4, capacitación corta al soporte local, documento de roles y privacidad, plan preliminar (esta Eva).
 - **Exclusiones:** fabricación e instalación de paneles, microfinanzas, expansión a otras regiones, app ciudadana masiva.
-- **Restricciones:** presupuesto de piloto, conectividad, equipo académico/semestral, fecha de Eva 1.
+- **Restricciones:** presupuesto de piloto, conectividad, equipo de cuatro personas, fecha del primer reporte a donantes.
 - **Supuestos:** hay comunidad piloto identificada; hay al menos un técnico local; los inversores aceptan indicadores simples en esta fase.
 
 ### 8.2 EDT de primer nivel (ejemplo)
 
 ```
-0. Plataforma de energía solar — piloto
+0. Kiran — piloto de operación de kits solares
 ├── 1. Dirección del proyecto (acta, interesados, riesgos, reportes)
 ├── 2. Inventario de kits y hogares
 ├── 3. Tablero operativo

@@ -43,8 +43,8 @@ KPI de valor (más adelante): tiempo entre falla reportada y ticket cerrado, y u
 
 ## Constraints
 
-- Equipo de 4 estudiantes, jornada vespertina
-- Presupuesto y plazo del piloto académico (Eva 1 en semana 5)
+- Equipo de cuatro personas de desarrollo (informática)
+- Techo US$ 20.700 · 14 sep–9 dic 2026
 - Conectividad irregular en terreno
 - Financiamiento mixto: hay que respetar hitos de reporte
 - Datos de hogares: minimización y roles (no subir bases reales al repo)

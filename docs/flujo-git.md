@@ -5,7 +5,8 @@ Si nunca usaste Git, sigue esto en orden. Si ya lo usas, basta `CONTRIBUTING.md`
 ## Instalar
 
 - [Git](https://git-scm.com/download/win)
-- Cuenta en GitHub y aceptación de la invitación al repo privado
+- Cuenta en GitHub. El repositorio es público; la invitación como colaborador/a
+  solo es necesaria para subir cambios directamente.
 
 En la primera configuración (solo una vez, en **tu** computador):
 

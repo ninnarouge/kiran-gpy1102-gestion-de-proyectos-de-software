@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Logo Kiran sobre fondo oscuro</title>
+  <desc id="desc">Versión horizontal reversa de la marca Kiran.</desc>
+  <rect width="1200" height="360" fill="#10263D"/>
+  <g transform="translate(64 60) scale(.96)">
+    <rect x="34" y="28" width="48" height="184" rx="7" fill="#FFFFFF"/>
+    <path d="M82 120L200 32V88L92 124Z" fill="#E59A24"/>
+    <path d="M82 120L200 208V152L92 116Z" fill="#E59A24"/>
+    <circle cx="86" cy="120" r="7" fill="#10263D"/>
+  </g>
+  <g fill="#FFFFFF" font-family="'Aptos Display','Montserrat','Arial',sans-serif">
+    <text x="340" y="172" font-size="112" font-weight="700" letter-spacing="18">KIRAN</text>
+    <text x="344" y="232" font-size="30" font-weight="500" letter-spacing=".5">Visibilidad que mantiene la energía activa.</text>
+  </g>
+  <rect x="344" y="264" width="104" height="6" rx="3" fill="#E59A24"/>
+</svg>

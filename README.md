@@ -10,12 +10,12 @@ Tablero Trello: cuando esté conectado, ver [`docs/trello.md`](docs/trello.md).
 
 ## Equipo
 
-| Integrante | Rol sugerido en el repo | GitHub |
+| Integrante | Rol en Kiran | GitHub |
 |---|---|---|
-| Giannina Guerrero | Coordinación del repo y alcance | [@ninnarouge](https://github.com/ninnarouge) |
-| Ari Araya | Por definir | _invitar con usuario de GitHub_ |
-| Nicolás Barra | Por definir | _invitar con usuario de GitHub_ |
-| Skarlett Tropan | Por definir | _invitar con usuario de GitHub_ |
+| Giannina Guerrero | Directora del proyecto y frontend | [@ninnarouge](https://github.com/ninnarouge) |
+| Nicolás Barra | Backend | _invitar con usuario de GitHub_ |
+| Ari Araya | Infraestructura y nube | _invitar con usuario de GitHub_ |
+| Skarlett Tropan | Calidad e impacto | _invitar con usuario de GitHub_ |
 
 Ramo: **GPY1102** · Prerrequisito GPY1101 · Docencia en Sala de Proyectos.
 
@@ -29,8 +29,14 @@ Ramo: **GPY1102** · Prerrequisito GPY1101 · Docencia en Sala de Proyectos.
 ├── CODE_OF_CONDUCT.md        ← cómo nos tratamos
 ├── AGENTS.md                 ← reglas si alguien usa un agente de IA
 ├── docs/                     ← guías del equipo (caso, eva, git)
-├── Eva 01/entrega/           ← archivos que sí entregamos (Gantt, cronograma)
-└── Unidad-1-Guia-Extensa.md  ← guía de estudio de la Unidad 1 (trabajo propio)
+│   └── estudio/              ← guías de estudio del equipo
+├── scripts/                  ← regenerar informe, EDT y cronograma
+└── evaluaciones/
+    └── eva-01/
+        ├── informe/          ← Word del plan (lo que se entrega)
+        ├── planificacion/    ← XML Project Libre, Gantt y CSV
+        ├── pitch/            ← guion de la presentación
+        └── marca/final/      ← logo Kiran
 ```
 
 **No se sube** el material oficial con copyright (PPTs de Duoc, programa de asignatura, rúbrica PDF, extractos de PMBOK). Eso queda en el computador de cada persona. Ver `.gitignore`.
@@ -38,7 +44,8 @@ Ramo: **GPY1102** · Prerrequisito GPY1101 · Docencia en Sala de Proyectos.
 ## Cómo entrar al repo (primera vez)
 
 1. Crea una cuenta en [GitHub](https://github.com) si no tienes.
-2. Avísale a Giannina tu **usuario** para que te invite al repo (es privado).
+2. El repositorio es público. Para editarlo, avísale a Giannina tu **usuario**
+   para que te invite como colaborador/a.
 3. Acepta el mail de invitación.
 4. En tu computador:
 
