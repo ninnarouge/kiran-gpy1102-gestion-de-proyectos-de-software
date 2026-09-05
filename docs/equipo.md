@@ -2,7 +2,7 @@
 
 | Nombre | GitHub | Fortaleza que aporta | Notas |
 |---|---|---|---|
-| Giannina Guerrero | ninna-rouge | Repo, docs, alcance | Dueña del repositorio en GitHub |
+| Giannina Guerrero | ninnarouge | Repo, docs, alcance | Dueña del repositorio (cuenta Duoc) |
 | Ari Araya | _pendiente_ | _pendiente_ | Invitar cuando tenga usuario |
 | Nicolás Barra | _pendiente_ | _pendiente_ | Invitar cuando tenga usuario |
 | Skarlett Tropan | _pendiente_ | _pendiente_ | Invitar cuando tenga usuario |

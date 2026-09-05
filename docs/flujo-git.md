@@ -19,7 +19,7 @@ Usa el mail que tienes en GitHub.
 ## Clonar
 
 ```bash
-git clone https://github.com/ninna-rouge/gpy1102-plataforma-solar.git
+git clone https://github.com/ninnarouge/gpy1102-plataforma-solar.git
 cd gpy1102-plataforma-solar
 ```
 

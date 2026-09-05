@@ -10,7 +10,7 @@ Este repo es la **carpeta compartida del equipo**: plan, entregas, acuerdos y (m
 
 | Integrante | Rol sugerido en el repo | GitHub |
 |---|---|---|
-| Giannina Guerrero | Coordinación del repo y alcance | [@ninna-rouge](https://github.com/ninna-rouge) |
+| Giannina Guerrero | Coordinación del repo y alcance | [@ninnarouge](https://github.com/ninnarouge) |
 | Ari Araya | Por definir | _invitar con usuario de GitHub_ |
 | Nicolás Barra | Por definir | _invitar con usuario de GitHub_ |
 | Skarlett Tropan | Por definir | _invitar con usuario de GitHub_ |
@@ -41,7 +41,7 @@ Ramo: **GPY1102** · Prerrequisito GPY1101 · Docencia en Sala de Proyectos.
 4. En tu computador:
 
 ```bash
-git clone https://github.com/ninna-rouge/gpy1102-plataforma-solar.git
+git clone https://github.com/ninnarouge/gpy1102-plataforma-solar.git
 cd gpy1102-plataforma-solar
 ```
 

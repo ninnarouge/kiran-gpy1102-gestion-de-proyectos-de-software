@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
   - name: Duda rápida del equipo
-    url: https://github.com/ninna-rouge/gpy1102-plataforma-solar/issues/new?template=duda.md
+    url: https://github.com/ninnarouge/gpy1102-plataforma-solar/issues/new?template=duda.md
     about: Pregunta de git, alcance o la Eva 1
