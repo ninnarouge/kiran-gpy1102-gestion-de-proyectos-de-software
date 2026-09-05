@@ -1,8 +1,11 @@
-# PRODUCT.md
+# PRODUCT.md — Kiran
+
+**Producto:** Kiran  
+**Asignatura:** GPY1102 Gestión de Proyectos de Software · Duoc UC
 
 ## Job to be done
 
-Cuando un equipo de terreno y quienes financian un piloto solar necesitan **ver el estado real de los kits**, poder **abrir una falla** y **mostrar impacto** sin armar un Excel a mano, esta plataforma lo registra y lo muestra.
+Cuando un equipo de terreno y quienes financian un piloto solar necesitan **ver el estado real de los kits**, poder **abrir una falla** y **mostrar impacto** sin armar un Excel a mano, **Kiran** lo registra y lo muestra.
 
 ## Audience
 

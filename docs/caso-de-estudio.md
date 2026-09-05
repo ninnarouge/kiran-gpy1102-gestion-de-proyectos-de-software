@@ -1,6 +1,7 @@
-# Caso de estudio 7 — Plataforma solar comunitaria
+# Caso de estudio 7 — Kiran
 
-Nombre largo: **Provisión de energía sostenible en comunidades desfavorecidas**.
+**Producto del equipo:** Kiran  
+Nombre del caso: **Provisión de energía sostenible en comunidades desfavorecidas**.
 
 ## Contexto
 
@@ -8,7 +9,7 @@ En una región desfavorecida de India, muchas comunidades no tienen energía con
 
 ## Qué resuelve el software (nuestro proyecto)
 
-No instalamos paneles. Construimos (planificamos, en la Eva 1) una plataforma para:
+No instalamos paneles. **Kiran** (planificamos, en la Eva 1) cubre:
 
 1. **Inventario** de comunidades, hogares y kits, con estado operativo (activo, en falla, dado de baja)
 2. **Tablero** para ver el estado general e individual

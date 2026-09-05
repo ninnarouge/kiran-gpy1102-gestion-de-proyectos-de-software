@@ -5,7 +5,7 @@ Instrucciones para agentes de IA (Cursor u otro) que trabajen **en este repo**.
 ## Contexto
 
 - Ramo Duoc UC **GPY1102** Gestión de Proyectos de Software
-- Producto: piloto de plataforma de kits solares (inventario, tablero, tickets, reportes)
+- Producto: **Kiran** — piloto de plataforma de kits solares (inventario, tablero, tickets, reportes)
 - Equipo de 4. Entrega principal cercana: Eva Parcial 1 (planificar)
 
 ## Leer antes de editar

@@ -1,8 +1,8 @@
-# GPY1102 · Plataforma solar comunitaria
+# Kiran · GPY1102 Gestión de Proyectos de Software
 
-Repositorio del **equipo** de Gestión de Proyectos de Software (Duoc UC, jornada vespertina, Puente Alto).
+Repositorio del **equipo** de **Gestión de Proyectos de Software (GPY1102)** — Duoc UC, jornada vespertina, Puente Alto.
 
-Trabajamos el **Caso 7**: una plataforma para registrar, monitorear y mantener kits solares en una comunidad piloto, y para reportar impacto a quienes financian el proyecto.
+**Kiran** es el nombre del proyecto (Caso 7): una plataforma para registrar, monitorear y mantener kits solares en una comunidad piloto, y para reportar impacto a quienes financian el trabajo.
 
 Este repo es la **carpeta compartida del equipo**: plan, entregas, acuerdos y (más adelante) el software. No reemplaza Canvas ni la maleta didáctica de Duoc.
 
@@ -41,8 +41,8 @@ Ramo: **GPY1102** · Prerrequisito GPY1101 · Docencia en Sala de Proyectos.
 4. En tu computador:
 
 ```bash
-git clone https://github.com/ninnarouge/gpy1102-plataforma-solar.git
-cd gpy1102-plataforma-solar
+git clone https://github.com/ninnarouge/kiran-gpy1102-gestion-de-proyectos-de-software.git
+cd kiran-gpy1102-gestion-de-proyectos-de-software
 ```
 
 5. Lee `PRODUCT.md` y `docs/caso-de-estudio.md` antes de editar.
@@ -70,7 +70,7 @@ Guía de la Eva 1: [`docs/evaluacion-1.md`](docs/evaluacion-1.md).
 
 ## Producto (en una frase)
 
-Software de **operación** de kits solares de un piloto: inventario, tablero, tickets de mantención e informes de impacto. **No** fabricamos ni instalamos paneles.
+**Kiran** opera los kits solares de un piloto: inventario, tablero, tickets de mantención e informes de impacto. **No** fabricamos ni instalamos paneles.
 
 Detalle: [`PRODUCT.md`](PRODUCT.md).
 

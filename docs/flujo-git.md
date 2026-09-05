@@ -19,8 +19,8 @@ Usa el mail que tienes en GitHub.
 ## Clonar
 
 ```bash
-git clone https://github.com/ninnarouge/gpy1102-plataforma-solar.git
-cd gpy1102-plataforma-solar
+git clone https://github.com/ninnarouge/kiran-gpy1102-gestion-de-proyectos-de-software.git
+cd kiran-gpy1102-gestion-de-proyectos-de-software
 ```
 
 ## Cada vez que vas a trabajar
