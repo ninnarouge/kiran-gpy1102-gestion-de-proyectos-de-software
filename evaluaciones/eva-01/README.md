@@ -3,6 +3,7 @@
 ## Estructura
 
 - `informe/`: `Informe-Ejecutivo-Eva01.docx` y `Alcance-EDT-y-exclusiones.docx`.
+- `informe/insumos/`: pedazos del equipo para armar el Word (no es la entrega).
 - `planificacion/`: `Cronograma-Kiran.xml` (Project Libre), Gantt HTML y CSV.
 - `marca/final/`: logo definitivo, variantes y guía de uso.
 - `pitch/`: guion de la presentación a dirección.

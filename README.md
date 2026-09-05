@@ -14,7 +14,7 @@ Tablero Trello: cuando esté conectado, ver [`docs/trello.md`](docs/trello.md).
 |---|---|---|
 | Giannina Guerrero | Directora del proyecto y frontend | [@ninnarouge](https://github.com/ninnarouge) |
 | Nicolás Barra | Backend | _invitar con usuario de GitHub_ |
-| Ari Araya | Infraestructura y nube | _invitar con usuario de GitHub_ |
+| Ari Araya | Infraestructura y nube | [@KhanIvall](https://github.com/KhanIvall) |
 | Skarlett Tropan | Calidad e impacto | _invitar con usuario de GitHub_ |
 
 Ramo: **GPY1102** · Prerrequisito GPY1101 · Docencia en Sala de Proyectos.
@@ -34,6 +34,7 @@ Ramo: **GPY1102** · Prerrequisito GPY1101 · Docencia en Sala de Proyectos.
 └── evaluaciones/
     └── eva-01/
         ├── informe/          ← Word del plan (lo que se entrega)
+        │   └── insumos/      ← pedazos del equipo para armar el Word
         ├── planificacion/    ← XML Project Libre, Gantt y CSV
         ├── pitch/            ← guion de la presentación
         └── marca/final/      ← logo Kiran

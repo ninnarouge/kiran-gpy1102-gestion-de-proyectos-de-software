@@ -41,6 +41,7 @@ Dentro de la Eva 1: informe **30%** · oral **70%**.
 Carpeta `evaluaciones/eva-01/`:
 
 - `informe/`: documentos propios del informe ejecutivo (`Informe-Ejecutivo-Eva01.docx`, alcance/EDT).
+- `informe/insumos/`: textos del equipo para armar el Word (un archivo por pedazo).
 - `planificacion/`: `Cronograma-Kiran.xml` (Project Libre), Gantt HTML y CSV.
 - `marca/`: identidad visual de Kiran y recursos para el pitch.
 - `pitch/`: guion de las 6 preguntas del oral.
