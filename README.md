@@ -4,7 +4,9 @@ Repositorio del **equipo** de **Gestión de Proyectos de Software (GPY1102)** �
 
 **Kiran** es el nombre del proyecto (Caso 7): una plataforma para registrar, monitorear y mantener kits solares en una comunidad piloto, y para reportar impacto a quienes financian el trabajo.
 
-Este repo es la **carpeta compartida del equipo**: plan, entregas, acuerdos y (más adelante) el software. No reemplaza Canvas ni la maleta didáctica de Duoc.
+Este repo es la **carpeta compartida del equipo**: plan, entregas, acuerdos y (más adelante) el software. Es **público**. No reemplaza Canvas ni la maleta didáctica de Duoc.
+
+Tablero Trello: cuando esté conectado, ver [`docs/trello.md`](docs/trello.md).
 
 ## Equipo
 
