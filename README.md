@@ -17,7 +17,7 @@ Tablero Trello: cuando esté conectado, ver [`docs/trello.md`](docs/trello.md).
 | Ari Araya | Infraestructura y nube | [@KhanIvall](https://github.com/KhanIvall) |
 | Skarlett Tropan | Calidad e impacto | _invitar con usuario de GitHub_ |
 
-Ramo: **GPY1102** · Prerrequisito GPY1101 · Docencia en Sala de Proyectos.
+Ramo: **GPY1102** · Docente: **Juan Bautista Sáez Fernández** · Prerrequisito GPY1101 · Docencia en Sala de Proyectos.
 
 ## Qué hay aquí
 
@@ -32,10 +32,11 @@ Ramo: **GPY1102** · Prerrequisito GPY1101 · Docencia en Sala de Proyectos.
 │   └── estudio/              ← guías de estudio del equipo
 ├── scripts/                  ← regenerar informe, EDT y cronograma
 └── evaluaciones/
-    └── eva-01/
+    └── eva-01/               ← única carpeta de Eva 1 (no uses Eva 01/ en la raíz)
         ├── informe/          ← Word del plan (lo que se entrega)
         │   └── insumos/      ← pedazos del equipo para armar el Word
-        ├── planificacion/    ← XML Project Libre, Gantt y CSV
+        ├── planificacion/    ← XML Project Libre, Gantt, CSV y capa Scrum
+        ├── presentacion/     ← deck interactivo del oral
         ├── pitch/            ← guion de la presentación
         └── marca/final/      ← logo Kiran
 ```

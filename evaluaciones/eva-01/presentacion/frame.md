@@ -1,45 +1,43 @@
 ---
-name: Kiran Editorial Control
-background: "#F4EFE4"
+name: Kiran Signal
+background: "#F7F3EA"
 foreground: "#10263D"
 accent: "#E59A24"
-surface: "#FFFcf6"
-muted: "#5C6E7D"
-dark: "#0B1B2C"
+surface: "#FFFFFF"
+muted: "#5A6B79"
+dark: "#0A1520"
 font_display: "Montserrat"
-font_body: "Montserrat"
-font_data: "Space Mono"
+font_body: "IBM Plex Sans"
+font_data: "IBM Plex Mono"
 corner_radius: "2px"
 ---
 
 # Dirección visual
 
-La sala de control se siente editorial: marfil cálido, azul de operación y un
-solo acento ámbar. El isotipo no decora; dirige la atención.
+Una consola de operación. El navy es el sistema; el ámbar es la señal que
+hace visible un kit. El isotipo no decora: los haces *son* la propuesta
+de valor.
 
 ## Tipografía
 
-- Titulares en Montserrat 700, tracking cerrado, mucho aire entre líneas.
-- Promesa y cuerpo en Montserrat 400, más livianos que el título.
-- Datos, kicker y fuentes en Space Mono, tracking abierto, versalitas ópticas.
-- Una idea por tamaño: display → título → lead → dato. No competir.
+- **Montserrat** 700–800 en wordmark y títulos. Es la voz pública de Kiran.
+- **IBM Plex Sans** en cuerpo y leads. Lectura de tablero, no de revista.
+- **IBM Plex Mono** en kicker, códigos y fuentes.
+- KIRAN en versales con tracking abierto. La promesa en peso regular.
 
 ## Composición
 
-- Titulares grandes, anclados a la izquierda, con mucho aire.
-- Un visual dominante por lámina; el resto es evidencia.
-- Hairlines y reglas finas. El ámbar aparece solo cuando hay que atender.
-- Fondos oscuros en apertura, valor y cierre.
-- Transición: fundido suave, sin forma geométrica. El deck se escala a la pantalla.
+- Tres bandas que no se pisan: folio, escena, riel de datos.
+- El deck se *contiene* en la ventana; el escenario de html queda navy (`#0a1520`) en todo el pitch. Las láminas claras pintan su propio papel marfil; las oscuras se funden con el escenario para que los laterales no se sientan otro producto.
+- Navegación al centro derecho. Progreso al borde inferior.
+- Ámbar solo cuando hay que atender: haces, estado, acento de dato.
 
-## Sí
+## Movimiento
 
-- Contraste fuerte, superficies quietas y profundidad por capas, no por sombra.
-- Estados distinguibles por forma y texto, no solo por color.
-- Movimiento suave, distinto en cada escena, con una sola ambientación.
+- Los haces se dibujan. Los nodos aparecen en cadena.
+- Un pulso suave en el origen de luz. Nada de wipe ni de grilla CAD.
 
 ## No
 
-- Ampolletas, soles, hojas o fotografías genéricas de paneles.
-- Tarjetas idénticas, bordes gruesos, sombras pesadas o degradados decorativos.
-- Párrafos largos o más de una idea principal por lámina.
+- Serif editorial, lomo de libro, aros, pastillas, fotos genéricas.
+- Afirmar que Kiran fabrica o instala paneles.

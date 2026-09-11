@@ -1,6 +1,12 @@
-"""Caso 7: EDT, CPM y export a Project Libre (MSPDI XML) + Gantt HTML."""
+"""Caso 7: EDT, CPM y export a Project Libre (MSPDI XML) + Gantt HTML.
+
+Híbrido: la EDT y la ruta crítica (PMBOK 6) siguen siendo la línea base.
+Los sprints (SBOK / Scrum) son la capa adaptativa de tablero y tickets;
+no duplican trabajo ni alargan el piloto.
+"""
 from __future__ import annotations
 
+import shutil
 from collections import defaultdict
 from dataclasses import dataclass, field
 from datetime import date, datetime, time, timedelta
@@ -46,6 +52,7 @@ class Task:
     summary: bool = False
     milestone: bool = False
     resource: str = ""
+    sprint: str = ""
     es: int = 0
     ef: int = 0
     ls: int = 0
@@ -66,46 +73,58 @@ class Task:
         return workday_date(self.ef - 1)
 
 
+# Bandas de calendario (índice 0 = 14 sep 2026). No son paquetes de la EDT:
+# Sprint 0 habilita; S1–S4 entregan incremento de tablero y tickets.
+# El 20 % de cada sprint Scrum no se compromete (reserva de capacidad).
+SPRINT_BANDS = [
+    ("Sprint 0", 0, 22, "#64748b", "Habilitador: acta, inventario, privacidad, ambiente"),
+    ("S1", 22, 32, "#0f766e", "Incremento: tablero de comunidad · 8/10 d comprometidos"),
+    ("S2", 32, 42, "#0e7490", "Incremento: tablero usable · 8/10 d comprometidos"),
+    ("S3", 42, 52, "#0369a1", "Incremento: tickets asignables · 8/10 d comprometidos"),
+    ("S4", 52, 63, "#1d4ed8", "Incremento: terreno + reporte + traspaso"),
+]
+
+
 TASKS: list[Task] = [
     Task("1", "Dirección del proyecto", 0, [], 1, True),
-    Task("1.1", "Acta de constitución e interesados", 3, [], resource="Directora de proyecto"),
-    Task("1.2", "Plan preliminar y línea base", 5, ["1.1"], resource="Directora de proyecto"),
-    Task("1.3", "Riesgos de alto nivel y comunicación", 4, ["1.1"], resource="Directora de proyecto"),
+    Task("1.1", "Acta de constitución e interesados", 3, [], resource="Directora de proyecto", sprint="Sprint 0"),
+    Task("1.2", "Plan preliminar y línea base", 5, ["1.1"], resource="Directora de proyecto", sprint="Sprint 0"),
+    Task("1.3", "Riesgos de alto nivel y comunicación", 4, ["1.1"], resource="Directora de proyecto", sprint="Sprint 0"),
     Task("2", "Inventario de kits y hogares", 0, [], 1, True),
-    Task("2.1", "Modelo de datos (comunidad, hogar, kit)", 8, ["1.1"], resource="Desarrollador backend"),
-    Task("2.2", "Estados operativos del kit", 5, ["2.1"], resource="Desarrollador backend"),
-    Task("2.3", "Carga inicial del piloto", 6, ["2.2"], resource="Soporte local"),
-    Task("2.4", "Validación con soporte local", 4, ["2.3"], resource="Soporte local"),
+    Task("2.1", "Modelo de datos (comunidad, hogar, kit)", 8, ["1.1"], resource="Desarrollador backend", sprint="Sprint 0"),
+    Task("2.2", "Estados operativos del kit", 5, ["2.1"], resource="Desarrollador backend", sprint="Sprint 0"),
+    Task("2.3", "Carga inicial del piloto", 6, ["2.2"], resource="Soporte local", sprint="Sprint 0"),
+    Task("2.4", "Validación con soporte local", 4, ["2.3"], resource="Soporte local", sprint="S1"),
     Task("3", "Tablero operativo", 0, [], 1, True),
-    Task("3.1", "Vista general de la comunidad", 8, ["2.3"], resource="Desarrollador frontend"),
-    Task("3.2", "Vista individual del kit", 6, ["3.1"], resource="Desarrollador frontend"),
-    Task("3.3", "Indicadores de estado", 5, ["3.1"], resource="Desarrollador frontend"),
-    Task("3.4", "Ajustes de usabilidad con técnico local", 5, ["3.2", "3.3", "2.4"], resource="Desarrollador frontend"),
+    Task("3.1", "Vista general de la comunidad", 8, ["2.3"], resource="Desarrollador frontend", sprint="S1"),
+    Task("3.2", "Vista individual del kit", 6, ["3.1"], resource="Desarrollador frontend", sprint="S2"),
+    Task("3.3", "Indicadores de estado", 5, ["3.1"], resource="Desarrollador frontend", sprint="S2"),
+    Task("3.4", "Ajustes de usabilidad con técnico local", 5, ["3.2", "3.3", "2.4"], resource="Desarrollador frontend", sprint="S2"),
     Task("4", "Monitoreo, tickets y mantención", 0, [], 1, True),
-    Task("4.1", "Registro de rendimiento", 6, ["2.2"], resource="Desarrollador backend"),
-    Task("4.2", "Flujo de tickets", 8, ["4.1", "3.2"], resource="Desarrollador backend"),
-    Task("4.3", "Asignación a soporte local", 5, ["4.2"], resource="Desarrollador backend"),
-    Task("4.4", "Prueba en terreno (PERT)", 8, ["4.3", "3.4", "6.4"], resource="Soporte local"),
+    Task("4.1", "Registro de rendimiento", 6, ["2.2"], resource="Desarrollador backend", sprint="Sprint 0"),
+    Task("4.2", "Flujo de tickets", 8, ["4.1", "3.2"], resource="Desarrollador backend", sprint="S2–S3"),
+    Task("4.3", "Asignación a soporte local", 5, ["4.2"], resource="Desarrollador backend", sprint="S3"),
+    Task("4.4", "Prueba en terreno (PERT)", 8, ["4.3", "3.4", "6.4"], resource="Soporte local", sprint="S3–S4"),
     Task("5", "Impacto y reportes a patrocinadores", 0, [], 1, True),
-    Task("5.1", "Definición de indicadores de impacto", 4, ["1.1"], resource="Analista de impacto / QA"),
-    Task("5.2", "Generación de informe periódico", 6, ["5.1", "4.1"], resource="Analista de impacto / QA"),
-    Task("5.3", "Exportación para inversores y donantes", 4, ["5.2"], resource="Analista de impacto / QA"),
-    Task("5.4", "Primera entrega al patrocinador", 3, ["5.3", "4.4"], resource="Directora de proyecto"),
+    Task("5.1", "Definición de indicadores de impacto", 4, ["1.1"], resource="Analista de impacto / QA", sprint="Sprint 0"),
+    Task("5.2", "Generación de informe periódico", 6, ["5.1", "4.1"], resource="Analista de impacto / QA", sprint="S1"),
+    Task("5.3", "Exportación para inversores y donantes", 4, ["5.2"], resource="Analista de impacto / QA", sprint="S1"),
+    Task("5.4", "Primera entrega al patrocinador", 3, ["5.3", "4.4"], resource="Directora de proyecto", sprint="S4"),
     Task("6", "Privacidad, accesos y despliegue", 0, [], 1, True),
-    Task("6.1", "Roles y permisos", 5, ["1.1"], resource="Desarrollador backend"),
-    Task("6.2", "Tratamiento de datos de hogares", 6, ["6.1"], resource="Desarrollador backend"),
-    Task("6.3", "Ambiente de despliegue", 5, ["6.2"], resource="Infraestructura y nube"),
-    Task("6.4", "Puesta en marcha del piloto", 4, ["6.3", "2.3"], resource="Infraestructura y nube"),
+    Task("6.1", "Roles y permisos", 5, ["1.1"], resource="Desarrollador backend", sprint="Sprint 0"),
+    Task("6.2", "Tratamiento de datos de hogares", 6, ["6.1"], resource="Desarrollador backend", sprint="Sprint 0"),
+    Task("6.3", "Ambiente de despliegue", 5, ["6.2"], resource="Infraestructura y nube", sprint="Sprint 0"),
+    Task("6.4", "Puesta en marcha del piloto", 4, ["6.3", "2.3"], resource="Infraestructura y nube", sprint="S1"),
     Task("7", "Capacitación y transición", 0, [], 1, True),
-    Task("7.1", "Material de capacitación", 4, ["3.2", "4.2"], resource="Analista de impacto / QA"),
-    Task("7.2", "Taller al soporte local", 3, ["7.1", "6.4"], resource="Soporte local"),
-    Task("7.3", "Traspaso operativo del piloto", 3, ["7.2", "5.4"], resource="Directora de proyecto"),
+    Task("7.1", "Material de capacitación", 4, ["3.2", "4.2"], resource="Analista de impacto / QA", sprint="S3"),
+    Task("7.2", "Taller al soporte local", 3, ["7.1", "6.4"], resource="Soporte local", sprint="S3"),
+    Task("7.3", "Traspaso operativo del piloto", 3, ["7.2", "5.4"], resource="Directora de proyecto", sprint="S4"),
     Task("8", "Hitos de control", 0, [], 1, True),
-    Task("8.1", "Hito: inventario validado", 0, ["2.4"], milestone=True),
-    Task("8.2", "Hito: tablero usable", 0, ["3.4"], milestone=True),
-    Task("8.3", "Hito: tickets en terreno", 0, ["4.4"], milestone=True),
-    Task("8.4", "Hito: primer reporte al patrocinador", 0, ["5.4"], milestone=True),
-    Task("8.5", "Hito: piloto entregado", 0, ["7.3"], milestone=True),
+    Task("8.1", "Hito: inventario validado", 0, ["2.4"], milestone=True, sprint="S1"),
+    Task("8.2", "Hito: tablero usable", 0, ["3.4"], milestone=True, sprint="S2"),
+    Task("8.3", "Hito: tickets en terreno", 0, ["4.4"], milestone=True, sprint="S4"),
+    Task("8.4", "Hito: primer reporte al patrocinador", 0, ["5.4"], milestone=True, sprint="S4"),
+    Task("8.5", "Hito: piloto entregado", 0, ["7.3"], milestone=True, sprint="S4"),
 ]
 
 
@@ -274,8 +293,13 @@ def build_xml(tasks: list[Task], finish: int, dest: Path) -> None:
         xml_text(el, "CalendarUID", -1)
         xml_text(el, "RemainingDuration", f"PT{t.dur * 8}H0M0S")
         xml_text(el, "Estimated", 0)
+        notes = []
+        if t.sprint:
+            notes.append(f"Capa de calendario: {t.sprint}.")
         if t.slack == 0:
-            xml_text(el, "Notes", "Ruta crítica (holgura 0). Cualquier atraso mueve el fin del piloto.")
+            notes.append("Ruta crítica (holgura 0). Cualquier atraso mueve el fin del piloto.")
+        if notes:
+            xml_text(el, "Notes", " ".join(notes))
         for p in t.preds:
             pred = by[p]
             link = SubElement(el, "PredecessorLink")
@@ -332,60 +356,105 @@ def build_xml(tasks: list[Task], finish: int, dest: Path) -> None:
 
 def build_html(tasks: list[Task], finish: int, dest: Path) -> None:
     leaves = [t for t in tasks if not t.summary]
+    guides = []
+    for _name, es, _ef, color, _goal in SPRINT_BANDS:
+        if es <= 0:
+            continue
+        left = 100.0 * es / finish
+        guides.append(
+            f'<div class="guide" style="left:{left:.2f}%;background:{color}"></div>'
+        )
+    guide_html = "".join(guides)
+
+    def bar_box(t: Task) -> tuple[float, float, str]:
+        if t.milestone:
+            pos = min(max(t.ef - 1, t.es), finish - 1)
+            left = 100.0 * pos / finish
+            width = max(100.0 * 0.6 / finish, 1.1)
+            return left, width, "#10263d"
+        left = 100.0 * t.es / finish
+        width = max(100.0 * t.dur / finish, 0.9)
+        color = "#b45309" if t.slack == 0 else "#64748b"
+        return left, width, color
+
     rows = []
     for t in leaves:
-        left = 100.0 * t.es / finish
-        width = max(100.0 * max(t.dur, 0.4) / finish, 0.8)
-        color = "#b45309" if t.slack == 0 else "#64748b"
-        if t.milestone:
-            color = "#0f766e"
-            width = 0.8
+        left, width, color = bar_box(t)
         crit = "sí" if t.slack == 0 else "no"
+        extra = " milestone" if t.milestone else ""
         rows.append(
             f"""<tr>
             <td>{t.code}</td>
             <td>{t.name}</td>
+            <td>{t.sprint or '—'}</td>
             <td>{t.dur}</td>
             <td>{', '.join(t.preds) or '—'}</td>
             <td>{t.start_date.isoformat()}</td>
             <td>{t.finish_date.isoformat()}</td>
             <td>{t.slack}</td>
             <td>{crit}</td>
-            <td class="barcell"><div class="track"><div class="bar" style="left:{left:.2f}%;width:{width:.2f}%;background:{color}"></div></div></td>
+            <td class="barcell"><div class="track">{guide_html}<div class="bar{extra}" style="left:{left:.2f}%;width:{width:.2f}%;background:{color}"></div></div></td>
             </tr>"""
+        )
+    band_html = []
+    for name, es, ef, color, _goal in SPRINT_BANDS:
+        left = 100.0 * es / finish
+        width = 100.0 * (ef - es) / finish
+        start = workday_date(es).isoformat()
+        end = workday_date(ef - 1).isoformat()
+        band_html.append(
+            f'<div class="band" style="left:{left:.2f}%;width:{width:.2f}%;background:{color}" '
+            f'title="{name}: {start} a {end}">{name}</div>'
         )
     html = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Gantt y ruta crítica — Kiran</title>
 <style>
 body {{ font-family: 'Segoe UI', Arial, sans-serif; margin: 24px; color: #111; }}
 h1 {{ font-size: 20px; margin-bottom: 4px; }}
-p {{ color: #444; max-width: 920px; }}
-table {{ border-collapse: collapse; width: 100%; font-size: 12px; }}
+p {{ color: #444; max-width: 1100px; line-height: 1.45; }}
+.wrap {{ overflow-x: auto; margin-top: 12px; }}
+table {{ border-collapse: collapse; width: 100%; min-width: 1100px; font-size: 12px; }}
 th, td {{ border-bottom: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: middle; }}
-th {{ background: #f4f4f5; }}
-.barcell {{ width: 38%; }}
-.track {{ position: relative; height: 14px; background: #f4f4f5; border-radius: 2px; }}
-.bar {{ position: absolute; top: 0; height: 14px; border-radius: 2px; }}
+th {{ background: #f4f4f5; position: sticky; top: 0; z-index: 2; }}
+.barcell {{ width: 42%; min-width: 320px; }}
+.track {{ position: relative; height: 16px; background: #f4f4f5; border-radius: 2px; overflow: hidden; }}
+.bar {{ position: absolute; top: 2px; height: 12px; border-radius: 2px; }}
+.bar.milestone {{ top: 3px; height: 10px; border-radius: 1px; }}
+.guide {{ position: absolute; top: 0; width: 1px; height: 16px; opacity: 0.35; }}
 .legend span {{ display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: middle; }}
+.strip {{ position: relative; height: 28px; background: #e2e8f0; border-radius: 3px; overflow: hidden; }}
+.band {{ position: absolute; top: 0; height: 28px; color: #fff; font-size: 11px; font-weight: 600;
+        display: flex; align-items: center; justify-content: center; box-sizing: border-box;
+        border-right: 2px solid #fff; white-space: nowrap; }}
+.axis td {{ background: #f8fafc; font-weight: 600; }}
 </style>
 </head>
 <body>
 <h1>Cronograma de Kiran — piloto de kits solares</h1>
-<p>Inicio: {START.isoformat()} · Término: {workday_date(finish - 1).isoformat()} · {finish} días hábiles · Calendario lunes a viernes, 8 h.</p>
-<p class="legend"><span style="background:#b45309"></span>Ruta crítica (holgura 0) &nbsp; <span style="background:#64748b"></span>Con holgura &nbsp; <span style="background:#0f766e"></span>Hito</p>
+<p>Inicio: {START.isoformat()} · Término: {workday_date(finish - 1).isoformat()} · {finish} días hábiles · lunes a viernes, 8 h.</p>
+<p>Diagrama de Gantt híbrido: las bandas de arriba de la columna Gantt son los sprints. Ámbar = ruta crítica (holgura 0). Gris = con holgura. Navy = hito. Sprint 0 habilita; S1–S4 entregan incremento (8 de 10 días comprometidos).</p>
+<p class="legend"><span style="background:#b45309"></span>Ruta crítica &nbsp; <span style="background:#64748b"></span>Con holgura &nbsp; <span style="background:#10263d"></span>Hito &nbsp; <span style="background:#64748b"></span>Sprint 0 &nbsp; <span style="background:#0f766e"></span>S1 &nbsp; <span style="background:#0e7490"></span>S2 &nbsp; <span style="background:#0369a1"></span>S3 &nbsp; <span style="background:#1d4ed8"></span>S4</p>
+<div class="wrap">
 <table>
-<thead><tr><th>EDT</th><th>Actividad</th><th>Días</th><th>Predecesora</th><th>Inicio</th><th>Fin</th><th>Holgura</th><th>Crítica</th><th>Gantt</th></tr></thead>
+<thead><tr><th>EDT</th><th>Actividad</th><th>Sprint</th><th>Días</th><th>Predecesora</th><th>Inicio</th><th>Fin</th><th>Holgura</th><th>Crítica</th><th>Gantt (14 sep → 9 dic)</th></tr></thead>
 <tbody>
+<tr class="axis"><td colspan="9">Sprints (alineados con las barras)</td><td class="barcell"><div class="strip">{''.join(band_html)}</div></td></tr>
 {''.join(rows)}
 </tbody>
 </table>
-<p>Criterio técnico: CPM (camino más largo). 4.4 usa PERT (O=5, M=7, P=13) → 8 días. Abrir el XML en Project Libre para la línea base oficial.</p>
+</div>
+<p>Criterio técnico: CPM. 4.4 usa PERT (O=5, M=7, P=13) → 8 días. Holgura ≠ reserva: B y C pueden esperar; A no. Si una historia no alcanza, vuelve al backlog. Línea base oficial: Cronograma-Kiran.xml (Project Libre). Detalle Scrum: capa-scrum.md.</p>
 </body>
 </html>"""
     dest.write_text(html, encoding="utf-8")
+    # Copia para el deck: el HTML de presentacion se sirve desde su propia carpeta.
+    deck = ROOT / "evaluaciones" / "eva-01" / "presentacion" / "gantt-ruta-critica.html"
+    deck.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(dest, deck)
 
 
 def critical_chain(tasks: list[Task]) -> list[Task]:
@@ -422,6 +491,7 @@ def run() -> dict:
                 "Inicio",
                 "Fin",
                 "Recurso",
+                "Sprint",
             ]
         )
         for t in TASKS:
@@ -442,6 +512,7 @@ def run() -> dict:
                     t.start_date.isoformat(),
                     t.finish_date.isoformat(),
                     t.resource,
+                    t.sprint,
                 ]
             )
     crit = critical_chain(TASKS)
@@ -455,10 +526,10 @@ def run() -> dict:
         "html": html_path,
         "csv": csv_path,
     }
-    print(f"Duración: {finish} días hábiles")
-    print(f"Término: {info['end']}")
-    print("Ruta crítica:")
-    print(" → ".join(f"{t.code} {t.name} ({t.dur}d)" for t in crit))
+    print(f"Duracion: {finish} dias habiles")
+    print(f"Termino: {info['end']}")
+    print("Ruta critica:")
+    print(" -> ".join(f"{t.code} {t.name} ({t.dur}d)" for t in crit))
     return info
 
 

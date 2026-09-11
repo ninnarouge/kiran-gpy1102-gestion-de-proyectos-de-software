@@ -1,7 +1,7 @@
 ---
 workflow: slideshow
 message: "Kiran convierte kits instalados en una operación observable y creíble"
-audience: "docente y evaluación individual GPY1102"
+audience: "Juan Bautista Sáez Fernández, docente y evaluación individual GPY1102"
 aspect: 1920x1080
 slides: 13
 ---
@@ -15,12 +15,12 @@ slides: 13
 5. **El alcance nace de criterios verificables, no de una lista de deseos.** Determinación.
 6. **El piloto entrega software operativo, no infraestructura eléctrica.** Alcance.
 7. **La EDT convierte el alcance en siete cuentas con responsables claros.** EDT y recursos.
-8. **Once actividades con holgura cero fijan el cierre en 63 días hábiles.** CPM.
+8. **Once actividades con holgura cero fijan el cierre; el margen de fallo es reserva, no holgura extra en A.** CPM.
 9. **PERT transforma incertidumbre de terreno en una duración defendible.** 7,67 días esperados → 8 días planificados.
-10. **El enfoque híbrido protege lo fijo y permite aprender en terreno.** Estrategia.
+10. **El enfoque híbrido congela lo fijo, arranca en Sprint 0 y deja 20 % de capacidad libre.** Estrategia.
 11. **Cada factor ambiental se traduce en una decisión concreta del plan.** EEF y estándares.
 12. **Cada herramienta tiene una función y ninguna reemplaza a la otra.** Justificación.
-13. **El éxito no es terminar pantallas: es validar el estado de cada kit.** Cierre y KPI.
+13. **Gracias. La promesa queda en el aire y la sala, abierta.** Cierre, equipo y preguntas.
 
 ## Ritmo
 

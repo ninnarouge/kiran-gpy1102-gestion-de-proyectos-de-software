@@ -4,7 +4,7 @@ message: "Kiran convierte kits solares instalados en una operación observable, 
 destination: classroom-presentation
 aspect: 1920x1080
 language: es
-audience: "docente de GPY1102, equipo del proyecto y evaluación individual"
+audience: "Juan Bautista Sáez Fernández, docente de GPY1102, equipo del proyecto y evaluación individual"
 length: "15 min"
 angle: "defensa ejecutiva del plan de proyecto"
 ---
@@ -26,13 +26,14 @@ y herramientas.
 ## Customizations
 
 - Deck navegable con modo presentador y notas por lámina.
-- Diagramas propios para flujo operativo, alcance, EDT, PERT, enfoque híbrido y herramientas.
+- Diagramas propios para flujo operativo, alcance, EDT, PERT, enfoque híbrido (Sprint 0 + reserva de capacidad) y herramientas.
 - Composición 16:9 legible en proyector y compatible con exposición de 15 minutos.
 
 ## Notes
 
 - Mantener la paleta Kiran: azul `#10263D`, ámbar `#E59A24`, marfil `#F7F3EA`.
-- Usar Montserrat para titulares y Space Mono para datos.
+- Usar **Montserrat** en wordmark y títulos (identidad Kiran), **IBM Plex Sans** en cuerpo e **IBM Plex Mono** en datos.
+- Dirección visual de consola: navy = sistema, ámbar = señal visible. Sin grilla CAD ni serif de revista.
 - No afirmar que Kiran fabrica o instala paneles.
 - No inventar cifras de hogares, subsidios ni impacto.
 - PMBOK 6 es la referencia oficial del ramo; otras ediciones deben etiquetarse.
