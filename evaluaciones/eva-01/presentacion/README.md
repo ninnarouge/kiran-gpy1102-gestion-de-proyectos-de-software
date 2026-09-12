@@ -12,8 +12,9 @@ python -m http.server 4173
 
 Después abre [http://localhost:4173](http://localhost:4173).
 
-- `→`, `Espacio` o clic a la derecha: avanzar.
-- `←` o clic a la izquierda: volver.
+- `→`, `↑`, `Espacio` o clic a la derecha: avanzar.
+- `←`, `↓` o clic a la izquierda: volver.
+- Puntero láser con botones arriba/abajo: arriba avanza, abajo retrocede.
 
 HyperFrames es solo el taller para animar y revisar el deck. No hace falta para presentar.
 

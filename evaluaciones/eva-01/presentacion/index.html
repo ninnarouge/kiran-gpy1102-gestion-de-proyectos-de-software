@@ -5038,10 +5038,10 @@
           if (event.target.closest(".critical-item")) {
             if (event.key === " " || event.key === "Enter") return;
           }
-          if (event.key === "ArrowRight" || event.key === " " || event.key === "PageDown") {
+          if (event.key === "ArrowRight" || event.key === "ArrowUp" || event.key === " " || event.key === "PageDown") {
             event.preventDefault();
             go(1);
-          } else if (event.key === "ArrowLeft" || event.key === "Backspace" || event.key === "PageUp") {
+          } else if (event.key === "ArrowLeft" || event.key === "ArrowDown" || event.key === "Backspace" || event.key === "PageUp") {
             event.preventDefault();
             go(-1);
           } else if (event.key === "Home") {
