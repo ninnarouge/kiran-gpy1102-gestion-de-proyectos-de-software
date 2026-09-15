@@ -86,3 +86,13 @@ Detalle: [`PRODUCT.md`](PRODUCT.md).
 ## Licencia
 
 Uso **académico** del equipo GPY1102. Ver `LICENSE`.
+
+---
+
+## Nota de perfil profesional (para visitantes / reclutadores)
+
+Este repositorio documenta un ciclo real de **gestión de proyectos de software** en Duoc UC (GPY1102): alcance, planificación, entregables y trabajo en equipo con flujo Git (ramas + Pull Requests).
+
+**Rol de Giannina Guerrero (@ninnarouge):** Directora del proyecto y frontend — definición de producto, coordinación del equipo y criterio de entrega.
+
+No es un “repo de ejercicios sueltos”: es evidencia de liderazgo de proyecto, comunicación técnica y disciplina de colaboración.
