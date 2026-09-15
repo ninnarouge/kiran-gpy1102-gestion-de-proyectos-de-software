@@ -6,6 +6,8 @@ build/
 .next/
 coverage/
 *.tsbuildinfo
+__pycache__/
+*.py[cod]
 
 # Secretos y entorno
 .env
@@ -28,9 +30,12 @@ Desktop.ini
 # Material oficial con copyright (Duoc / PMI)
 # Se queda en el computador de cada integrante; no se sube al repo.
 Contenidos/
+docs/estudio/Contenidos AVA/
+docs/estudio/_extract_ava.txt
+docs/estudio/_slides_tmp/
+# Copia local antigua (con espacio). La fuente es evaluaciones/eva-01/
 Eva 01/
 evaluaciones/**/material-oficial/
-evaluaciones/**/entrega/
 evaluaciones/**/*-actualizado.docx
 Programa de Asignatura GPY1102.pdf
 Resumen-PMBOK*.md
@@ -38,6 +43,17 @@ Resumen-PMBOK*.md
 # Canvas / artefactos locales de Cursor
 .cursor/
 canvases/
+
+# HyperFrames: miniaturas, backups y capturas de prueba
+.thumbnails/
+.hyperframes/
+evaluaciones/**/presentacion/snapshots/
+evaluaciones/**/presentacion/.verify/
+
+# Ensayos de marca (máscaras, quads, variantes de afiche)
+evaluaciones/**/marca/**/debug/
+evaluaciones/eva-01/marca/publicidad-kiran-foto-v1.png
+evaluaciones/eva-01/marca/publicidad-kiran-foto-v2.png
 
 # Temporales de Office y basura
 ~$*
