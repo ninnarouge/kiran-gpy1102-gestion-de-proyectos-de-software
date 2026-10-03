@@ -49,6 +49,10 @@ canvases/
 .hyperframes/
 evaluaciones/**/presentacion/snapshots/
 evaluaciones/**/presentacion/.verify/
+evaluaciones/**/presentacion/_print.html
+evaluaciones/**/presentacion/export/_preview/
+evaluaciones/**/presentacion/export/_slides/
+evaluaciones/**/presentacion/export/_chrome-profile/
 
 # Ensayos de marca (máscaras, quads, variantes de afiche)
 evaluaciones/**/marca/**/debug/

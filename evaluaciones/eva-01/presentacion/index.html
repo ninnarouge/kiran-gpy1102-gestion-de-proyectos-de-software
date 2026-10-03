@@ -3186,6 +3186,10 @@
         display: flex;
       }
 
+      html.is-pdf-capture .deck-nav {
+        display: none !important;
+      }
+
       .deck-nav button {
         width: 48px;
         height: 48px;
@@ -5030,8 +5034,11 @@
           showSlide(slideIndex + step);
         }
 
+        const querySlide = Number(new URLSearchParams(location.search).get("slide"));
         const hashSlide = Number((location.hash.match(/slide-(\d+)/i) || [])[1]);
-        showSlide(hashSlide > 0 ? hashSlide - 1 : 0);
+        const startSlide = querySlide || hashSlide;
+        if (querySlide) document.documentElement.classList.add("is-pdf-capture");
+        showSlide(startSlide > 0 ? startSlide - 1 : 0);
         window.setTimeout(() => document.documentElement.focus(), 0);
 
         window.addEventListener("keydown", (event) => {
