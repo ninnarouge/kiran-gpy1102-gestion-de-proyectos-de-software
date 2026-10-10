@@ -3,7 +3,7 @@
 **Para:** `evaluaciones/eva-02/informe/2.2.2-Gestion-de-cambios-Kiran.docx`  
 **Uso:** borrador para pegar en la copia del Word (mismo formato, Tablas 2–11). No reemplaza el `.docx`.
 
-Conservar C-01 a C-04. Agregar C-05 (IA interna progresiva, soporte primero) y C-06 (priorización visual). Frontera: **C-01b** = dato prioridad + nota; **C-06** = cola/filtros en UI.
+Conservar C-01 a C-04. Agregar **C-05** (chatbot en plataforma: FAQ + canal de asistencia para usuarios del piloto, con el fin de ahorrar contrato de personal de soporte; despliegue progresivo) y **C-06** (priorización visual). Fronteras: **C-01b** = dato prioridad + nota; **C-06** = cola/filtros en UI; **C-05** ≠ app ciudadana masiva ni reemplazo total del técnico.
 
 ---
 
@@ -13,7 +13,7 @@ En el párrafo del procedimiento, cambiar “cuatro cambios potenciales” por *
 
 Agregar al final de la introducción (o al cierre del párrafo de prioridad):
 
-> C-05 y C-06 no suman encima de la fotografía, el segundo punto de inventario y el servicio externo: compiten por las mismas dos tarjetas por persona. Si entra uno, sale una historia equivalente del sprint. La contingencia del 12 % sigue cerrada sin razón escrita. Un datalake completo, un modelo hospedado por el equipo o una IA para hogares y donantes no entran en esta ventana: o se cierran, o quedan como solicitud futura fuera del piloto.
+> C-05 y C-06 no suman encima de la fotografía, el segundo punto de inventario y el servicio externo: compiten por las mismas dos tarjetas por persona. Si entra uno, sale una historia equivalente del sprint. La contingencia del 12 % sigue cerrada sin razón escrita. Un datalake completo, un modelo hospedado por el equipo, una app ciudadana masiva o un chatbot que reemplace por completo al soporte contratado no entran en esta ventana: o se cierran, o quedan como solicitud futura fuera del piloto. C-05 fase 1 es autoservicio de FAQ y canal de asistencia para usuarios de la plataforma, no un segundo producto.
 
 ---
 
@@ -21,12 +21,12 @@ Agregar al final de la introducción (o al cierre del párrafo de prioridad):
 
 | Id. | Situación | Origen | Corte que toca |
 |-----|-----------|--------|----------------|
-| C-05 | Ejemplo de solicitud. La dirección pide un asistente de IA de uso interno para tickets, reportes y decisiones. En este plan la formulación completa no se aprueba: solo se contempla la fase 1 (resumen de ticket, checklist de terreno y sugerencia del siguiente ticket en cola, con confirmación humana), tras un tablero usable y sin enviar datos de hogares a un modelo externo. | Dirección / equipo | 9 de noviembre (depende del tablero) y 4 de diciembre (tickets). No la ruta crítica de inventario. |
+| C-05 | Ejemplo de solicitud. La dirección pide un chatbot en la plataforma para los usuarios del piloto: preguntas frecuentes (FAQ) y un canal para comunicarse por temas de soporte y asistencia, con el fin de ahorrar contrato de personal de soporte. En este plan la formulación amplia (app ciudadana masiva o reemplazo total del técnico) no se aprueba: solo se contempla la fase 1 (FAQ publicadas en el chat más escalamiento a ticket o a persona de soporte cuando el FAQ no alcanza), tras un tablero usable, sin datos de hogares en un modelo externo y sin sustituir los estados del kit. | Dirección / equipo (ahorro de personal de soporte) | 9 de noviembre (depende del tablero usable) y 4 de diciembre (tickets y canal). No la ruta crítica de inventario. |
 | C-06 | Se pide una priorización visual en el tablero: cola o filtros que muestren qué atender primero (kit en falla, urgencia), para bajar consultas fuera del sistema al soporte local. No cambia los estados del kit ni abre una app ciudadana. Reutiliza la prioridad de C-01b si esa medida entra; no la sustituye. | Contraparte / soporte local | 9 de noviembre y, por uso, 4 de diciembre |
 
 Texto bajo Tabla 2:
 
-> C-05 se rotula como ejemplo de solicitud porque concreta el tipo de cambio de productividad con IA que el piloto puede recibir. No es un copiloto ya construido. Lo que amerita registro es la ampliación de superficie de producto y el costo variable de una API de modelo. La medida factible, si cabe, es solo la fase 1 de soporte.
+> C-05 se rotula como ejemplo de solicitud porque concreta el tipo de cambio de soporte al usuario con IA: un chatbot con FAQ y canal de asistencia para bajar el gasto en personal de soporte contratado. No es una app ciudadana ni el reemplazo total del técnico. Lo que amerita registro es la nueva superficie en la plataforma y el costo variable de una API de modelo. La medida factible, si cabe, es solo la fase 1 (FAQ más escalamiento humano).
 >
 > C-06 no es lo mismo que C-01b. C-01b agrega el dato de prioridad y la nota en el modelo del ticket. C-06 es la cola o el filtro en la interfaz para que el técnico vea el orden sin pedir por WhatsApp qué kit mirar primero. Sin C-01b (o sin un dato equivalente), la cola visual no tiene criterio; sin C-06, el dato de prioridad queda escondido en el formulario.
 
@@ -38,19 +38,19 @@ Texto bajo Tabla 2:
 
 ## §2 — consecuencias
 
-### 2.5. C-05. Asistente de IA (fase 1)
+### 2.5. C-05. Chatbot de FAQ y canal de soporte (fase 1)
 
-En los términos pedidos (copiloto para tickets, reportes y decisiones), el cambio toca integración, costo variable de API, privacidad y calidad de las sugerencias. Nicolás sostiene la integración. Skarlett valida la calidad de lo sugerido. Ari registra el tope de gasto. Giannina sostiene el control de cambios. Un modelo propio, un fine-tuning o un datalake para entrenar no están en el plan.
+En los términos pedidos (chatbot para usuarios con FAQ y comunicación de soporte, para ahorrar contrato de personal), el cambio toca la interfaz de la plataforma, integración con API de modelo o motor de FAQ, privacidad, calidad de las respuestas y el flujo hacia el ticket. Nicolás sostiene la integración. Giannina la interfaz del chat. Skarlett valida la calidad de las respuestas y el FAQ. Ari registra el tope de gasto. Un modelo propio, un fine-tuning, un datalake para entrenar o una app para cada hogar no están en el plan.
 
-El efecto positivo acotado es aliviar al técnico a 0,4 FTE: menos tiempo para entender un ticket y elegir el siguiente, si la sugerencia se usa y se corrige. El efecto negativo de la formulación completa es scope creep, gasto no comprometido y riesgo de priorizar mal por una alucinación. La fase 1 no cambia el estado del kit ni redacta el reporte a donantes.
+El efecto positivo acotado es reducir consultas repetidas al personal de soporte contratado: el usuario resuelve con FAQ o deja un mensaje que escala a ticket. El efecto negativo de la formulación completa (reemplazo total del soporte o app ciudadana) es ampliar el alcance, abrir gasto no comprometido y responder mal por una alucinación. La fase 1 no cambia el estado del kit, no cierra tickets sola y no redacta el reporte a donantes.
 
-Indicadores amenazados: E1 (corte del 4 de diciembre si se adelanta la fase), E4 (desviación de nube/API sobre 10 %), E5 (si se construye sin fila en el registro). Operativos a monitorear: O1, O6 (submétricas de adopción y rechazo de sugerencias) y O4 (WIP).
+Indicadores amenazados: E1, E4 y E5. Operativos: O1, O4 y O6 (contención por FAQ sin escalar; % que escala a persona).
 
 ### 2.6. C-06. Priorización visual
 
 El cambio toca la interfaz del tablero y, si hace falta, filtros en backend. Giannina sostiene la UI. No abre estados nuevos del kit. El efecto positivo es bajar el costo de soporte informal. El efecto negativo es presión de esfuerzo hacia el 9 de noviembre y más líneas cambiadas antes del 4 de diciembre, con riesgo sobre O1 y, si persiste, sobre E1.
 
-Orden: C-06 antes que la IA fase 1. La IA no adelanta a un tablero que el soporte aún no usa.
+Orden: C-06 (cola visible para quien atiende) antes que el chatbot fase 1: lo que escale desde el chat debe poder atenderse en la cola.
 
 ### 2.7. Efecto conjunto (texto a fusionar con el 2.5 actual)
 
@@ -62,16 +62,16 @@ Renumerar el “2.5. Efecto conjunto” a **2.7** y agregar:
 
 | Id. | Impacto | Costo | Tiempo | Factible en esos términos |
 |-----|---------|-------|--------|---------------------------|
-| C-05 completo (copiloto / datalake / modelo propio) | Alto. Abre plataforma de datos o IA fuera de la EDT. | Gasto variable y posible contingencia. Rompe E4 si supera 10 % de desviación. | Rompe o desplaza el 4 de diciembre. | No |
-| C-05 fase 1 (soporte) | Medio. Integra API y prompts acotados; humano confirma. | Horas replanificadas + sobre API dentro del variable (parte de los US$ 1.240). Contingencia cerrada salvo razón escrita. | Post 9 de noviembre; no en la semana del 5 al 9 de diciembre. | Condicionado a C-06/C-01b, cupo de sprint y tope de API |
+| C-05 completo (app ciudadana / reemplazo total / datalake) | Alto. Abre app masiva o elimina el soporte humano sin capacidad de integración. | Gasto variable alto; rompe E4 si >10 %. | Rompe o desplaza el 4 de diciembre. | No |
+| C-05 fase 1 (chatbot FAQ + canal) | Medio. Chat con FAQ y escalamiento a ticket/persona; no cierra solo. | Horas replanificadas + sobre API/hosting del chat en variable. Objetivo: menos horas de soporte contratado. Contingencia cerrada. | Post 9 de noviembre; no 5–9 dic. | Condicionado a C-06, cupo, tope API y FAQ curado |
 | C-06 | Medio. UX de cola/filtros; reutiliza prioridad C-01b. | Casi sin infra extra; esfuerzo UI/backend del techo. | Presión hacia el 9 de noviembre. | Condicionado a reemplazo de historia y WIP |
 
 ### Tabla 4 — riesgos nuevos
 
 | Riesgo | Se materializa si | Mitigación |
 |--------|-------------------|------------|
-| La IA amplía el alcance sin control | Se construye copiloto, auto-estados o reporte a donantes sin fila nueva | Solo fase 1 asistida. Salto de fase = solicitud nueva. Revisión de impacto con rol senior (Ari o Nicolás), no con juniors en planificación/CC. |
-| El costo de API o un datalake come el techo | Se contrata lago completo o se abre contingencia sin acta | Datalake completo rechazado/diferido. Ari pone tope de API en Excel. Desviación > 10 %: se pausa IA antes que el corte. |
+| El chatbot amplía el alcance sin control | Se construye app ciudadana, se elimina el soporte de golpe o el bot cierra tickets/cambia estados solo | Solo fase 1: FAQ + escalamiento humano. Salto de fase = solicitud nueva. Revisión senior (Ari o Nicolás), no juniors en CC. |
+| El costo de API o un datalake come el techo | Se contrata lago, modelo propio o se abre contingencia sin acta por el chatbot | Datalake y app ciudadana rechazados/diferidos. Ari pone tope de API del chatbot. Desviación > 10 %: se pausa el chatbot antes que el corte. |
 | La cola visual se confunde con estados del kit | C-06 cambia semántica de activo/falla/baja | C-06 solo ordena y filtra. Estados siguen en el modelo del inventario. |
 | Se acumula superficie sin integración | Entran C-05 y C-06 junto a foto, segundo punto y servicio externo | Un cambio constructivo a la vez además de C-04. Si entra IA o cola, sale otra historia. Mentoría docente 1 h/sprint si el CC es ambiguo. |
 
@@ -81,33 +81,33 @@ Renumerar el “2.5. Efecto conjunto” a **2.7** y agregar:
 
 ### 3.1 (párrafos)
 
-> C-05 se aprueba solo por fases. La fase 1 (soporte) queda condicionada a que C-06 y, si aplica, C-01b estén en marcha o en el mismo plan de sprint, a que quepa en dos tarjetas por persona y a un tope de llamadas API en Excel. La fase 2 (borradores internos de cierre) solo post 4 de diciembre o con CC nuevo. La fase 3 (copiloto amplio, ML, IA a hogares/donantes, modelo propio) se rechaza en sep–dic 2026. No se aprueba un copiloto único “todo en uno”.
+> C-05 se aprueba solo por fases. La fase 1 (chatbot con FAQ y canal que escala a ticket o persona) queda condicionada a C-06, a dos tarjetas por persona y a un tope de API en Excel. El FAQ lo cura el equipo; el bot no cierra ni cambia estados solo. La fase 2 (ampliar corpus FAQ y enrutamiento) solo post 4 de diciembre o con CC nuevo. La fase 3 (reemplazo total del personal de soporte, app ciudadana, modelo propio) se rechaza en sep–dic 2026.
 >
-> C-06 se aprueba en forma condicionada: vistas de cola o filtro en el tablero hacia el 9 de noviembre, sin ML, midiendo menos consultas informales. Es prerrequisito de la IA fase 1. Si no cabe en el WIP, no entra.
+> C-06 se aprueba en forma condicionada: cola o filtro hacia el 9 de noviembre. Es prerrequisito del chatbot fase 1. Si no cabe en el WIP, no entra.
 
 ### Tabla 5 — filas
 
 | Id. | Importante | Urgente | Cuadrante | Decisión de orden |
 |-----|------------|---------|-----------|-------------------|
 | C-06, cola visual | Sí, si baja carga del soporte sin abrir app ciudadana. | Sí hacia el 9 de noviembre. | Planificar / hacer en ese corte. | Antes que C-05. Condicionada al reemplazo de historia. |
-| C-05 fase 1 | Sí para soporte, no antes que la cola. | No antes del tablero usable. | Planificar post 9 de noviembre. | Después de C-06. Condicionada. |
-| C-05 fases 2–3 / datalake completo | No en esta ventana. | No. | Sacar del camino o planificar sin fecha de construcción. | Rechazado o diferido. |
+| C-05 fase 1, chatbot FAQ + canal | Sí para bajar carga de personal de soporte, no antes que la cola. | No antes del tablero usable. | Planificar post 9 de noviembre. | Después de C-06. Condicionada. |
+| C-05 fases 2–3 / app ciudadana / datalake | No en esta ventana. | No. | Sacar del camino o planificar sin fecha. | Rechazado o diferido. |
 
 ### Tabla 6 — filas
 
 | Id. | Decisión | Alineación con el objetivo | Estado del registro | Escalamiento |
 |-----|----------|----------------------------|---------------------|--------------|
-| C-05 fase 1 | Aprobada condicionada (C-06/C-01b, WIP, tope API). Fases 2–3 no. | Apoya tickets sin abrir producto nuevo ni reporte automático a donantes. | Abierto condicionado | Sí, si proponen mover el 4 de diciembre o abrir contingencia por API. |
-| C-05 completo / datalake C | No se aprueba en esta ventana. | El piloto usa BD + export; no un segundo producto de datos. | Cerrado (formulación amplia) | Sí, a dirección, si se insiste en lago o modelo propio. |
+| C-05 fase 1 | Aprobada condicionada (C-06, WIP, tope API, FAQ curado). Fases 2–3 no. El bot no cierra solo. | Autoservicio y canal para usuarios de la plataforma; ahorra personal de soporte; no app ciudadana. | Abierto condicionado | Sí, si mueven el 4 dic, abren contingencia o reemplazan de golpe al soporte. |
+| C-05 completo / app ciudadana / datalake | No se aprueba en esta ventana. | Sin app masiva ni segundo producto de datos; el soporte humano sigue para lo que el FAQ no resuelve. | Cerrado | Sí, si se insiste en app ciudadana, lago o modelo propio. |
 | C-06 | Aprobada condicionada a reemplazo de historia y WIP. | Hace usable la prioridad sin WhatsApp. | Abierto | Sí, si alguien propone cambiar estados del kit o mover el 9 de noviembre. |
 
 Fases IA (bloque bajo 3.1, misma tipografía de tabla del doc; no inventar “Tabla 5b” si el estilo no la usa):
 
 | Fase | Cuándo | Qué se construye | Fuera | KPI |
 |------|--------|------------------|-------|-----|
-| 1 Soporte | Post 9 nov / sprint a 4 dic | Resumen, checklist, siguiente en cola (humano confirma) | Auto-estado, PII en modelo, chat hogar | O6; E1/E4 |
-| 2 Interna | Post 4 dic o CC | Borrador nota de cierre; agrupación similar | Reporte donantes sin revisión | O6 adopción |
-| 3 | Fuera de ventana | — | Copiloto total, ML, app ciudadana | — |
+| 1 FAQ + canal | Post 9 nov / sprint a 4 dic | Chatbot con FAQ curado; escalamiento a ticket/persona | Cierre automático, auto-estado, app por hogar, PII en modelo | O6 contención; E1/E4 |
+| 2 Ampliación | Post 4 dic o CC | Más corpus FAQ; mejor enrutamiento del canal | Reemplazo total del soporte contratado | O6 |
+| 3 | Fuera de ventana | — | App ciudadana, modelo propio, datalake | — |
 
 ---
 
@@ -118,31 +118,31 @@ Fases IA (bloque bajo 3.1, misma tipografía de tabla del doc; no inventar “Ta
 | Decisión | Alcance | Project Libre | Trello | Excel y gasto |
 |----------|---------|---------------|-------|---------------|
 | C-06 condicionada | Tablero: cola/filtros; sin estados nuevos. Esfuerzo orientativo 3–5 pd UI + 1–2 pd backend. | Fecha 9 nov no se mueve. Si desvío > 3 días en crítico, replan antes de seguir. | Tarjeta solo tras sacar historia equivalente. Máx. 2/persona. | Sin partida infra nueva. |
-| C-05 fase 1 condicionada | Integración API + prompts + logs de uso internos. ~4–6 pd integración + 2–3 pd calidad. | Tareas bajo tickets; predecesora tablero usable. No 5–9 dic. | Misma regla de reemplazo. | Subítem “sobre API IA” en variable; Ari tope mensual. Contingencia 12 % cerrada. Desviación > 10 %: pausar IA. |
-| C-05 amplio / datalake C | Sin cambio de alcance del piloto. | No se inserta en el Gantt. | Sin tarjeta de construcción. | Sin gasto. Queda cerrado o post-piloto. |
+| C-05 fase 1 condicionada | Chatbot: corpus FAQ, ventana de chat, escalamiento a ticket/persona. ~4–6 pd integración + 2–3 pd calidad FAQ. | Bajo tickets/soporte; predecesora tablero usable. No 5–9 dic. | Misma regla de reemplazo. | Sobre API del chatbot en variable; Ari tope. Contingencia 12 % cerrada. >10 %: pausar chatbot. Ahorro = horas de soporte contratado. |
+| C-05 amplio / app ciudadana / datalake | Sin cambio de alcance del piloto. | No se inserta en el Gantt. | Sin tarjeta. | Sin gasto. Cerrado o post-piloto. |
 
 ### Tabla 8 — pasos nuevos (después de los existentes)
 
 | Paso | Responsable | Plazo |
 |------|-------------|-------|
 | Confirmar C-06: historia equivalente que sale; construir cola/filtros sin cambiar estados del kit. | Giannina Guerrero (UI); Nicolás Barra si hay filtro de datos | Sprint hacia el 9 de noviembre de 2026. |
-| Tras tablero usable, decidir si entra C-05 fase 1: cupo WIP, tope API de Ari, Review con soporte. | Giannina (CC); Nicolás (integración); Skarlett (calidad sugerencias); Ari (gasto) | Ventana nov–dic; no semana 5–9 dic. |
-| Medir submétricas bajo O6 (% tickets con resumen/checklist; % sugerencias rechazadas). Si rechazo alto, congelar fase 2. | Skarlett Tropan; Nicolás Barra | Al cierre del sprint que use fase 1. |
-| No abrir fase 2 ni datalake completo sin CC nuevo y revisión senior. | Giannina Guerrero | Post 4 de diciembre o fuera de ventana. |
+| Tras tablero usable, decidir si entra C-05 fase 1 (chatbot FAQ + canal): cupo WIP, tope API, FAQ curado, Review con quien da soporte. | Giannina (CC + UI chat); Nicolás (integración); Skarlett (calidad FAQ); Ari (gasto) | Ventana nov–dic; no semana 5–9 dic. |
+| Medir bajo O6: % consultas contenidas por FAQ sin escalar; % que escala a ticket/persona. Contención baja o alucinaciones → congelar fase 2. | Skarlett Tropan; Nicolás Barra | Al cierre del sprint que use fase 1. |
+| No abrir fase 2 del chatbot, app ciudadana ni datalake sin CC nuevo y revisión senior. | Giannina Guerrero | Post 4 de diciembre o fuera de ventana. |
 
 ### Tabla 9 — efecto en cortes
 
 Actualizar filas:
 
-- **9 nov:** puede entrar C-06 (cola), solo a cambio de otra historia. No entra datalake. No entra C-05 fase 1 antes del tablero usable.
-- **4 dic:** puede entrar C-05 fase 1 si cumplió condiciones; no fase 2; no servicio externo; no archivo de C-01.
+- **9 nov:** puede entrar C-06 (cola), solo a cambio de otra historia. No entra datalake ni app ciudadana. No entra chatbot C-05 antes del tablero usable.
+- **4 dic:** puede entrar C-05 fase 1 (FAQ + canal) si cumplió condiciones; no fase 2; no servicio externo; no archivo de C-01.
 
 ### Tabla 10 — registro
 
 | Id. | Tipo | Propietario | Prioridad | Estado | Resultado y justificación |
 |-----|------|-------------|-----------|--------|---------------------------|
-| C-05a | Requisito. Copiloto / IA amplia / datalake completo. | Giannina Guerrero | — | Cerrado | No aprobado en sep–dic 2026. Fuera de EDT y techo. |
-| C-05b | Requisito. IA fase 1 soporte (resumen, checklist, siguiente en cola). | Nicolás Barra | Alta | Abierto | Condicionado a C-06/C-01b, WIP y tope API. Sin PII en modelo externo. |
+| C-05a | Requisito. Chatbot amplio, app ciudadana o reemplazo total del soporte; o datalake. | Giannina Guerrero | — | Cerrado | No aprobado en sep–dic 2026. Fuera de EDT y techo. |
+| C-05b | Requisito. Chatbot fase 1: FAQ + canal con escalamiento a ticket/persona. | Nicolás Barra | Alta | Abierto | Condicionado a C-06, WIP, tope API y FAQ curado. Sin PII en modelo externo. No cierra estados solo. Objetivo: ahorrar horas de soporte contratado. |
 | C-06 | Requisito. Priorización visual (cola/filtros). | Giannina Guerrero | Alta | Abierto | Condicionado a reemplazo de historia. No cambia estados del kit. Prerrequisito de C-05b. |
 
 ---
@@ -170,7 +170,7 @@ Ampliar la prosa existente de defectos y reapertura (O1, O2). Agregar tabla(s) c
 | O3 | Cumplimiento del sprint | % historias comprometidas completadas (lista ya reemplazada si hubo CC) | ≥80 % | Trello | Giannina | Resto a backlog |
 | O4 | WIP y bloqueos | Tarjetas/persona; días en Bloqueado | ≤2; >5 días → C-04 | Trello | Giannina | Reasignación registrada |
 | O5 | Kits con estado verificable | % kits con hogar, responsable y estado coherente | Meta del KPI de producto | Inventario / tablero | Dueño inventario | No cerrar corte |
-| O6 | Atención de fallas (C-06; submétricas C-05) | Tiempo falla→ticket asignado; tiempo para elegir siguiente; % consultas fuera del tablero; % uso resumen IA y % sugerencias rechazadas | Mejora post 9 nov; rechazo alto → congelar fase 2 | Tablero + bitácora | Giannina / técnico; IA: Nicolás/Skarlett | Priorizar cola antes que fase 2 |
+| O6 | Atención de fallas (C-06; submétricas C-05) | Tiempo falla→ticket; tiempo para elegir siguiente; % consultas fuera del tablero; % consultas del chatbot contenidas por FAQ; % que escala a persona | Mejora post 9 nov; contención baja / alucinaciones → congelar fase 2 | Tablero + bitácora + log chat | Giannina / soporte; chatbot: Nicolás/Skarlett | Priorizar cola antes que fase 2 del chatbot |
 | O7 | Coordinación y datos en terreno | Puntaje contraparte 1–5; % sync por lote en ventana | ≥4; sync según plan | Office + Excel | Giannina / Ari | Escalar; sin ampliar alcance sin CC |
 
 Prosa O1/O2 (ampliar lo ya escrito):
@@ -183,8 +183,8 @@ Prosa O1/O2 (ampliar lo ya escrito):
 
 | Pregunta | Respuesta actualizada (fusionar) |
 |----------|----------------------------------|
-| ¿Qué cambios se aceptan? | … más C-06 cola visual y C-05 fase 1, ambas condicionadas (reemplazo de historia, WIP, y en IA tope de API y prerrequisito de cola). |
-| ¿Qué cambios se rechazan? | … más copiloto IA amplio, datalake/lakehouse completo, modelo propio y fases 2–3 de IA en esta ventana. |
+| ¿Qué cambios se aceptan? | … más C-06 cola visual y C-05b chatbot FAQ + canal, ambas condicionadas (reemplazo de historia, WIP; en chatbot: tope API, FAQ curado, prerrequisito de cola). |
+| ¿Qué cambios se rechazan? | … más chatbot que reemplaza de golpe al soporte, app ciudadana masiva, datalake/lakehouse, modelo propio y fases 2–3 del chatbot en esta ventana. |
 | ¿Qué no se toca? | Fechas, techo US$ 20.700, contingencia 12 % cerrada, cuatro roles. |
 
 ---
