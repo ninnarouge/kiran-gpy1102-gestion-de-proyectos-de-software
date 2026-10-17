@@ -3,7 +3,7 @@
 **Para:** `evaluaciones/eva-02/informe/2.2.2-Gestion-de-cambios-Kiran.docx`  
 **Uso:** borrador para pegar en la copia del Word (mismo formato, Tablas 2–11). No reemplaza el `.docx`.
 
-Conservar C-01 a C-04. Agregar **C-05** (chatbot en plataforma: FAQ + canal de asistencia para usuarios del piloto, con el fin de ahorrar contrato de personal de soporte; despliegue progresivo) y **C-06** (priorización visual). Fronteras: **C-01b** = dato prioridad + nota; **C-06** = cola/filtros en UI; **C-05** ≠ app ciudadana masiva ni reemplazo total del técnico.
+Conservar C-01 a C-04. Agregar **C-05** (chatbot FAQ + canal; UI/UX; GCloud + Gemini) y **C-06** (priorización visual). **Dueños técnicos GCloud, ADK y datalake (base de información):** Nicolás Barra y Ari Araya. Datalake mínimo con C-05b; lakehouse completo solo con CC. **Fases posteriores:** casos internos, monitoreo, alertas, IA operativa.
 
 ---
 
@@ -21,12 +21,12 @@ Agregar al final de la introducción (o al cierre del párrafo de prioridad):
 
 | Id. | Situación | Origen | Corte que toca |
 |-----|-----------|--------|----------------|
-| C-05 | Ejemplo de solicitud. La dirección pide un chatbot en la plataforma para los usuarios del piloto: preguntas frecuentes (FAQ) y un canal para comunicarse por temas de soporte y asistencia, con el fin de ahorrar contrato de personal de soporte. En este plan la formulación amplia (app ciudadana masiva o reemplazo total del técnico) no se aprueba: solo se contempla la fase 1 (FAQ publicadas en el chat más escalamiento a ticket o a persona de soporte cuando el FAQ no alcanza), tras un tablero usable, sin datos de hogares en un modelo externo y sin sustituir los estados del kit. | Dirección / equipo (ahorro de personal de soporte) | 9 de noviembre (depende del tablero usable) y 4 de diciembre (tickets y canal). No la ruta crítica de inventario. |
+| C-05 | Ejemplo de solicitud. Chatbot en la plataforma (FAQ + canal de soporte/asistencia) para ahorrar contrato de personal. Se prioriza soporte y UI/UX clara por zona compleja y público objetivo. A futuro el hilo de tickets puede alimentar casos internos, monitoreo y alertas, e IA operativa sobre equipos — solo identificado, no construido en esta ventana. Fase 1: FAQ + escalamiento a ticket/persona tras tablero usable. | Dirección / equipo (ahorro de personal de soporte) | 9 de noviembre (tablero usable) y 4 de diciembre (tickets y canal). No inventario crítico. |
 | C-06 | Se pide una priorización visual en el tablero: cola o filtros que muestren qué atender primero (kit en falla, urgencia), para bajar consultas fuera del sistema al soporte local. No cambia los estados del kit ni abre una app ciudadana. Reutiliza la prioridad de C-01b si esa medida entra; no la sustituye. | Contraparte / soporte local | 9 de noviembre y, por uso, 4 de diciembre |
 
 Texto bajo Tabla 2:
 
-> C-05 se rotula como ejemplo de solicitud porque concreta el tipo de cambio de soporte al usuario con IA: un chatbot con FAQ y canal de asistencia para bajar el gasto en personal de soporte contratado. No es una app ciudadana ni el reemplazo total del técnico. Lo que amerita registro es la nueva superficie en la plataforma y el costo variable de una API de modelo. La medida factible, si cabe, es solo la fase 1 (FAQ más escalamiento humano).
+> C-05 prioriza soporte + UI/UX amigable (junto con C-06) porque la zona es compleja y el público necesita un uso guiado: si está claro, se ahorra soporte. No es app ciudadana ni reemplazo total del técnico. Monitoreo, alertas e IA operativa sobre equipos = fases posteriores identificadas. Ahora solo fase 1 (FAQ + escalamiento humano).
 >
 > C-06 no es lo mismo que C-01b. C-01b agrega el dato de prioridad y la nota en el modelo del ticket. C-06 es la cola o el filtro en la interfaz para que el técnico vea el orden sin pedir por WhatsApp qué kit mirar primero. Sin C-01b (o sin un dato equivalente), la cola visual no tiene criterio; sin C-06, el dato de prioridad queda escondido en el formulario.
 
@@ -40,11 +40,13 @@ Texto bajo Tabla 2:
 
 ### 2.5. C-05. Chatbot de FAQ y canal de soporte (fase 1)
 
-En los términos pedidos (chatbot para usuarios con FAQ y comunicación de soporte, para ahorrar contrato de personal), el cambio toca la interfaz de la plataforma, integración con API de modelo o motor de FAQ, privacidad, calidad de las respuestas y el flujo hacia el ticket. Nicolás sostiene la integración. Giannina la interfaz del chat. Skarlett valida la calidad de las respuestas y el FAQ. Ari registra el tope de gasto. Un modelo propio, un fine-tuning, un datalake para entrenar o una app para cada hogar no están en el plan.
+En los términos pedidos, el cambio toca interfaz, UI/UX, API/FAQ, privacidad, calidad de respuestas y flujo a ticket. Giannina: UI del chat y UX. Nicolás: integración. Skarlett: calidad FAQ. Ari: tope de gasto. Fuera de esta ventana: modelo propio, datalake, app por hogar, monitoreo/alertas con IA sobre todos los equipos.
 
-El efecto positivo acotado es reducir consultas repetidas al personal de soporte contratado: el usuario resuelve con FAQ o deja un mensaje que escala a ticket. El efecto negativo de la formulación completa (reemplazo total del soporte o app ciudadana) es ampliar el alcance, abrir gasto no comprometido y responder mal por una alucinación. La fase 1 no cambia el estado del kit, no cierra tickets sola y no redacta el reporte a donantes.
+Efecto positivo: menos consultas al personal contratado; uso guiado en zona compleja. Efecto negativo de la formulación completa: scope creep y gasto. La fase 1 no cambia estados, no cierra sola, no genera alertas de flota.
 
-Indicadores amenazados: E1, E4 y E5. Operativos: O1, O4 y O6 (contención por FAQ sin escalar; % que escala a persona).
+**Hoja de ruta (solo identificación):** (1) soporte + UI/UX ahora; (2) tickets → casos internos / trazas; (3) monitoreo, alertas e IA operativa sobre equipos — post piloto o CC nuevo.
+
+Indicadores: E1, E4, E5; O1, O4, O6 (contención FAQ / escalamiento).
 
 ### 2.6. C-06. Priorización visual
 
@@ -81,7 +83,7 @@ Renumerar el “2.5. Efecto conjunto” a **2.7** y agregar:
 
 ### 3.1 (párrafos)
 
-> C-05 se aprueba solo por fases. La fase 1 (chatbot con FAQ y canal que escala a ticket o persona) queda condicionada a C-06, a dos tarjetas por persona y a un tope de API en Excel. El FAQ lo cura el equipo; el bot no cierra ni cambia estados solo. La fase 2 (ampliar corpus FAQ y enrutamiento) solo post 4 de diciembre o con CC nuevo. La fase 3 (reemplazo total del personal de soporte, app ciudadana, modelo propio) se rechaza en sep–dic 2026.
+> C-05 se aprueba solo por fases. Fase 1 (FAQ + canal + UI/UX clara) condicionada a C-06, WIP y tope API; priorizada por zona compleja y público objetivo (ahorro de soporte). Fase 2 (más FAQ, enrutamiento, trazas de casos internos) post 4 dic o CC. Fase 3 (monitoreo/alertas con IA sobre equipos, app ciudadana, reemplazo total del soporte, modelo propio) rechazada en sep–dic 2026; queda identificada a futuro.
 >
 > C-06 se aprueba en forma condicionada: cola o filtro hacia el 9 de noviembre. Es prerrequisito del chatbot fase 1. Si no cabe en el WIP, no entra.
 
@@ -103,11 +105,11 @@ Renumerar el “2.5. Efecto conjunto” a **2.7** y agregar:
 
 Fases IA (bloque bajo 3.1, misma tipografía de tabla del doc; no inventar “Tabla 5b” si el estilo no la usa):
 
-| Fase | Cuándo | Qué se construye | Fuera | KPI |
-|------|--------|------------------|-------|-----|
-| 1 FAQ + canal | Post 9 nov / sprint a 4 dic | Chatbot con FAQ curado; escalamiento a ticket/persona | Cierre automático, auto-estado, app por hogar, PII en modelo | O6 contención; E1/E4 |
-| 2 Ampliación | Post 4 dic o CC | Más corpus FAQ; mejor enrutamiento del canal | Reemplazo total del soporte contratado | O6 |
-| 3 | Fuera de ventana | — | App ciudadana, modelo propio, datalake | — |
+| Fase | Cuándo | Qué se construye | Fuera / diferido | KPI |
+|------|--------|------------------|------------------|-----|
+| 1 Soporte + UX | Post 9 nov / sprint a 4 dic | Chatbot FAQ; canal; UI/UX clara para usuarios | Cierre automático, auto-estado, PII en modelo | O6; E1/E4 |
+| 2 Casos / canal | Post 4 dic o CC | Más FAQ; enrutamiento; trazas de casos para uso interno | — | O6 |
+| 3 Operación / IA | Fuera de ventana | Monitoreo, alertas, IA operativa sobre equipos (identificado) | App ciudadana, modelo propio, datalake, reemplazo total soporte | — |
 
 ---
 
@@ -141,15 +143,15 @@ Actualizar filas:
 
 | Id. | Tipo | Propietario | Prioridad | Estado | Resultado y justificación |
 |-----|------|-------------|-----------|--------|---------------------------|
-| C-05a | Requisito. Chatbot amplio, app ciudadana o reemplazo total del soporte; o datalake. | Giannina Guerrero | — | Cerrado | No aprobado en sep–dic 2026. Fuera de EDT y techo. |
-| C-05b | Requisito. Chatbot fase 1: FAQ + canal con escalamiento a ticket/persona. | Nicolás Barra | Alta | Abierto | Condicionado a C-06, WIP, tope API y FAQ curado. Sin PII en modelo externo. No cierra estados solo. Objetivo: ahorrar horas de soporte contratado. |
+| C-05a | Futuro identificado: chatbot amplio; app ciudadana; reemplazo total soporte; monitoreo/alertas con IA sobre equipos; datalake. | Giannina Guerrero | — | Cerrado (esta ventana) | No construir en sep–dic 2026; queda como fase posterior. |
+| C-05b | Chatbot fase 1: FAQ + canal + UI/UX de soporte. | Nicolás Barra | Alta | Abierto | Condicionado a C-06, WIP, tope API, FAQ curado. Prioridad: zona compleja y público objetivo → ahorro de soporte. Sin monitoreo de flota en esta fase. |
 | C-06 | Requisito. Priorización visual (cola/filtros). | Giannina Guerrero | Alta | Abierto | Condicionado a reemplazo de historia. No cambia estados del kit. Prerrequisito de C-05b. |
 
 ---
 
 ## §4.4 — indicadores (5 estratégicos + 7 operativos)
 
-Ampliar la prosa existente de defectos y reapertura (O1, O2). Agregar tabla(s) con el mismo estilo del documento.
+En el Word: **Tabla 12** (E1–E5) y **Tabla 13** (O1–O7) para comunicar los indicadores de forma organizada. O7 incluye protección de datos del datalake (C-05d). C-05d aplica minimización, roles e **ISO/IEC 27701**.
 
 ### Estratégicos del proyecto (por corte / dirección)
 
