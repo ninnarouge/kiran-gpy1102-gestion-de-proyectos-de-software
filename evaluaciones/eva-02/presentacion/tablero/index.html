@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiran · Tablero de indicadores del piloto</title>
+<meta name="author" content="Equipo Kiran">
+<style>
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400 600;font-display:swap;src:url('../assets/fonts/IBMPlexSans-a68a20.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('../assets/fonts/IBMPlexMono-d196e8.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url('../assets/fonts/IBMPlexMono-a7544c.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:500 800;font-display:swap;src:url('../assets/fonts/Montserrat-e56e84.woff2') format('woff2')}
+:root{
+  --navy:#10263d;--navy-deep:#0b1520;--navy-2:#1b3652;--amber:#e59a24;--amber-ink:#8a5208;--amber-soft:#f3e2c0;
+  --ivory:#f3eee4;--paper:#f7f3ea;--card:#fdfbf6;--line:#d2c6b4;--line-soft:#e4d9c8;--ink:#14212d;--muted:#4e5e6b;--on-navy:#c3cfd9;
+  --ok:#1f6a50;--ok-bg:#e1eee7;--warn:#7d4a06;--warn-bg:#f6e6c8;--alert:#a23d32;--alert-bg:#f6e0dc;--none:#4e5e6b;--none-bg:#ebe5da;
+  --font-display:'Montserrat',system-ui,sans-serif;--font-body:'IBM Plex Sans',system-ui,sans-serif;--font-data:'IBM Plex Mono',ui-monospace,monospace;
+  --r:10px;--gap:16px;
+}
+*{box-sizing:border-box}
+html{background:var(--ivory);color:var(--ink);font:400 15px/1.45 var(--font-body);-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
+.sr{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:10;background:var(--amber);color:var(--navy-deep);padding:8px 14px;border-radius:6px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+.num{font-family:var(--font-data);font-variant-numeric:tabular-nums}
+
+header.top{background:var(--navy);color:#fff;border-bottom:4px solid var(--amber)}
+.top-in{max-width:1240px;margin:0 auto;padding:14px 24px 14px;display:grid;grid-template-columns:auto 1fr auto;gap:12px 20px;align-items:center}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand svg{width:46px;height:46px;flex:none}
+.brand-name{font:800 22px/1 var(--font-display);letter-spacing:.18em}
+.brand-sub{display:block;margin-top:5px;font:500 11px/1.2 var(--font-display);letter-spacing:.16em;text-transform:uppercase;color:var(--on-navy)}
+.top-title h1{margin:0;font:700 20px/1.2 var(--font-display);letter-spacing:-.01em}
+.top-title p{margin:3px 0 0;color:var(--on-navy);font-size:13px}
+.cortes{border:0;margin:0;padding:0;min-width:0}
+.cortes legend{font:600 11px/1 var(--font-display);letter-spacing:.14em;text-transform:uppercase;color:var(--on-navy);margin-bottom:7px;padding:0}
+.seg{display:flex;gap:4px;background:var(--navy-deep);padding:4px;border-radius:9px}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg label{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:6px 12px;border-radius:6px;cursor:pointer;color:#dfe6ec;min-width:96px;transition:background .15s}
+.seg label b{font:700 14px/1.1 var(--font-display)}
+.seg label span{font-size:11px;line-height:1.1;color:var(--on-navy)}
+.seg label:hover{background:var(--navy-2)}
+.seg input:checked+label{background:var(--amber);color:var(--navy-deep)}
+.seg input:checked+label span{color:var(--navy-deep)}
+.seg input:focus-visible+label{outline:3px solid #fff;outline-offset:1px}
+
+main{flex:1;width:100%;max-width:1240px;margin:0 auto;padding:16px 24px 8px}
+.status{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;background:var(--card);border:1px solid var(--line-soft);border-left:5px solid var(--ok);border-radius:var(--r);padding:10px 16px;margin-bottom:var(--gap)}
+.status.plan{border-left-color:var(--line)}
+.status h2{margin:0;font:700 15px/1.25 var(--font-display)}
+.status p{margin:0;color:var(--muted);flex:1;min-width:260px}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font:600 12px/1.4 var(--font-body);white-space:nowrap}
+.tag i{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
+.s-ok{background:var(--ok-bg);color:var(--ok)}.s-warn{background:var(--warn-bg);color:var(--warn)}.s-alert{background:var(--alert-bg);color:var(--alert)}.s-none{background:var(--none-bg);color:var(--none)}
+.s-none i{background:transparent;border:2px solid currentColor}
+
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);margin-bottom:var(--gap)}
+.card{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r);padding:14px 16px;box-shadow:0 1px 0 rgba(16,38,61,.04)}
+.kpi{display:flex;flex-direction:column;gap:8px;position:relative;border-top:4px solid var(--line)}
+.kpi.k-ok{border-top-color:var(--ok)}.kpi.k-warn{border-top-color:var(--amber)}.kpi.k-alert{border-top-color:var(--alert)}
+.kpi-h{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.kpi-h h3,.card h2{margin:0;font:700 11.5px/1.3 var(--font-display);letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.kpi-v{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.kpi-v strong{font:700 34px/1 var(--font-display);letter-spacing:-.02em;color:var(--navy);font-variant-numeric:tabular-nums lining-nums}
+.kpi-v em{font-style:normal;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.kpi.is-plan .kpi-v strong{color:var(--muted)}
+.kpi dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:0;font-size:13px}
+.kpi dt{color:var(--muted)}.kpi dd{margin:0;text-align:right;font-family:var(--font-data);font-size:12.5px}
+.kpi .note{margin:auto 0 0;padding-top:8px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted)}
+.kpi .note b{color:var(--ink);font-weight:600}
+.meter{position:relative;height:10px;border-radius:5px;background:#ebe4d7;overflow:visible}
+.meter .fill{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:var(--navy);transition:width .35s ease}
+.meter .fill.ghost{background:repeating-linear-gradient(135deg,#b8c3cc 0 4px,#d6dde2 4px 8px)}
+.meter .mark{position:absolute;top:-4px;bottom:-4px;width:3px;margin-left:-1.5px;background:var(--amber-ink);border-radius:2px;transition:left .35s ease}
+.dots{display:flex;gap:6px}
+.dots span{width:18px;height:18px;border-radius:50%;border:2px solid var(--navy);background:transparent}
+.dots span.on{background:var(--navy)}
+.dots span.min{box-shadow:0 0 0 2px var(--card),0 0 0 4px var(--amber)}
+.is-plan .dots span{border-color:#8796a3}.is-plan .dots span.on{background:#c9d1d8}
+
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);margin-bottom:var(--gap)}
+.c7{grid-column:span 7}.c5{grid-column:span 5}.c8{grid-column:span 8}.c4{grid-column:span 4}.c12{grid-column:span 12}
+.card-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.card-h p{margin:0;font-size:12.5px;color:var(--muted)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin:0;padding:0;list-style:none}
+.legend li{display:flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:18px;height:4px;border-radius:2px;background:var(--navy)}
+.sw.plan{background:repeating-linear-gradient(90deg,var(--amber-ink) 0 5px,transparent 5px 8px)}
+.sw.box{width:12px;height:12px;border-radius:3px}
+.chart{width:100%;height:auto;max-height:330px;display:block}
+.chart text{font-family:var(--font-body);fill:var(--muted);font-size:12px}
+.chart .pt{cursor:pointer}
+.chart .pt:focus{outline:none}
+.chart .pt:focus-visible circle.hit{stroke:var(--amber);stroke-width:3}
+.cvals{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0 0;padding:0;list-style:none}
+.cvals li{border:1px solid var(--line-soft);border-radius:8px;padding:6px 8px;font-size:12px;color:var(--muted);background:#fff}
+.cvals li.sel{border-color:var(--amber);box-shadow:inset 0 0 0 1px var(--amber);background:#fffaf0}
+.cvals b{display:block;color:var(--navy);font:700 13px/1.25 var(--font-display)}
+.cvals .num{color:var(--ink);white-space:nowrap}.blist li>span:last-child{white-space:nowrap}
+
+.bigrow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin:2px 0 10px}
+.bigrow strong{font:700 26px/1 var(--font-display);color:var(--navy)}
+.bigrow span{font-size:12.5px;color:var(--muted)}
+.bar{display:flex;height:26px;border-radius:6px;overflow:hidden;background:#ebe4d7;position:relative}
+.bar>span{display:block;height:100%}
+.b-gasto{background:var(--navy)}
+.b-saldo{background:#9fb0bd}
+.b-cont{background:repeating-linear-gradient(135deg,var(--amber) 0 6px,#f0c57f 6px 12px)}
+.bar-wrap{position:relative;padding-top:18px}
+.bar-mark{position:absolute;top:0;bottom:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;pointer-events:none;transition:left .35s ease}
+.bar-mark span{font:600 11px/1 var(--font-body);color:var(--amber-ink);white-space:nowrap;background:var(--card);padding:0 3px}
+.bar-mark i{flex:1;width:3px;background:var(--amber-ink);margin-top:3px;border-radius:2px}
+.scale{position:relative;height:16px;font-size:11.5px;color:var(--muted);margin-top:4px}.scale span{position:absolute;top:0}.scale span:first-child{left:0}.scale span:last-child{right:0}
+.blist{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;font-size:13px}
+.blist li{display:flex;align-items:center;gap:8px;justify-content:space-between;border-bottom:1px solid var(--line-soft);padding:4px 0}
+.blist li>span:first-child{display:flex;align-items:center;gap:8px;color:var(--muted)}
+.blist .num{font-size:12.5px}
+.api{margin-top:12px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;font-size:13px}
+.api .meter{height:8px}
+
+.c05-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:2px 0 10px}
+.c05-top .from,.c05-top .to{font:700 22px/1 var(--font-display);color:var(--navy)}
+.c05-top .to{color:var(--amber-ink)}
+.c05-top .arrow{color:var(--muted);font-size:13px}
+.ext{display:flex;height:14px;border-radius:4px;overflow:hidden;margin-bottom:12px}
+.ext span:first-child{flex:20700;background:var(--navy)}
+.ext span:last-child{flex:340;min-width:14px;background:repeating-linear-gradient(135deg,var(--amber-ink) 0 3px,var(--amber-soft) 3px 6px)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+thead th{font:700 11px/1.3 var(--font-display);letter-spacing:.1em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--navy)}
+td.r,th.r{text-align:right;white-space:nowrap}
+tfoot td,tfoot th{font-weight:600;border-bottom:0;border-top:2px solid var(--line)}
+.rng{position:relative;height:8px;background:#ebe4d7;border-radius:4px;min-width:90px}
+.rng span{position:absolute;top:0;bottom:0;background:var(--amber);border-radius:4px}
+.foot-note{margin:10px 0 0;font-size:12.5px;color:var(--muted)}
+.foot-note b{color:var(--ink);font-weight:600}
+
+.trello-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:4px 0 12px}
+.trello-stats div{background:#fff;border:1px solid var(--line-soft);border-radius:8px;padding:8px 10px}
+.trello-stats strong{display:block;font:700 26px/1 var(--font-display);color:var(--navy)}
+.trello-stats span{font-size:12px;color:var(--muted)}
+.people{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:13px}
+.people li{display:grid;grid-template-columns:78px 1fr auto;align-items:center;gap:10px}
+.slots{display:flex;gap:4px}
+.slots i{width:26px;height:12px;border-radius:3px;border:1.5px solid var(--navy)}
+.slots i.on{background:var(--navy)}
+.btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:8px 14px;border-radius:7px;background:var(--navy);color:#fff;text-decoration:none;font:600 13px/1.2 var(--font-body)}
+.btn:hover{background:var(--navy-2)}
+.btn svg{width:14px;height:14px}
+
+.reglas td:first-child{font-weight:500}
+.reglas td.umb{font-family:var(--font-data);white-space:nowrap;color:var(--navy)}
+.reglas tr.hit td{background:#fff6e6}
+.source{margin:0 0 6px;font-size:12px;color:var(--muted)}
+footer{background:var(--navy-deep);color:var(--on-navy);font-size:12.5px;letter-spacing:.04em}
+footer div{max-width:1240px;margin:0 auto;padding:12px 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:1180px){.top-in{grid-template-columns:auto 1fr}.cortes{grid-column:1/-1}.seg label{flex:1}}
+@media (max-width:1100px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.c7,.c5,.c8,.c4{grid-column:span 12}}
+@media (max-width:640px){.kpis{grid-template-columns:1fr}.seg{flex-wrap:wrap}.seg label{min-width:calc(50% - 2px)}.cvals{grid-template-columns:repeat(2,1fr)}.blist{grid-template-columns:1fr}.top-title{grid-column:1/-1}main{padding:12px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{header.top,footer,.b-gasto,.b-cont,.seg input:checked+label{print-color-adjust:exact;-webkit-print-color-adjust:exact}.skip{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Ir al contenido</a>
+<header class="top">
+  <div class="top-in">
+    <div class="brand" aria-label="Kiran">
+      <svg viewBox="0 0 240 240" aria-hidden="true"><rect x="50" y="28" width="42" height="184" rx="10" fill="#ffffff"/><path d="M91 120L198 38V96L99 118Z" fill="#e59a24"/><path d="M91 120L198 202V144L99 122Z" fill="#e59a24"/><circle cx="92" cy="120" r="9" fill="#e59a24"/></svg>
+      <div><span class="brand-name">KIRAN</span><span class="brand-sub">Monitoreo y control</span></div>
+    </div>
+    <div class="top-title">
+      <h1>Tablero de indicadores del piloto</h1>
+      <p>Ventana del piloto: 14 sep – 9 dic 2026 · Corte registrado: 19 oct 2026</p>
+    </div>
+    <fieldset class="cortes">
+      <legend>Corte</legend>
+      <div class="seg" id="seg"></div>
+    </fieldset>
+  </div>
+</header>
+<main id="contenido" tabindex="-1">
+  <section class="status" id="status" aria-labelledby="status-h">
+    <h2 id="status-h"></h2>
+    <span class="tag" id="status-tag"></span>
+    <p id="status-p"></p>
+  </section>
+  <p class="sr" aria-live="polite" id="live"></p>
+
+  <section class="kpis" aria-label="Indicadores del corte" id="kpis"></section>
+
+  <div class="grid">
+    <section class="card c7" aria-labelledby="curva-h">
+      <div class="card-h">
+        <h2 id="curva-h">Curva de avance · planificado y real</h2>
+        <ul class="legend"><li><span class="sw plan"></span>Planificado</li><li><span class="sw"></span>Real registrado</li></ul>
+      </div>
+      <svg class="chart" id="curva" viewBox="0 0 640 250" role="group" aria-labelledby="curva-h curva-d"></svg>
+      <p class="sr" id="curva-d">Avance planificado: 54,9 % al 19 oct, 78,2 % al 9 nov, 97,7 % al 4 dic y 100 % al 9 dic de 2026. Avance real registrado al 19 oct: 54,9 %.</p>
+      <ul class="cvals" id="cvals"></ul>
+    </section>
+
+    <section class="card c5" aria-labelledby="pres-h">
+      <div class="card-h"><h2 id="pres-h">Presupuesto y contingencia</h2><p>Montos en US$</p></div>
+      <div class="bigrow"><strong class="num" id="p-gasto"></strong><span id="p-gasto-t"></span></div>
+      <div class="bar-wrap">
+        <div class="bar" id="p-bar" role="img"></div>
+        <div class="bar-mark" id="p-mark"><span id="p-mark-t"></span><i></i></div>
+      </div>
+      <div class="scale"><span>0</span><span id="p-scale-techo"></span></div>
+      <ul class="blist" id="p-list"></ul>
+      <div class="api"><span>API de modelo</span><div class="meter" role="img" id="api-m"><span class="fill" id="api-f"></span></div><span class="num" id="api-t"></span></div>
+    </section>
+  </div>
+
+  <div class="grid">
+    <section class="card c8" aria-labelledby="c05-h">
+      <div class="card-h"><h2 id="c05-h">Solicitud C-05 · Módulo de asistencia</h2><span class="tag s-warn" id="c05-tag"><i></i></span></div>
+      <div class="c05-top"><span class="from num" id="c05-from"></span><span class="arrow" id="c05-arrow"></span><span class="to num" id="c05-to"></span></div>
+      <div class="ext" role="img" id="c05-ext"><span></span><span></span></div>
+      <table>
+        <caption class="sr">Desglose del incremento solicitado en caja, en US$</caption>
+        <thead><tr><th scope="col">Componente</th><th scope="col" class="r">Mínimo</th><th scope="col" class="r">Máximo</th><th scope="col"><span class="sr">Rango</span></th><th scope="col">Nota</th></tr></thead>
+        <tbody id="c05-body"></tbody>
+        <tfoot id="c05-foot"></tfoot>
+      </table>
+      <p class="foot-note" id="c05-note"></p>
+    </section>
+
+    <section class="card c4" aria-labelledby="tr-h">
+      <div class="card-h"><h2 id="tr-h">Trello · Tablero Kiran</h2><p>Al 19 oct 2026</p></div>
+      <div class="trello-stats">
+        <div><strong class="num">6</strong><span>En curso</span></div>
+        <div><strong class="num">0</strong><span>Bloqueados</span></div>
+        <div><strong class="num">13</strong><span>Listos</span></div>
+      </div>
+      <ul class="people" aria-label="Tarjetas en curso por persona, máximo 2 por persona">
+        <li><span>Giannina</span><span class="slots" aria-hidden="true"><i class="on"></i><i class="on"></i></span><span class="num">2 de 2</span></li>
+        <li><span>Nicolás</span><span class="slots" aria-hidden="true"><i class="on"></i><i class="on"></i></span><span class="num">2 de 2</span></li>
+        <li><span>Skarlett</span><span class="slots" aria-hidden="true"><i class="on"></i><i></i></span><span class="num">1 de 2</span></li>
+        <li><span>Ari</span><span class="slots" aria-hidden="true"><i class="on"></i><i></i></span><span class="num">1 de 2</span></li>
+      </ul>
+      <a class="btn" href="https://trello.com/b/tpq4wSRh/kiran" target="_blank" rel="noopener">Abrir tablero en Trello<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3L7 9"/></svg><span class="sr">(se abre en una pestaña nueva)</span></a>
+    </section>
+  </div>
+
+  <section class="card c12" aria-labelledby="reg-h" style="margin-bottom:var(--gap)">
+    <div class="card-h"><h2 id="reg-h">Reglas de control</h2><p>Parámetros que usan los semáforos</p></div>
+    <table class="reglas">
+      <thead><tr><th scope="col">Regla</th><th scope="col">Umbral</th><th scope="col">Acción si se cruza</th></tr></thead>
+      <tbody id="reg-body"></tbody>
+    </table>
+  </section>
+  <p class="source">Datos: Tablero-KPI-Kiran.xlsx, corte registrado del 19 oct 2026. Los cortes del 9 nov, 4 dic y 9 dic muestran el valor planificado y se completan en su fecha.</p>
+</main>
+<footer><div><span>Equipo Kiran · GPY1102 Gestión de Proyectos de Software · Sección 001-V</span><span>Proyecto Kiran · 2026</span></div></footer>
+<script type="application/json" id="datos">{"cortes":[{"id":"19-oct","fecha":"19 oct 2026","hito":"Inventario validado","registrado":true,"avance":{"meta":"Atraso ≤ 3 días hábiles con causa","plan":0.549,"real":0.549,"ctrl":0,"causa":"No aplica","sem":"Verde","alerta":"Sin alerta: avance igual al plan","decision":"Continuar según el plan"},"gasto":{"meta":"Desviación ≤ 10 %","plan":10346,"real":10346,"ctrl":0,"causa":"—","sem":"Verde","alerta":"Sin alerta: gasto conforme al avance","decision":"Continuar; contingencia sin uso"},"auto":{"meta":"Puntaje ≥ 4","plan":4,"real":4,"ctrl":"—","causa":"—","sem":"Verde","alerta":"Sin alerta: hito aceptado","decision":"Cerrar el corte"},"defectos":{"meta":"≤ 5 y 0 bloqueantes","plan":5,"real":3,"ctrl":0,"causa":"—","sem":"Verde","alerta":"Sin alerta: defectos menores y corregidos","decision":"Continuar con las pruebas del sprint"}},{"id":"9-nov","fecha":"9 nov 2026","hito":"Tablero operativo","registrado":false,"avance":{"meta":"Atraso ≤ 3 días hábiles con causa","plan":0.782,"real":null,"ctrl":null,"causa":null,"sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 9 nov 2026"},"gasto":{"meta":"Desviación ≤ 10 %","plan":14672,"real":null,"ctrl":"—","causa":"—","sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 9 nov 2026"},"auto":{"meta":"Puntaje ≥ 4","plan":4,"real":null,"ctrl":"—","causa":"—","sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 9 nov 2026"},"defectos":{"meta":"≤ 5 y 0 bloqueantes","plan":5,"real":null,"ctrl":null,"causa":"—","sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 9 nov 2026"}},{"id":"4-dic","fecha":"4 dic 2026","hito":"Tickets, pruebas e informe","registrado":false,"avance":{"meta":"Atraso ≤ 3 días hábiles con causa","plan":0.977,"real":null,"ctrl":null,"causa":null,"sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 4 dic 2026"},"gasto":{"meta":"Desviación ≤ 10 %","plan":18434,"real":null,"ctrl":"—","causa":"—","sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 4 dic 2026"},"auto":{"meta":"Puntaje ≥ 4","plan":4,"real":null,"ctrl":"—","causa":"—","sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 4 dic 2026"},"defectos":{"meta":"≤ 5 y 0 bloqueantes","plan":5,"real":null,"ctrl":null,"causa":"—","sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 4 dic 2026"}},{"id":"9-dic","fecha":"9 dic 2026","hito":"Cierre y traspaso","registrado":false,"avance":{"meta":"Atraso ≤ 3 días hábiles con causa","plan":1,"real":null,"ctrl":null,"causa":null,"sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 9 dic 2026"},"gasto":{"meta":"Desviación ≤ 10 %","plan":18810,"real":null,"ctrl":"—","causa":"—","sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 9 dic 2026"},"auto":{"meta":"Puntaje ≥ 4","plan":4,"real":null,"ctrl":"—","causa":"—","sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 9 dic 2026"},"defectos":{"meta":"≤ 5 y 0 bloqueantes","plan":5,"real":null,"ctrl":null,"causa":"—","sem":"Sin registro","alerta":"Pendiente de registro","decision":"Se registra en el corte del 9 dic 2026"}}],"resumen":"Los cuatro indicadores en verde: se continúa según el plan y la contingencia queda sin uso.","presupuesto":{"techo":20700,"contingencia":1890,"contPct":0.100478468899522,"base":18810,"gasto":10346,"gastoPct":0.550026581605529,"saldo":8464,"contUsada":0,"contNota":"Sin uso","apiTope":120,"apiUsado":0,"apiSaldo":120},"c05":{"items":[{"nombre":"API de modelo (Gemini)","min":60,"max":120,"nota":"Dentro del tope de US$ 120"},{"nombre":"Google Cloud","min":60,"max":100,"nota":"Consumo adicional de nube"},{"nombre":"Colchón de cuotas e integración","min":80,"max":120,"nota":"Credenciales, cuotas y pruebas"}],"totalMin":200,"totalMax":340,"totalNota":"Se solicita el máximo","techoSolicitado":21040,"estado":"Pendiente de decisión de la dirección","esfuerzo":"Esfuerzo del módulo: 13–22 días-persona","esfuerzoNota":"Sin costo en caja: se cubre con sustitución de alcance"},"reglas":[{"regla":"Atraso máximo con causa escrita (días hábiles)","umbral":3,"accion":"La semana siguiente completa lo pendiente y no suma trabajo nuevo"},{"regla":"Desviación máxima del gasto","umbral":0.1,"accion":"Se detiene el gasto no comprometido"},{"regla":"Autoevaluación mínima del hito (1–5)","umbral":4,"accion":"La contraparte reabre el corte"},{"regla":"Defectos máximos por 1.000 líneas modificadas","umbral":5,"accion":"Se corrige antes de sumar funciones"},{"regla":"Defectos bloqueantes abiertos permitidos","umbral":0,"accion":"Ningún corte se cierra con un bloqueante abierto"}]}</script>
+<script>
+(function(){
+"use strict";
+var D=JSON.parse(document.getElementById("datos").textContent);
+var C=D.cortes,P=D.presupuesto,K=D.c05;
+var $=function(id){return document.getElementById(id)};
+function miles(n){var s=String(Math.round(Math.abs(n)));return (n<0?"−":"")+s.replace(/\B(?=(\d{3})+(?!\d))/g,".")}
+function usd(n){return "US$\u00a0"+miles(n)}
+function pct(x,d){var v=(x*100).toFixed(d==null?1:d);if(d==null&&/\.0$/.test(v))v=v.slice(0,-2);return v.replace(".",",")+"\u00a0%"}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+var SEM={"Verde":"ok","Ámbar":"warn","Rojo":"alert","Sin registro":"none"};
+function tag(s){var k=SEM[s]||"none";return '<span class="tag s-'+k+'"><i aria-hidden="true"></i>'+esc(s)+'</span>'}
+function short(c){return c.fecha.replace(" 2026","")}
+var dias=function(n){return n===1?"1 día hábil":n+" días hábiles"};
+
+var seg=$("seg");
+seg.innerHTML=C.map(function(c,i){return '<input type="radio" name="corte" id="c-'+c.id+'" value="'+i+'"'+(i===0?" checked":"")+'><label for="c-'+c.id+'"><b>'+short(c)+'</b><span>'+esc(c.hito)+'</span></label>'}).join("");
+seg.addEventListener("change",function(e){if(e.target.name==="corte")sel(+e.target.value,true)});
+
+function card(o){
+  return '<article class="card kpi k-'+(SEM[o.sem]||"none")+(o.plan?" is-plan":"")+'" aria-labelledby="'+o.id+'-h">'+
+  '<div class="kpi-h"><h3 id="'+o.id+'-h">'+o.titulo+'</h3>'+tag(o.sem)+'</div>'+
+  '<div class="kpi-v"><strong class="num">'+o.valor+'</strong><em>'+o.etq+'</em></div>'+o.viz+
+  '<dl>'+o.filas.map(function(f){return '<dt>'+f[0]+'</dt><dd>'+f[1]+'</dd>'}).join("")+'</dl>'+
+  '<p class="note">'+o.nota+'</p></article>';
+}
+function meter(v,max,mark,ghost,label){
+  return '<div class="meter" role="img" aria-label="'+esc(label)+'"><span class="fill'+(ghost?" ghost":"")+'" style="width:'+Math.min(100,v/max*100)+'%"></span>'+(mark!=null?'<span class="mark" style="left:'+Math.min(100,mark/max*100)+'%"></span>':'')+'</div>';
+}
+function dots(n,min,label){var h='<div class="dots" role="img" aria-label="'+esc(label)+'">';for(var i=1;i<=5;i++)h+='<span class="'+(i<=n?"on":"")+(i===min?" min":"")+'"></span>';return h+'</div>'}
+
+function kpis(c){
+  var r=c.registrado,a=c.avance,g=c.gasto,s=c.auto,d=c.defectos,pend='<b>Se registra en su fecha</b> · '+c.fecha;
+  var nota=function(x){return r?'<b>'+esc(x.alerta)+'.</b> '+esc(x.decision)+'.':pend};
+  return [
+    card({id:"k1",titulo:"Avance frente al plan",sem:a.sem,plan:!r,valor:pct(r?a.real:a.plan),etq:r?"real":"planificado",
+      viz:meter(r?a.real:a.plan,1,a.plan,!r,r?"Avance real "+pct(a.real)+" frente a "+pct(a.plan)+" planificado":"Avance planificado "+pct(a.plan)),
+      filas:[["Plan al corte",pct(a.plan)],["Real al corte",r?pct(a.real):"—"],["Atraso",r?dias(a.ctrl):"—"],["Meta",esc(a.meta.replace("Atraso ",""))]],nota:nota(a)}),
+    card({id:"k2",titulo:"Gasto frente al plan",sem:g.sem,plan:!r,valor:usd(r?g.real:g.plan),etq:r?"ejecutado":"planificado",
+      viz:meter(r?g.real:g.plan,P.base,g.plan,!r,(r?"Gasto ejecutado "+usd(g.real):"Gasto planificado "+usd(g.plan))+" sobre una base de "+usd(P.base)),
+      filas:[["Plan al corte",usd(g.plan)],["Desviación",r?pct(g.ctrl,0):"—"],["Base del plan",usd(P.base)],["Meta",esc(g.meta.replace("Desviación ",""))]],nota:nota(g)}),
+    card({id:"k3",titulo:"Autoevaluación del hito",sem:s.sem,plan:!r,valor:(r?s.real:"≥ "+s.plan)+" / 5",etq:r?"puntaje":"mínimo",
+      viz:dots(r?s.real:0,s.plan,r?"Puntaje "+s.real+" de 5; mínimo "+s.plan:"Puntaje pendiente; mínimo "+s.plan),
+      filas:[["Mínimo para cerrar",String(s.plan)],["Real al corte",r?s.real+" de 5":"—"],["Hito",esc(c.hito)]],nota:nota(s)}),
+    card({id:"k4",titulo:"Defectos por 1.000 líneas",sem:d.sem,plan:!r,valor:r?String(d.real):"≤ "+d.plan,etq:r?"por 1.000 líneas":"meta",
+      viz:meter(r?d.real:0,d.plan,null,!r,r?d.real+" defectos por 1.000 líneas; meta hasta "+d.plan:"Pendiente; meta hasta "+d.plan),
+      filas:[["Meta","≤ "+d.plan+" por 1.000"],["Bloqueantes abiertos",r?String(d.ctrl):"—"],["Bloqueantes permitidos","0"]],nota:nota(d)})
+  ].join("");
+}
+
+var X0=Date.UTC(2026,8,14),X1=Date.UTC(2026,11,9);
+var FX=[Date.UTC(2026,9,19),Date.UTC(2026,10,9),Date.UTC(2026,11,4),Date.UTC(2026,11,9)];
+var W=640,H=250,L=46,R=56,T=30,B=34;
+function sx(t){return L+(t-X0)/(X1-X0)*(W-L-R)}
+function sy(v){return T+(1-v)*(H-T-B)}
+function curva(idx){
+  var g='',i;
+  for(i=0;i<=4;i++){var v=i/4;g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+sy(v)+'" y2="'+sy(v)+'" stroke="'+(i?"#e4d9c8":"#b9ad9a")+'" stroke-width="1"/><text x="'+(L-8)+'" y="'+(sy(v)+4)+'" text-anchor="end">'+(i*25)+' %</text>'}
+  var ticks=[[X0,"14 sep"]].concat(FX.map(function(t,k){return[t,short(C[k])]}));
+  ticks.forEach(function(t,k){var x=sx(t[0]);g+='<text x="'+x+'" y="'+(H-12)+'" text-anchor="'+(k===0?"start":k===3?"end":k===4?"start":"middle")+'"'+(k===3?' dx="-5"':k===4?' dx="5"':'')+'>'+t[1]+'</text>'});
+  var x=sx(FX[idx]);
+  g+='<rect x="'+(x-14)+'" y="'+T+'" width="28" height="'+(H-T-B)+'" fill="#f3e2c0" opacity=".55"/>';
+  g+='<line x1="'+x+'" x2="'+x+'" y1="'+T+'" y2="'+(H-B)+'" stroke="#8a5208" stroke-width="1.5" stroke-dasharray="3 3"/>';
+  var pp=[[X0,0]].concat(FX.map(function(t,k){return[t,C[k].avance.plan]}));
+  g+='<path d="M'+pp.map(function(p){return sx(p[0])+","+sy(p[1])}).join("L")+'" fill="none" stroke="#8a5208" stroke-width="2.5" stroke-dasharray="7 5"/>';
+  var rp=[[X0,0]];C.forEach(function(c,k){if(c.registrado)rp.push([FX[k],c.avance.real])});
+  g+='<path d="M'+rp.map(function(p){return sx(p[0])+","+sy(p[1])}).join("L")+'" fill="none" stroke="#10263d" stroke-width="3.5" stroke-linecap="round"/>';
+  C.forEach(function(c,k){
+    var px=sx(FX[k]),py=sy(c.avance.plan),on=k===idx,lab="Corte "+c.fecha+", "+c.hito+": planificado "+pct(c.avance.plan)+(c.registrado?", real "+pct(c.avance.real):", se registra en su fecha")+". Seleccionar corte.";
+    g+='<g class="pt" tabindex="0" role="button" data-i="'+k+'" aria-label="'+esc(lab)+'"'+(on?' aria-current="true"':'')+'><title>'+esc(lab.replace(". Seleccionar corte.",""))+'</title>'+
+      '<circle class="hit" cx="'+px+'" cy="'+py+'" r="13" fill="transparent"/>'+
+      (c.registrado?'<circle cx="'+px+'" cy="'+py+'" r="'+(on?8:6.5)+'" fill="#10263d" stroke="#fdfbf6" stroke-width="2.5"/>':'<circle cx="'+px+'" cy="'+py+'" r="'+(on?7:5.5)+'" fill="#fdfbf6" stroke="#8a5208" stroke-width="2.5"/>')+'</g>';
+    var ty=k===3?py+4:k===2?py-12:py-16,anchor=k===3?"start":k===2?"end":"middle",dx=k===3?12:k===2?-8:0;
+    g+='<text x="'+(px+dx)+'" y="'+ty+'" text-anchor="'+anchor+'" style="font-family:var(--font-data);font-size:12px;fill:'+(on?"#10263d":"#4e5e6b")+';font-weight:'+(on?600:400)+'">'+pct(c.avance.plan)+'</text>';
+  });
+  $("curva").innerHTML=g;
+  $("cvals").innerHTML=C.map(function(c,k){return '<li'+(k===idx?' class="sel"':'')+'><b>'+short(c)+'</b>'+esc(c.hito)+'<br>Plan <span class="num">'+pct(c.avance.plan)+'</span> · Real <span class="num">'+(c.registrado?pct(c.avance.real):"—")+'</span></li>'}).join("");
+}
+$("curva").addEventListener("click",function(e){var p=e.target.closest(".pt");if(p)pick(+p.getAttribute("data-i"))});
+$("curva").addEventListener("keydown",function(e){var p=e.target.closest(".pt");if(p&&(e.key==="Enter"||e.key===" ")){e.preventDefault();pick(+p.getAttribute("data-i"),true)}});
+function pick(i,keep){var r=$("c-"+C[i].id);r.checked=true;sel(i,true);if(keep){var n=$("curva").querySelector('.pt[data-i="'+i+'"]');if(n)n.focus()}}
+
+function presupuesto(idx){
+  var c=C[idx],T=P.techo;
+  $("p-gasto").textContent=usd(P.gasto);
+  $("p-gasto-t").textContent="ejecutado al 19 oct · "+pct(P.gastoPct,0)+" de la base";
+  $("p-bar").innerHTML='<span class="b-gasto" style="width:'+P.gasto/T*100+'%"></span><span class="b-saldo" style="width:'+P.saldo/T*100+'%"></span><span class="b-cont" style="width:'+P.contingencia/T*100+'%"></span>';
+  $("p-bar").setAttribute("aria-label","Techo "+usd(T)+": gasto ejecutado "+usd(P.gasto)+", saldo de la base "+usd(P.saldo)+", contingencia "+usd(P.contingencia)+" sin uso");
+  var m=$("p-mark"),f=c.gasto.plan/T;m.style.left=f*100+"%";m.style.alignItems=f>.8?"flex-end":f<.2?"flex-start":"center";m.style.transform=f>.8?"translateX(-100%)":f<.2?"none":"translateX(-50%)";
+  $("p-mark-t").textContent="Plan al "+short(c)+": "+miles(c.gasto.plan);
+  $("p-scale-techo").textContent="Techo "+miles(T);
+  $("p-list").innerHTML=[
+    ['<span class="sw box b-gasto"></span>Gasto ejecutado',miles(P.gasto)],
+    ['Base del plan',miles(P.base)],
+    ['<span class="sw box b-saldo"></span>Saldo de la base',miles(P.saldo)],
+    ['Techo aprobado',miles(T)],
+    ['<span class="sw box b-cont"></span>Contingencia '+pct(P.contPct,0),miles(P.contingencia)],
+    ['Contingencia usada',miles(P.contUsada)+' · '+esc(P.contNota.toLowerCase())]
+  ].map(function(r){return '<li><span>'+r[0]+'</span><span class="num">'+r[1]+'</span></li>'}).join("");
+  $("api-f").style.width=(P.apiUsado/P.apiTope*100)+"%";
+  $("api-m").setAttribute("aria-label","API de modelo: "+usd(P.apiUsado)+" usados de un tope de "+usd(P.apiTope));
+  $("api-t").textContent=miles(P.apiUsado)+" / "+miles(P.apiTope);
+}
+function c05(){
+  $("c05-tag").insertAdjacentText("beforeend",K.estado);
+  $("c05-from").textContent=usd(P.techo);
+  $("c05-arrow").textContent="+ "+usd(K.totalMax)+" →";
+  $("c05-to").textContent=usd(K.techoSolicitado);
+  $("c05-ext").setAttribute("aria-label","Techo aprobado "+usd(P.techo)+" más "+usd(K.totalMax)+" solicitados: "+usd(K.techoSolicitado));
+  var mx=Math.max.apply(null,K.items.map(function(i){return i.max}));
+  $("c05-body").innerHTML=K.items.map(function(i){return '<tr><th scope="row" style="font-weight:500">'+esc(i.nombre)+'</th><td class="r num">'+miles(i.min)+'</td><td class="r num">'+miles(i.max)+'</td><td><div class="rng" role="img" aria-label="Entre '+miles(i.min)+' y '+miles(i.max)+'"><span style="left:'+i.min/mx*100+'%;width:'+(i.max-i.min)/mx*100+'%"></span></div></td><td>'+esc(i.nota)+'</td></tr>'}).join("");
+  $("c05-foot").innerHTML='<tr><th scope="row">Incremento en caja</th><td class="r num">'+miles(K.totalMin)+'</td><td class="r num">'+miles(K.totalMax)+'</td><td></td><td>'+esc(K.totalNota)+'</td></tr>';
+  $("c05-note").innerHTML='<b>'+esc(K.esfuerzo)+'.</b> '+esc(K.esfuerzoNota)+'. Techo solicitado '+usd(K.techoSolicitado)+', '+esc(K.estado.toLowerCase())+'.';
+}
+function umbral(r){var u=r.umbral;if(/gasto/i.test(r.regla))return "> "+pct(u,0);if(/días/.test(r.regla))return "> "+u+" días";if(/mínima/.test(r.regla))return "< "+u;if(/bloqueantes/i.test(r.regla))return "> "+u;return "> "+u}
+function reglas(){
+  $("reg-body").innerHTML=D.reglas.map(function(r){return '<tr><td>'+esc(r.regla)+'</td><td class="umb">'+esc(umbral(r))+'</td><td>'+esc(r.accion)+'</td></tr>'}).join("");
+}
+function sel(i,announce){
+  var c=C[i],st=$("status"),r=c.registrado;
+  st.classList.toggle("plan",!r);
+  $("status-h").textContent="Corte "+c.fecha+" · "+c.hito;
+  $("status-tag").className="tag "+(r?"s-ok":"s-none");
+  $("status-tag").innerHTML='<i aria-hidden="true"></i>'+(r?"Registrado":"Planificado");
+  $("status-p").textContent=r?D.resumen:"Valores planificados del corte. Se registra en su fecha: "+c.fecha+".";
+  $("kpis").innerHTML=kpis(c);
+  curva(i);presupuesto(i);
+  if(history.replaceState)history.replaceState(null,"","#corte-"+c.id);
+  if(announce)$("live").textContent="Corte "+c.fecha+", "+c.hito+". "+(r?"Valores registrados.":"Valores planificados; se registra en su fecha.");
+}
+c05();reglas();
+function fromHash(){var h=(location.hash.match(/corte-([\w-]+)/)||[])[1],start=0;
+C.forEach(function(c,k){if(c.id===h)start=k});
+$("c-"+C[start].id).checked=true;return start}
+sel(fromHash(),false);
+window.addEventListener("hashchange",function(){sel(fromHash(),true)});
+})();
+</script>
+</body>
+</html>

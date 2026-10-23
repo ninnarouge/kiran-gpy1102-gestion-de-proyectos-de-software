@@ -16,7 +16,7 @@
 | 5 | 2.3 | Plan de asignación de recursos + viabilidad/rentabilidad | §4 |
 | 7 | 2.4 | Estado actual / datos de valor para stakeholders | §5 |
 
-Presentación oral (IE 2, 4, 6, 8): pendiente.
+Presentación oral (IE 2, 4, 6, 8): [`presentacion/index.html`](presentacion/index.html). Once láminas, 15 minutos, misma línea gráfica de Eva 1. Guion en `presentacion/STORYBOARD.md`.
 
 ## Insumos
 
