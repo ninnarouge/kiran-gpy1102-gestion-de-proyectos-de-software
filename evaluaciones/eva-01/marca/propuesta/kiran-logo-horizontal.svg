@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Kiran  Visibilidad que mantiene la energía activa</title>
+  <desc id="desc">Logo horizontal propuesto: K de haces de luz, wordmark y eslogan.</desc>
+  <rect width="1200" height="360" fill="#F7F3EA"/>
+  <g transform="translate(88 58)">
+    <rect x="50" y="28" width="42" height="184" rx="10" fill="#10263D"/>
+    <path d="M91 120L198 38V96L99 118Z" fill="#E59A24"/>
+    <path d="M91 120L198 202V144L99 122Z" fill="#E59A24"/>
+    <circle cx="92" cy="120" r="9" fill="#E59A24"/>
+  </g>
+  <g fill="#10263D" font-family="'Montserrat','Aptos Display','Arial',sans-serif">
+    <text x="360" y="168" font-size="108" font-weight="700" letter-spacing="10">KIRAN</text>
+    <text x="362" y="226" font-size="26" font-weight="500">Visibilidad que mantiene la energía activa.</text>
+  </g>
+</svg>

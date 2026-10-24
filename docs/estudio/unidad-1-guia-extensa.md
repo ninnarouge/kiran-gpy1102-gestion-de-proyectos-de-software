@@ -1,121 +1,37 @@
-# GPY1102 — Gestión de Proyectos de Software
+# Planificación de proyectos de software
 
-# Unidad 1 · Guía extensa de estudio
+# Guía de estudio
 
-**Asignatura:** Gestión de Proyectos de Software  
-**Sigla:** GPY1102 · **Créditos:** 10 Duoc / 4 SCT · **Línea:** FOL · **Formato:** presencial, Sala de Proyectos  
-**Prerrequisito:** GPY1101  
-**Experiencia de aprendizaje:** *Planificación de Proyectos de Software* (RA1)  
-**Material cubierto:** 1.1.1 + 1.1.2 · 1.2.1 + 1.2.2 · 1.3.1 + 1.3.2 · IL1.4 (herramientas; no hay PPT en carpeta) · Eva Parcial 1  
-**Fuentes:** Programa de Asignatura, presentaciones de clase, actividades, rúbrica Eva 1, Caso 7, bibliografía oficial (PMBOK 6.ª 2017, SBOK 4.ª 2023, ITIL 4)  
-**Fuera de alcance:** Unidad 2 (monitoreo y control) y Unidad 3 (cierre), salvo cuando se necesita el hilo del semestre.
+Material para aprender a **planificar un proyecto de software**: alcance, trabajo, tiempo, costo, entorno, enfoque y herramientas.
 
-Las definiciones están **parafraseadas para estudio**. En informe y oral, el lenguaje de referencia es **PMBOK 6.ª**. La 7.ª solo se usa cuando el material de Eva 1 pregunta por **valor** e **interesados**. La 8.ª no es bibliografía del ramo.
+Las definiciones siguen el lenguaje de la *Guía del PMBOK* **6.ª edición** (2017). Donde se habla de **valor** e **interesados** con más énfasis, se indica PMBOK 7.ª.
+
+Un ejemplo recorre la guía: **Kiran**, una plataforma para operar kits solares de un piloto (inventario, tablero, tickets e informes). Sirve para ver los conceptos en un caso concreto, no para describir una evaluación.
+
+Cómo leer cada término: **qué es**, **qué no es**, **para qué sirve** y **un ejemplo**. Si dos palabras se parecen, la guía las contrapone a propósito.
 
 ---
 
 ## Índice
 
-- 0. Cómo aprobar esta unidad
-- 1. Mapa de la Unidad 1
-- 2. Cimientos y léxico
-- 3. Bloque 1.1 — Plan preliminar (IL1.1)
-- 4. Bloque 1.2 — Factores ambientales y estándares (IL1.2)
-- 5. Bloque 1.3 — Estrategias de planificación (IL1.3)
-- 6. Bloque 1.4 — Selección de herramientas (IL1.4)
-- 7. El plan preliminar como sistema
-- 8. Caso 7 aplicado (Kiran)
-- 9. Eva Parcial 1
-- 10. Glosario
-- 11. Banco de respuestas orales
-- 12. Autoevaluación
-- 13. Referencias
+- 1. Cimientos y léxico
+- 2. El plan preliminar: alcance, EDT, cronograma, costos y recursos
+- 3. Factores ambientales y estándares
+- 4. Estrategias de planificación
+- 5. Selección de herramientas
+- 6. El plan como sistema
+- 7. Ejemplo aplicado (Kiran)
+- 8. Glosario
+- 9. Autoevaluación
+- 10. Referencias
 
 ---
 
-## 0. Cómo aprobar esta unidad
+## 1. Cimientos y léxico
 
-Quien aprueba la Unidad 1 no recita listas: **planifica un proyecto de software y lo defiende** con el vocabulario del ramo. Debe poder:
+Antes del alcance hace falta un vocabulario compartido: qué es un proyecto, quién autoriza, quién es interesado y qué cuenta como valor.
 
-1. **Definir** el proyecto con enunciado de alcance, exclusiones, supuestos y restricciones.
-2. **Descomponer** el trabajo en EDT, estimar duraciones y determinar la ruta crítica.
-3. **Clasificar** costos y recursos, y armar un presupuesto inicial con contingencia.
-4. **Analizar** factores ambientales internos y externos, y estándares (PMBOK, CMMI, COBIT, ITIL), **sobre el caso**.
-5. **Elegir** un enfoque (predictivo, adaptativo o híbrido) y **justificarlo** con el contexto organizacional.
-6. **Usar** una herramienta de industria (MS Project, Project Libre u Office 365) y explicar **por qué esa**.
-7. **Defender oralmente** todo lo anterior, de forma individual, sin leer el informe.
-
-### Resultado de aprendizaje (RA1)
-
-> Planifica un proyecto de software, considerando requerimientos y procesos del cliente, factores ambientales y estándares de la industria, para gestionarlo e integrarlo de manera eficiente en la organización.
-
-### Indicadores de logro
-
-| IL | Horas | Qué hay que demostrar |
-|---|---|---|
-| **IL1.1** | 4 | Define alcance, recursos, cronograma y costos en un **plan preliminar**, con herramientas de la industria. |
-| **IL1.2** | 4 | Analiza factores ambientales y estándares, **evaluando su impacto en un caso real**. |
-| **IL1.3** | 6 | Define estrategias de planificación (predictivo / adaptativo / híbrido) mediante **planes contextualizados**. |
-| **IL1.4** | 6 | Utiliza herramientas de planificación y **selecciona las más adecuadas** según el estándar y la organización. |
-
-### Cómo estudiar esta guía
-
-1. Leer cada bloque: **definición → matices → ejemplo del Caso 7 → nombre técnico**.
-2. Reproducir en voz alta la **síntesis exigida** al final de cada parte.
-3. Cerrar con la autoevaluación de la sección 12, **sin apuntes**.
-4. Ensayar las seis preguntas del pitch (secciones 9 y 11) como defensa individual.
-
-El Caso 7 (plataforma de operación de kits solares; producto **Kiran**) es el hilo de **toda** la guía. El semestre trabaja **un solo caso** desde la semana 4 hasta el ET.
-
----
-
-## 1. Mapa de la Unidad 1
-
-```
-                         RA1 · PLANIFICAR EL PROYECTO
-                    (para gestionarlo e integrarlo después)
-                                      │
-     ┌──────────────┬─────────────────┼─────────────────┬──────────────┐
-     ▼              ▼                 ▼                 ▼              ▼
-   IL1.1          IL1.2             IL1.3             IL1.4          Eva 1
-   Plan           EEF y             Enfoque           Herramienta    Informe 30%
-   preliminar     estándares        predictivo /      y justificación + oral 70%
-                  (impacto)         adaptativo /
-                                    híbrido
-```
-
-**Competencia del programa (C4):** evaluar y gestionar proyectos en todo el ciclo de vida, con buenas prácticas y herramientas, en contextos **tradicionales y ágiles**. La Unidad 1 cubre solo el arranque: planificar. Monitoreo y cierre se hacen después, **sobre el mismo caso**.
-
-### Hilo del semestre
-
-| Momento | Entrega | Peso en el bloque de parciales | Impacto aprox. en nota final |
-|---|---|---|---|
-| Parcial 1 · Planificar | Informe ejecutivo + pitch analógico | 30% de 60% | ≈ 18% |
-| Parcial 2 · Monitorear | Reporte + video 5–7 min | 35% de 60% | ≈ 21% |
-| Parcial 3 · Cerrar | 3 láminas + reunión de cierre | 35% de 60% | ≈ 21% |
-| ET | Defensa 15 min con PPT/Canva | 40% directo | 40% |
-
-Los quizzes formativos (Eva For 1, 2 y 3) **no ponderan**.
-
-### Bibliografía: no mezclar ediciones
-
-| Fuente | Edición | Rol en el ramo |
-|---|---|---|
-| Guía del PMBOK | **6.ª, 2017** | Bibliografía obligatoria. Lenguaje de los PPT 1.1, 1.2 y 1.3 (EDT, EEF, CPM, grupos de procesos). |
-| Guía SBOK | 4.ª, 2023 | Bibliografía obligatoria. Nutre el enfoque **adaptativo** (Scrum). |
-| ITIL 4 (Baud) | 2020 | Bibliografía obligatoria. Comparativa de estándares en 1.2. |
-| PMBOK | 7.ª, 2021 | Extracto local de Eva 1 (interesados y valor). Útil en el pitch. Etiquetar la edición. |
-| PMBOK | 8.ª, 2025/26 | Apunte de apoyo en `docs/estudio/`. **No** es biblio oficial. No citarla en el informe. |
-
-En prueba y rúbrica: hablar **PMBOK 6**. Usar la 7.ª solo si preguntan por **valor** e **interesados**.
-
----
-
-## 2. Cimientos y léxico
-
-La clase 1.1 arranca en el alcance, pero el acta (actividad 1.1.2, paso 1) y el material de valor de Eva 1 exigen estos cimientos.
-
-### 2.1 Distinciones que hay que poder decir
+### 1.1 Distinciones que hay que poder decir
 
 | Término A | Término B | Diferencia |
 |---|---|---|
@@ -133,11 +49,17 @@ La clase 1.1 arranca en el alcance, pero el acta (actividad 1.1.2, paso 1) y el 
 | PMBOK | CMMI | Dirige **el proyecto** frente a madura **los procesos de la organización** |
 | ITIL | COBIT | Opera **el servicio** frente a gobierna **TI** |
 
-### 2.2 Proyecto y dirección de proyectos
+### 1.2 Proyecto y dirección de proyectos
 
-**Definición. Proyecto.** Esfuerzo **temporal** (inicio y fin definidos) para crear un **producto, servicio o resultado único**. «Temporal» no significa breve: significa que termina. «Único» no significa inédito en la historia: significa que *este* resultado, para *este* piloto, no existía.
+**Definición. Proyecto.** Esfuerzo **temporal** (tiene inicio y fin definidos) destinado a crear un **producto, servicio o resultado único**.
+
+Para entenderla hay que separar las dos palabras clave. **Temporal** no quiere decir «corto»: un proyecto puede durar meses o años; lo que lo define es que **termina**. Cuando el resultado pasa a usarse de forma continua, eso ya no es el proyecto: son **operaciones**. **Único** no quiere decir «nunca visto en el mundo»: quiere decir que *este* resultado, para *esta* organización y *este* conjunto de requisitos, no existía antes. Dos plataformas de inventario pueden parecerse; el piloto Kiran sigue siendo un proyecto único porque sus interesados, restricciones y datos son los de ese piloto.
+
+Error frecuente: tratar el mantenimiento diario (cargar kits, cerrar tickets) como si fuera el proyecto. Eso es operación. El proyecto **construye** la capacidad; la operación **la usa**.
 
 **Definición. Dirección de proyectos.** Aplicación de conocimientos, habilidades, herramientas y técnicas a las actividades del proyecto para cumplir los requisitos.
+
+No es «administrar gente» en abstracto. Es hacer que alcance, plazo, costo, calidad, riesgos e interesados **queden alineados** con lo autorizado. Sin dirección, hay trabajo; no hay proyecto gobernado.
 
 **Definición. Operaciones.** Trabajo continuo y repetitivo que mantiene el negocio. Al cierre, el proyecto transfiere su resultado a operaciones.
 
@@ -146,33 +68,43 @@ La clase 1.1 arranca en el alcance, pero el acta (actividad 1.1.2, paso 1) y el 
 | Tiempo | Inicio y fin | Continuo |
 | Resultado | Único | Repetitivo |
 | Propósito | **Cambiar** el estado de la organización | **Mantener** el negocio |
-| Ejemplo Caso 7 | Construir Kiran para el piloto | Atender tickets cuando ya esté en producción |
+| Ejemplo (Kiran) | Construir la plataforma del piloto | Atender tickets cuando ya esté en producción |
 
-**Definición. Triple restricción (triángulo de hierro).** Relación entre **alcance, tiempo y costo** (con calidad como criterio transversal). Un cambio en uno suele mover a los otros. En Eva 1 todavía no se controla el triángulo (eso es Unidad 2); sí se **declara** en el plan preliminar.
+**Definición. Triple restricción (triángulo de hierro).** Relación entre **alcance, tiempo y costo**, con la **calidad** como criterio que atraviesa los tres. Si aumenta el alcance y no se mueven plazo ni presupuesto, la calidad o el riesgo se degradan. Si se acorta el plazo, o se reduce alcance o se sube costo.
 
-### 2.3 Entregable, output, outcome y valor
+En la planificación se **declara** esa relación (qué entra, para cuándo, con qué techo). El control —medir desvíos y corregir— ocurre después, cuando el trabajo ya está en marcha.
+
+Error frecuente: cambiar el alcance («agreguemos un módulo más») y dejar intactos fecha y presupuesto. Eso no es flexibilidad: es romper la restricción sin decirlo.
+
+### 1.3 Entregable, output, outcome y valor
 
 **Definición. Entregable (*deliverable*).** Producto, resultado o capacidad **verificable** producido para completar un proceso, una fase o el proyecto.
 
-**Definición. Output.** Lo que el proyecto produce de forma observable (la plataforma, un informe, una capacitación).
+**Verificable** es la palabra que importa: alguien puede comprobar si está o no. «Mejorar la operación» no es entregable. «Tablero en el que el técnico ve el estado de cada kit» sí lo es, porque se puede abrir y contrastar con un criterio de aceptación.
 
-**Definición. Outcome.** Efecto que el output genera (las fallas se ven a tiempo; el soporte prioriza tickets reales).
+**Definición. Output.** Lo que el proyecto produce de forma observable: la plataforma, un informe, una capacitación, un XML de cronograma.
 
-**Definición. Valor.** Importancia de los beneficios —tangibles o intangibles— respecto del costo, el tiempo y el riesgo. Puede realizarse durante el proyecto, al cierre o **después**, en operaciones.
+**Definición. Outcome.** El **efecto** que ese output genera en el trabajo real. El tablero (output) no es el outcome; el outcome es que una falla deja de pasar desapercibida.
 
-El extracto de Eva 1 (PMBOK 7.ª, principio «enfocarse en el valor») insiste: si el software se entrega y **no mejora** lo prometido, los interesados pueden juzgar el proyecto como fracaso aunque el código «funcione». En el Caso 7 el valor no es «hay un tablero»: es que un kit dado de baja no siga contando como activo, que el soporte local atienda fallas reales y que un inversor reciba un informe usable.
+**Definición. Valor.** Importancia de los beneficios —tangibles o intangibles— ponderada frente a costo, tiempo y riesgo. El valor puede aparecer durante el proyecto, al cierre o **después**, cuando el resultado ya está en operaciones.
 
-**Definición. Caso de negocio (*business case*).** Justificación de la inversión: necesidad u oportunidad, opciones, costos, beneficios esperados y recomendación. Los proyectos suelen nacer de una **necesidad de negocio** + **justificación** + **estrategia**.
+El PMBOK 7.ª (principio de enfocarse en el valor) precisa: si el software se entrega y **no mejora** lo prometido, los interesados pueden juzgar el proyecto como fracaso aunque el código «funcione». En Kiran el valor no es «hay un tablero». El valor es que un kit dado de baja no siga contando como activo, que el soporte atienda fallas reales y que un financiador reciba un informe usable.
 
-### 2.4 Interesados (*stakeholders*)
+Cadena para no mezclarlos: **entregable/output** (lo que se produce) → **outcome** (lo que cambia en el uso) → **valor** (si ese cambio justifica lo invertido).
 
-**Definición. Interesado.** Persona, grupo u organización que **afecta**, **es afectada** o **se percibe afectada** por una decisión, actividad o resultado del proyecto. La influencia puede ser positiva o negativa. No son estáticos: entran, salen y cambian de interés.
+**Definición. Caso de negocio (*business case*).** Documento o argumento que **justifica la inversión**: necesidad u oportunidad, opciones consideradas, costos, beneficios esperados y recomendación (hacer / no hacer / hacer de otra forma). Los proyectos suelen nacer de una necesidad de negocio + esa justificación + una estrategia. Sin caso de negocio, el acta no tiene por qué existir.
 
-Según el material de Eva 1, los interesados pueden influir en alcance, cronograma, costo, equipo, planes, resultados, cultura, beneficios, umbrales de riesgo, calidad y criterio de éxito.
+### 1.4 Interesados (*stakeholders*)
 
-Habilidades asociadas: iniciativa, integridad, honestidad, colaboración, respeto, empatía, confianza y comunicación **bidireccional** frecuente.
+**Definición. Interesado.** Persona, grupo u organización que **afecta**, **es afectada** o **se percibe afectada** por una decisión, actividad o resultado del proyecto.
 
-**Interesados mínimos del Caso 7**
+Tres cláusulas, no una. Quien **afecta** puede imponer fecha o presupuesto (un donante). Quien **es afectada** recibe el resultado (el técnico, el hogar). Quien **se percibe afectada** también cuenta: si una autoridad local cree que el software expone datos, hay que gestionarla aunque no use la plataforma. La influencia puede ser a favor o en contra. La lista no es fija: entran, salen y cambian de interés.
+
+Error frecuente: reducir «interesados» a «el cliente que paga». En software de piloto hay operación, comunidad, financiadores, equipo y dirección; cada uno mueve una parte distinta del plan (alcance, plazo, costo, calidad, riesgo, criterio de éxito).
+
+La comunicación con ellos es **bidireccional**: no basta informar; hay que recoger lo que necesitan y lo que rechazan.
+
+**Interesados mínimos en Kiran**
 
 - Patrocinadores: inversores de impacto, agencia de subsidios, empresas tecnológicas asociadas.
 - Beneficiarios: comunidades y hogares (no necesariamente usuarios del software en esta fase).
@@ -180,21 +112,23 @@ Habilidades asociadas: iniciativa, integridad, honestidad, colaboración, respet
 - Equipo del proyecto: desarrollo, diseño, datos, QA, responsable de impacto.
 - Dirección de la empresa social; autoridades locales y donantes si aplica; PMO si existe.
 
-### 2.5 Gobernanza
+### 1.5 Gobernanza
 
-**Definición. Gobernanza organizacional.** Marco de autoridad, políticas y cumplimiento de **toda** la empresa (quién aprueba, con qué reglas).
+**Definición. Gobernanza organizacional.** Marco de autoridad, políticas y cumplimiento de **toda** la empresa: quién aprueba gastos, con qué reglas de privacidad, qué estándares son obligatorios.
 
-**Definición. Gobernanza del proyecto.** Marco específico de **este** proyecto: quién decide qué, con qué límite de autoridad y cómo se escala un problema.
+**Definición. Gobernanza del proyecto.** Marco **de este** proyecto: quién decide un cambio de alcance, hasta qué monto puede comprometer la directora, y a quién se escala si el terreno no carga datos.
 
-El RA1 pide planes **integrables** en la organización (IL1.3): no un plan aislado.
+La diferencia es de alcance. La organizacional vale para todos los proyectos. La del proyecto se diseña para *este*. Un plan que contradice la gobernanza de la empresa (por ejemplo, subir datos de hogares a un repositorio público) no es integrable: la organización no puede usarlo.
 
-### 2.6 Acta de constitución (*Project Charter*)
+### 1.6 Acta de constitución (*Project Charter*)
 
-**Definición.** Documento emitido por el sponsor o la gobernanza que **autoriza formalmente** el proyecto, nombra al director o directora y le otorga autoridad para aplicar recursos organizacionales.
+**Definición.** Documento emitido por el patrocinador (*sponsor*) o por la gobernanza que **autoriza formalmente** el proyecto, nombra al director o directora y le otorga autoridad para aplicar recursos de la organización.
 
-**No es** el plan detallado. El plan nace **después**, usando el acta como techo.
+Sin acta, el trabajo puede existir de hecho; no está **autorizado**. El acta responde: ¿por qué existe este proyecto?, ¿quién lo dirige?, ¿con qué techo de plazo y presupuesto?, ¿quién firma?
 
-Mínimo que debe quedar claro (PMBOK 6 y paso 1 de la actividad 1.1.2):
+**No es** el plan detallado. No trae EDT completa ni ruta crítica. El plan se elabora **después**, usando el acta como límite: no se puede planificar un alcance o un costo que el acta no contempla, salvo control de cambios.
+
+Mínimo que debe quedar claro:
 
 - propósito y justificación
 - objetivos medibles de alto nivel
@@ -209,26 +143,33 @@ Mínimo que debe quedar claro (PMBOK 6 y paso 1 de la actividad 1.1.2):
 
 ---
 
-## 3. Bloque 1.1 — Elaboración del plan preliminar (IL1.1)
+## 2. El plan preliminar
 
-**Material:** PPT 1.1.1 · Actividad 1.1.2 (duplas, 2 h)  
-**Objetivo:** planificar desde cero alcance, cronograma, costos y recursos.
+El plan preliminar reúne **acta**, **enunciado de alcance** (con EDT), **cronograma** y **costos/recursos**. No es un informe de 40 páginas: es el primer conjunto de documentos con el que se puede defender qué se hará, para cuándo y con qué techo.
 
-El plan preliminar **es** esas cuatro piezas más el acta. No es un informe de 40 páginas: es el primer mapa **defendible**.
+### 2.1 Alcance del proyecto
 
-### 3.1 Alcance del proyecto
+**Definición. Alcance del producto.** Características y funciones que debe tener el **resultado**. Responde: ¿cómo es el software (o el bien) cuando está listo?
 
-**Definición. Alcance del producto.** Características y funciones del resultado.
+No es la lista de tareas del equipo. «Tablero con estado de cada kit» es alcance de producto. «Reuniones de seguimiento semanales» no lo es: eso es trabajo de gestión, y entra en el alcance del **proyecto**.
 
-**Definición. Alcance del proyecto.** Trabajo necesario para entregar ese producto con las características acordadas, **incluido el trabajo de gestión**.
+**Definición. Alcance del proyecto.** Todo el trabajo necesario para entregar ese producto con las características acordadas, **incluido el trabajo de gestión** (acta, interesados, pruebas, capacitación, despliegue).
 
-**Definición. Enunciado del alcance.** Descripción detallada del proyecto y del producto que permite un **entendimiento común** y deja las **exclusiones explícitas**. El proceso suele ser **iterativo**.
+Error frecuente: definir solo pantallas y olvidar capacitación, privacidad o transición a operaciones. El producto puede estar «terminado» y el proyecto, no.
 
-**Definición. Scope creep.** Expansión no controlada del alcance sin ajuste de tiempo, costo o recursos y sin control de cambios.
+**Definición. Enunciado del alcance.** Descripción detallada del proyecto y del producto que permite un **entendimiento común** entre interesados y deja las **exclusiones explícitas**. El proceso suele ser **iterativo**: se precisa a medida que hay más información.
 
-#### Mínimo del enunciado (lámina de clase)
+No es el acta. El acta **autoriza**. El enunciado **delimita** qué entra y qué no. Sin exclusiones escritas, cualquier pedido posterior parece «parte de lo acordado».
 
-| Elemento | Definición / pregunta | Ejemplo Caso 7 |
+**Definición. Scope creep.** Expansión **no controlada** del alcance: se agrega trabajo sin ajustar tiempo, costo o recursos y **sin** pasar por control de cambios.
+
+No es lo mismo que un cambio aprobado. Si el patrocinador pide un módulo extra, se evalúa impacto y se firma: eso es cambio controlado. Si el módulo entra «porque era chico», es *scope creep*.
+
+**Definición. Control de cambios.** Proceso formal para evaluar, aprobar o rechazar una modificación al alcance, plazo, costo o línea base, y dejar registro. Sin este proceso, todo pedido se cuela como si ya estuviera autorizado.
+
+#### Mínimo del enunciado
+
+| Elemento | Definición / pregunta | Ejemplo (Kiran) |
 |---|---|---|
 | Descripción del alcance del producto | ¿Qué se construye? | Plataforma para registrar kits, tablero, tickets de mantención e informes de impacto de un piloto. |
 | Criterios de aceptación | Condiciones para dar por bueno un entregable | Un kit se puede crear, cambiar de estado (activo / en falla / dado de baja) y verse en el tablero el mismo día. |
@@ -237,34 +178,54 @@ El plan preliminar **es** esas cuatro piezas más el acta. No es un informe de 4
 | Restricciones | Límites obligatorios | Presupuesto de piloto, conectividad irregular, fecha de reporte a donantes, equipo pequeño. |
 | Supuestos | Factores dados por ciertos sin prueba plena | Hay conectividad mínima; el soporte local carga datos; los inversores aceptan reporte mensual. |
 
-Si un supuesto falla (no hay señal), el plan debe decir **qué se hace**. Un supuesto sin plan B es un **riesgo no declarado**.
+**Definición. Criterios de aceptación.** Condiciones **verificables** que un entregable debe cumplir para darse por bueno. No son deseos («que sea fácil de usar»): son pruebas («el técnico cambia el estado del kit y el tablero lo muestra el mismo día»).
 
-#### Plantilla del enunciado (lámina 11)
+**Definición. Exclusión.** Trabajo que **explícitamente no se hará** en este proyecto o fase. Se escribe para que no se asuma incluido. Fabricar paneles, en Kiran, es exclusión: si no está escrita, un interesado puede creer que «kits solares» incluye instalarlos.
 
-**Cabecera:** fecha, nombre del proyecto, versión, director/a, patrocinador, cliente, equipo, otros interesados.
+**Definición. Restricción.** Límite **obligatorio** sobre lo que sí se hace: presupuesto, plazo, ley, tamaño del equipo, tecnología impuesta. A diferencia de la exclusión, la restricción no saca trabajo: **acota** cómo se hace el trabajo que sí entra.
 
-**Cuerpo:**
+**Definición. Supuesto.** Factor que se da por **verdadero** sin prueba plena, para poder planificar. Si se demuestra falso, aparece un riesgo (o un problema). «El soporte local carga datos» es supuesto; si no carga, el inventario no sirve. Un supuesto sin qué hacer si falla es un **riesgo no declarado**.
 
-- **Antecedentes:** justificación, necesidad, oportunidad.
+Las tres se confunden. Pregunta de control: ¿esto **no se hará** (exclusión), **se hará pero con un techo** (restricción), o **se asume cierto para seguir** (supuesto)?
+
+#### Plantilla del enunciado
+
+No es un ensayo: es una ficha que dirección puede firmar.
+
+**Cabecera (quién y cuándo):** fecha, nombre del proyecto, versión, director/a, patrocinador, cliente, equipo, otros interesados.
+
+**Cuerpo (qué y para qué):**
+
+- **Antecedentes:** justificación, necesidad de mercado u oportunidad.
 - **Descripción del producto o servicio:** el entregable final.
 - **Objetivos:** qué se logra **con** ese entregable (outcome, no solo output).
+
+Después se completan los seis mínimos (producto, criterios, entregables, exclusiones, restricciones, supuestos). Sin la cabecera, el enunciado no tiene dueño; sin los seis mínimos, no tiene borde.
 
 #### Herramientas y técnicas para definir alcance
 
 1. **Analizar objetivos del producto y convertirlos en requisitos.**  
-   **Definición. Requisito.** Condición o capacidad que debe cumplirse. «Mejorar la calidad de vida» no es requisito. «Registrar cada kit con estado operativo» sí lo es.
+   **Definición. Requisito.** Condición o capacidad que el producto o el proyecto **debe** cumplir, formulada de modo que se pueda verificar.
+
+   Un objetivo de negocio («mejorar la calidad de vida») no es requisito: no se puede aceptar o rechazar en una demostración. «Registrar cada kit con estado operativo (activo / falla / baja)» sí lo es, porque se prueba con un registro concreto.
 
 2. **Generación de alternativas.**  
-   ¿Aplicación móvil para el técnico o solo web? ¿Tickets por un canal externo o módulo interno?
+   Comparar formas distintas de cumplir el mismo objetivo antes de fijar una. ¿Aplicación móvil para el técnico o solo web? ¿Tickets por un canal externo o módulo interno? Elegir sin alternativas es decidir por inercia.
 
 3. **Técnica Delphi.**  
-   **Definición.** Método de consenso entre expertos **en anónimo**: un facilitador envía un cuestionario, resume respuestas y las devuelve para otra ronda. Reduce el sesgo de autoridad. Útil cuando terreno, software e impacto social no coinciden en la primera reunión.
+   **Definición.** Método de consenso entre expertos **en anónimo**: un facilitador envía un cuestionario, resume las respuestas y las devuelve para otra ronda, hasta que las estimaciones o juicios se acercan.
 
-### 3.2 EDT / WBS
+   El anónimo es el mecanismo: evita que la persona de más rango imponga el número. No es una encuesta de opinión ni una votación a mano alzada. Sirve cuando hay incertidumbre y varias disciplinas (operación en terreno, software, impacto social) no coinciden en la primera reunión.
 
-**Definición. EDT (Estructura de Desglose del Trabajo) o WBS (*Work Breakdown Structure*).** Descomposición jerárquica de **todo** el trabajo del proyecto. Regla del PMBOK 6: la EDT cubre el **100%** del alcance acordado. Lo que no está en la EDT **no se hace** (o entra como cambio).
+### 2.2 EDT / WBS
 
-#### Diagrama de descomposición (lámina 7)
+**Definición. EDT (Estructura de Desglose del Trabajo) o WBS (*Work Breakdown Structure*).** Descomposición **jerárquica** de **todo** el trabajo del proyecto, organizada por entregables (no por departamentos).
+
+Regla del PMBOK 6: la EDT cubre el **100%** del alcance acordado. Lo que no está en la EDT **no se hace**, o entra solo por control de cambios. No es un organigrama ni una lista de tareas diarias: el organigrama dice *quién*; la lista de tareas dice *cuándo*; la EDT dice *qué trabajo existe*.
+
+Error frecuente: poner «frontend» y «backend» como ramas. Eso describe al equipo, no el trabajo. Las ramas deben ser entregables (inventario, tablero, tickets, reportes).
+
+#### Diagrama de descomposición
 
 ```
 Identificar entregables
@@ -279,30 +240,59 @@ Identificar entregables
 
 Se subdivide hasta el nivel en que **sí** se puede estimar.
 
-#### Niveles que pide la clase (lámina 9)
+#### Niveles de la EDT
+
+Cada nivel tiene una función distinta. No se baja por costumbre ni para «llenar» el diagrama: se baja hasta que el trabajo se pueda estimar y asignar.
+
+- La **cuenta de control** es el nivel en el que se miden juntos alcance, plazo y presupuesto.
+- El **paquete de planificación** está debajo: se sabe qué trabajo es, pero **aún no** se han detallado las actividades.
+- El **paquete de trabajo** es el nivel más bajo de la EDT: ahí hay duración, costo y responsable.
+
+Una numeración típica:
+
+```
+Proyecto
+ ├── 1 …
+ └── 2 …
+      ├── 2.1 …
+      ├── 2.2                    ← rama
+      │     ├── 2.2.1
+      │     ├── 2.2.2
+      │     └── 2.2.3            ← cuenta de control
+      │           ├── 2.2.3.1    ← paquete de planificación
+      │           └── 2.2.3.2
+      │                 ├── 2.2.3.2.1  ← paquete de trabajo
+      │                 └── 2.2.3.2.2  ← paquete de trabajo
+      └── 2.3 …
+```
 
 | Nombre | Definición | Para qué |
 |---|---|---|
-| **Cuenta de control (*control account*)** | Punto de gestión donde se integran alcance, plazo y presupuesto | Medir desempeño (Unidad 2) |
+| **Cuenta de control (*control account*)** | Punto de gestión donde se integran alcance, plazo y presupuesto | Medir desempeño más adelante |
 | **Paquete de planificación (*planning package*)** | Debajo de la cuenta de control: se conoce el trabajo, **aún no** las actividades detalladas | No fingir detalle inexistente |
 | **Paquete de trabajo (*work package*)** | Nivel más bajo de la EDT | Aquí hay duración, costo y responsable |
 
-Numeración típica: `2.2.3` cuenta de control → `2.2.3.1` paquete de planificación → `2.2.3.2.1` paquete de trabajo.
+**Definición. Descomposición.** Técnica de dividir entregables y trabajo del proyecto en componentes más pequeños y manejables, hasta el paquete de trabajo.
 
-**Definición. Descomposición.** Técnica de dividir entregables y trabajo del proyecto en componentes más pequeños y manejables.
+No es «partir por partir». Si un componente ya se puede estimar con confianza (tiempo, costo, responsable), se detiene. Si no, se subdivide. El diagrama de más arriba es esa regla, no un adorno.
 
-**Definición. Elaboración progresiva.** Detallar el plan a medida que aumenta la información. No es improvisación.
+**Definición. Elaboración progresiva.** Ir detallando el plan **a medida que aumenta la información disponible**. Al inicio se conocen entregables; las actividades finas aparecen después.
 
-#### Diccionario de la EDT (lámina 10)
+No es improvisación ni *scope creep*. Improvisar es cambiar el trabajo sin criterio. Elaboración progresiva es completar el detalle **dentro** del alcance ya acordado. Un paquete de planificación existe precisamente para eso: reservar el trabajo sin fingir un cronograma que aún no se puede escribir.
 
-**Definición.** Documento que detalla cada componente de la EDT: descripción, responsable, criterios de aceptación, supuestos, recursos, duración, hitos y costo. La EDT sola es un árbol; el diccionario es la ficha que permite estimar.
+#### Diccionario de la EDT
 
-Ejemplo de la clase (componente `2.2.2.1 Mercado`):
+**Definición. Diccionario de la EDT.** Documento que detalla cada componente de la EDT: descripción, responsable, criterios de aceptación, supuestos, recursos, duración, hitos y costo.
 
-| Campo | Ejemplo de la lámina |
+La EDT muestra la **estructura** (qué paquetes existen y cómo se anidan). El diccionario muestra el **contenido** de cada paquete (qué se acepta, quién lo hace, cuánto cuesta). Sin diccionario, la EDT no se puede estimar ni asignar: solo se sabe que «existe un tablero», no cuándo está bueno.
+
+Ejemplo (componente `2.2.2.1 Mercado`):
+
+| Campo | Ejemplo |
 |---|---|
 | ID | 2.2.2.1 |
 | Cuenta de control | 2.2 |
+| Última actualización | 15 de julio |
 | Responsable | Juan Roble |
 | Descripción | Estudio de mercado del sector de jugos naturales |
 | Criterio de aceptación | El informe incluye importaciones por país del Reino Unido, últimos 5 años |
@@ -314,7 +304,7 @@ Ejemplo de la clase (componente `2.2.2.1 Mercado`):
 | Costo | $32.920 |
 | Firma del director | (autorización) |
 
-**Traducción al Caso 7** (paquete `1.2.1 Tablero operativo`):
+**Traducción a Kiran** (tablero operativo):
 
 - Criterio de aceptación: se ve el estado de cada kit y el recuento de tickets abiertos/cerrados en una sola pantalla.
 - Entregable: vista de tablero usable en navegador por el soporte local.
@@ -324,27 +314,36 @@ Ejemplo de la clase (componente `2.2.2.1 Mercado`):
 
 Sin diccionario, la EDT no se puede estimar ni asignar.
 
-### 3.3 Cronograma
+### 2.3 Cronograma
 
-**Definición. Desarrollar el cronograma.** Integrar actividades, secuencias, recursos y duraciones para crear el **modelo de programación**: fechas de inicio y fin planificadas, e **hitos**. Es **iterativo**.
+**Definición. Desarrollar el cronograma.** Proceso de integrar actividades, secuencias, recursos y duraciones para crear el **modelo de programación**: fechas de inicio y fin planificadas, e **hitos**. Es **iterativo**: la primera versión se corrige cuando hay duraciones reales y recursos limitados.
 
-**Definición. Hito (*milestone*).** Punto o evento significativo. Duración cero.
+No es «poner fechas en un calendario». El calendario es una **representación**. El modelo es la lógica: qué precede a qué, cuánto dura cada actividad y qué pasa si una se atrasa.
 
-**Definición. Actividad.** Porción de trabajo programable, por lo general derivada de un paquete de trabajo.
+**Definición. Hito (*milestone*).** Punto o evento **significativo** en el proyecto. Duración **cero**: no consume trabajo; marca que algo se alcanzó (acta firmada, inventario cargado, primer reporte a donantes).
 
-#### Los dos pases que pide la clase
+Error frecuente: tratar un hito como una tarea de varios días. Si «capacitación» dura una semana, es actividad. El hito es «capacitación completada».
+
+**Definición. Actividad.** Porción de trabajo **programable** (tiene duración, predecesora y recursos), por lo general derivada de un paquete de trabajo. La EDT dice *qué* hay que producir; la actividad dice *cómo se programa* ese trabajo en el tiempo.
+
+#### Los dos pases del cronograma
 
 1. **Primera vez:** sin retrasos, sin adelantos, sin dependencias finas, **recursos ilimitados**. Muestra la duración «en bruto».
 2. **Segunda vez:** con retrasos, adelantos, dependencias y **recursos limitados**. Esta es la agenda defendible.
 
-**Definición. Adelanto (*lead*).** Solapamiento permitido: la sucesora empieza antes de que termine la predecesora.  
-**Definición. Retraso (*lag*).** Espera impuesta entre actividades.
+**Definición. Adelanto (*lead*).** Solapamiento **permitido**: la actividad sucesora puede empezar **antes** de que termine la predecesora. Ejemplo: empezar a diseñar el tablero cuando el modelo de datos ya está acordado, aunque la carga de kits aún no termine.
 
-#### Insumos típicos (lámina 18)
+**Definición. Retraso (*lag*).** Espera **impuesta** entre el fin de una actividad y el inicio de otra, aunque no haya trabajo en medio. Ejemplo: tres días de espera después de pedir acceso a un servidor hasta que el proveedor lo habilita.
+
+Lead adelanta el inicio; lag lo posterga. Ninguno cambia la duración de la actividad misma: cambian la **relación** entre dos actividades.
+
+#### Insumos típicos
 
 Lista de actividades, EDT, diagrama de red, calendarios de recursos, estimaciones de duración, enunciado del alcance y **OPA** (plantillas, lecciones, calendarios de la empresa).
 
-#### Tres representaciones, tres audiencias (lámina 24)
+Se puede esbozar en papel. Un **software de gestión de proyectos** facilita crear, actualizar y **compartir** el cronograma con el equipo.
+
+#### Tres representaciones, tres audiencias
 
 | Formato | Definición | Audiencia |
 |---|---|---|
@@ -356,16 +355,22 @@ Un Gantt de 80 barras no sirve para un inversor. Cuatro hitos no le dicen al equ
 
 #### CPM — Método de la ruta crítica
 
-**Definición. CPM (*Critical Path Method*).** Técnica que estima la duración **mínima** del proyecto calculando inicios y fines **tempranos y tardíos**, **sin** limitar recursos en el cálculo clásico.
+**Definición. CPM (*Critical Path Method*).** Técnica que estima la **duración mínima** del proyecto calculando, para cada actividad, inicios y fines **tempranos** y **tardíos**. En el cálculo clásico **no** se limitan recursos: se asume que hay gente y materiales cuando se necesitan.
 
-**Definición. Ruta crítica.** Secuencia de actividades que forma el **camino más largo**. Cualquier atraso en ella mueve la fecha final, salvo que se comprima el cronograma.
+Sirve para responder: si cada actividad dura lo estimado y se respeta el orden, ¿cuál es la fecha de término más temprana posible? No responde, por sí solo, si el equipo de dos personas puede hacer tres actividades en paralelo.
 
-**Definición. Holgura (*float* / *slack*).** Tiempo que una actividad puede atrasarse sin afectar la fecha de término del proyecto (holgura total). Si la holgura es **0**, la actividad es crítica.
+**Definición. Ruta crítica.** Secuencia de actividades que forma el **camino más largo** (mayor suma de duraciones) desde el inicio hasta el fin. Cualquier atraso en ella mueve la fecha final, salvo que se comprima el cronograma (más recursos, recorte de alcance, o paralelismo nuevo).
+
+No es «la más importante por fama» ni «la más difícil». Es la más **larga**. En Kiran: si se atrasa la carga de inventario, se atrasan el tablero y el reporte a donantes, porque dependen de esos datos.
+
+**Definición. Holgura (*float* / *slack*).** Tiempo que una actividad puede atrasarse **sin** afectar la fecha de término del proyecto (holgura **total**). Si la holgura es **0**, la actividad está en la ruta crítica.
+
+Holgura no es «tiempo libre del equipo». Es margen **respecto de la fecha final**. Si A tiene holgura 13 y se atrasa 14 días, A pasa a ser crítica y el proyecto se alarga.
 
 - **Forward pass (hacia adelante):** inicios y fines tempranos; duración mínima / camino crítico.
 - **Backward pass (hacia atrás):** inicios y fines tardíos; holguras.
 
-#### Lectura del nodo (lámina 21)
+#### Lectura del nodo
 
 ```
 ┌─────────────────┬──────────┬─────────────────┐
@@ -377,14 +382,14 @@ Un Gantt de 80 barras no sirve para un inversor. Cuatro hitos no le dicen al equ
 └─────────────────┴──────────┴─────────────────┘
 ```
 
-Fórmulas de la clase (convención de días calendario; la duración «ocupa» días inclusive):
+Fórmulas (convención de días calendario; la duración «ocupa» días inclusive):
 
 - **Fin temprano (EF)** = (Inicio temprano + Duración) − 1
 - **Inicio tardío (LS)** = (Fin tardío − Duración) + 1
 - **Holgura** = Fin tardío − Fin temprano  
   (equivalente: Inicio tardío − Inicio temprano)
 
-#### Ejemplo resuelto de la clase (actividades A–G)
+#### Ejemplo resuelto (actividades A–G)
 
 | N.º | Actividad | Predecesora | Duración |
 |---|---|---|---|
@@ -407,35 +412,43 @@ Holguras del diagrama: A = 13, C = 11, F = 11.
 
 Si A se atrasa más allá de su holgura, **también** pasa a ser crítica.
 
-**Para el oral:** la ruta crítica no es «la más importante por fama»; es la **más larga**. En el piloto, si se atrasa la carga de inventario, se atrasan el tablero y el reporte a donantes.
+La ruta crítica no es «la más importante por fama»; es la **más larga**. En el ejemplo, B–D–E–G suma 26; las otras rutas son más cortas y por eso tienen holgura.
 
 #### PERT — tres valores
 
-**Definición. PERT (*Program Evaluation and Review Technique*).** Estimación por tres valores cuando no hay un único número fiable.
+**Definición. PERT (*Program Evaluation and Review Technique*).** Método de estimación de duración que usa **tres valores** cuando no hay un único número fiable: optimista (O), más probable (M) y pesimista (P).
 
-- **O** = optimista  
-- **M** = más probable  
-- **P** = pesimista  
+CPM trabaja con **una** duración por actividad (determinista). PERT trabaja con **incertidumbre**: admite que el mismo trabajo puede salir rápido, normal o lento. No reemplaza al CPM: alimenta duraciones más realistas **para** luego calcular la red.
 
-Fórmulas de la clase:
+- **O** = optimista: si todo sale bien, el menor tiempo razonable.  
+- **M** = más probable: el tiempo que el experto espera en condiciones normales.  
+- **P** = pesimista: si aparecen problemas creíbles, el mayor tiempo razonable (no un desastre absurdo).
 
-- Duración esperada = **(O + 4M + P) / 6**
+Fórmulas:
+
+- Duración esperada = **(O + 4M + P) / 6**  
 - Desviación estándar = **(P − O) / 6**
 
-Ejemplo de la lámina: O = 4, M = 7, P = 16  
+El 4 en el numerador da más peso a M: se asume que lo más probable ocurre con más frecuencia que los extremos.
+
+Ejemplo de clase: O = 4, M = 7, P = 16  
 
 - Duración = (4 + 4×7 + 16) / 6 = **8 días**  
 - Desviación = (16 − 4) / 6 = **2 días**
 
-Útil en software con incertidumbre de terreno (Caso 7).
+En Kiran, una actividad de carga en terreno puede ser O = 5, M = 7, P = 13 → (5 + 28 + 13) / 6 = **7,67 ≈ 8 días**. Usar solo 5 días sería planificar el caso optimista como si fuera el esperado.
 
-### 3.4 Costos
+### 2.4 Costos
 
-**Definición. Presupuesto.** Suma autorizada para ejecutar el proyecto o un componente, construida a partir de los costos identificados **por fase** o por paquete.
+**Definición. Presupuesto.** Suma **autorizada** para ejecutar el proyecto o un componente, construida a partir de los costos identificados **por fase** o por paquete de trabajo.
 
-**Definición. Reserva de contingencia.** Monto (o tiempo) reservado para riesgos **identificados**. Sin este paso, el primer imprevisto deja el plan en cero.
+No es «lo que creemos que va a costar» (eso es una **estimación**). La estimación es un cálculo. El presupuesto es esa estimación **aprobada**, con techo. Sin aprobación (paso 6 más abajo), el número no existe para la organización.
 
-#### Cómo hacer un presupuesto (8 pasos de la lámina)
+**Definición. Reserva de contingencia.** Monto (o tiempo) reservado para riesgos **ya identificados**. Ejemplo: «si falla la conectividad, hay X días y Y dinero para carga por lotes».
+
+No es la reserva de **gestión** (esa cubre riesgos no identificados y la usa la dirección). Sin contingencia, el primer imprevisto conocido deja el plan en cero. Error frecuente: llamar «contingencia» a un recargo del 20% sin nombrar ningún riesgo.
+
+#### Cómo hacer un presupuesto (8 pasos)
 
 1. Definir la EDT.  
 2. Especificar detalles de las tareas.  
@@ -443,14 +456,14 @@ Ejemplo de la lámina: O = 4, M = 7, P = 16
 4. Obtener costos totales.  
 5. Incluir **contingencias y costos extra**.  
 6. Obtener la **aprobación**.  
-7. Hacer seguimiento (mira a la Unidad 2).  
+7. Hacer seguimiento.  
 8. Sacar conclusiones.
 
 Sin el paso 1, el presupuesto es un número sin base. Sin el paso 6, el número no existe para la organización.
 
-#### Principales tipos de costo (evaluación frecuente)
+#### Principales tipos de costo
 
-| Tipo | Definición | Ejemplo Caso 7 |
+| Tipo | Definición | Ejemplo (Kiran) |
 |---|---|---|
 | **Variable** | Cambia con el volumen de trabajo o de unidades | Horas extra de un consultor; más kits = más filas que cargar |
 | **Fijo** | No cambia con el volumen (en el rango del piloto) | Sueldo mensual de la *product owner* |
@@ -461,40 +474,37 @@ Sin el paso 1, el presupuesto es un número sin base. Sin el paso 6, el número 
 
 **Falacia del costo hundido:** «ya gastamos tanto, hay que seguir». La decisión se toma con costos **futuros** y valor **futuro**.
 
-### 3.5 Recursos
+### 2.5 Recursos
 
-**Definición. Estimar los recursos de las actividades.** Identificar **tipo, cantidad y características** de los recursos necesarios para completar las actividades. Permite estimar costo y duración con más precisión.
+**Definición. Estimar los recursos de las actividades.** Identificar **tipo, cantidad y características** de los recursos necesarios para completar cada actividad. Con eso se estiman costo y duración con más precisión.
 
-**Definición. RBS (*Resource Breakdown Structure*).** Desglose jerárquico de **todos** los recursos (humanos y materiales), por categoría y tipo, con cantidad y **disponibilidad**.
+«Tipo» es la clase (desarrolladora frontend, servidor, vehículo). «Cantidad» es cuántos y por cuánto tiempo. «Características» es el perfil (¿alguien que ya conoce el dominio, o un perfil junior?). Sin este paso, el cronograma asume recursos ilimitados: el primer pase de CPM.
 
-Ejemplo de la clase (curso PMP): personas (edición, ventas, técnicos) y materiales (tecnología e instalaciones).
+**Definición. RBS (*Resource Breakdown Structure*).** Desglose **jerárquico** de **todos** los recursos (humanos y materiales), por categoría y tipo, con **cantidad** y **disponibilidad**.
 
-**Traducción Caso 7 (mínimo)**
+No es un organigrama (quién reporta a quién) ni la EDT (qué trabajo hay). Es *con qué* se hace el trabajo. Se arma en **dos tiempos**:
 
-| Categoría | Ejemplos |
-|---|---|
-| Personas | Front, back, QA, diseño, responsable de impacto, soporte local, *product owner* |
-| Tecnología | Nube, repositorio, herramientas de tickets, dispositivos de terreno, conectividad |
-| Instalaciones | Espacio de la empresa social; punto de apoyo en la comunidad |
-| Financieros | Aporte de inversores, subsidio, reserva de contingencia |
+1. Primero el **tipo** (¿qué clases de recurso hay?).
+2. Después la **cantidad** (¿cuántos de cada uno?, y se suman hacia arriba).
 
-### 3.6 Actividad 1.1.2 — entregables en 2 horas
+Ejemplo (curso PMP): 9 personas + 10 materiales = **19** recursos en total. Personas se parten en edición (4), ventas (2) y técnicos (3). Materiales, en tecnología (8) e instalaciones (2). El asterisco del software significa «se usa, pero no se cuenta como unidad física».
 
-Situación: ejecución práctica, duplas, Sala de Proyectos, evalúa **IL1.1**.
+**Traducción a Kiran (mínimo)**
 
-| Paso | Entregable | Criterio |
+| Categoría | Ejemplos | Pregunta de cantidad |
 |---|---|---|
-| 1 | Acta de constitución | Autoriza y nombra director/a |
-| 2 | Alcance + EDT | Incluidos / no incluidos; fases, paquetes de trabajo |
-| 3 | Cronograma | Hitos, duraciones, asignación de recursos |
-| 4 | Recursos | Humanos, técnicos, financieros |
-| 5 | Presentar | Plantillas en Word + **análogo** (pizarra, kraft) |
+| Personas | Front, back, QA, diseño, impacto, soporte local, *product owner* | ¿Cuántas horas / cabezas por paquete? |
+| Tecnología | Nube, repositorio, herramienta de tickets, dispositivos de terreno | ¿Un ambiente o tres? ¿Licencias? |
+| Instalaciones | Espacio de la empresa social; punto de apoyo en la comunidad | ¿Visitas a terreno cuántas? |
+| Financieros | Aporte de inversores, subsidio, reserva de contingencia | ¿Cuánto queda después de la reserva? |
 
-### 3.7 Síntesis exigida 1.1
+Sin cantidad, el RBS no se puede costear ni permite ver si hay personas de más o de menos. Esa información alimenta el **segundo pase** del cronograma, con recursos **limitados**.
+
+### 2.6 Para recordar
 
 > Un plan preliminar no es un cronograma suelto. Es **acta** (autorización) + **enunciado de alcance** (qué / qué no, criterios, exclusiones, supuestos, restricciones) + **EDT con diccionario** (el 100% del trabajo) + **modelo de programación** (red, CPM/PERT, Gantt, hitos) + **recursos y costos clasificados**, con contingencia y aprobación. La ruta crítica es el camino más largo; PERT pondera incertidumbre; los costos hundidos no deciden el futuro.
 
-Preguntas de reflexión de la clase (ensayo):
+Para pensar:
 
 1. ¿Qué elementos son más importantes al planificar un proyecto de software?  
 2. ¿Cómo asegurar precisión en la estimación de recursos?  
@@ -506,17 +516,17 @@ Preguntas de reflexión de la clase (ensayo):
 
 ---
 
-## 4. Bloque 1.2 — Factores ambientales, normas y estándares (IL1.2)
+## 3. Factores ambientales y estándares
 
-**Material:** PPT 1.2.1 · Actividad 1.2.2 (equipos, 2 h)
+### 3.1 EEF y OPA
 
-### 4.1 Definición de EEF y OPA (PMBOK 6)
+**Definición. Factores ambientales de la empresa (EEF, *Enterprise Environmental Factors*).** Condiciones que **el equipo no controla** y que influyen, restringen o dirigen el proyecto. Pueden ser **internos** (cultura, infraestructura, software de la empresa) o **externos** (ley, mercado, clima, estándares de industria). Son **entrada** de muchos procesos, sobre todo de planificación. Pueden **ampliar o recortar** opciones, e influir de forma **positiva o negativa**.
 
-**Definición. Factores ambientales de la empresa (EEF, *Enterprise Environmental Factors*).** Condiciones que **el equipo no controla** y que influyen, restringen o dirigen el proyecto. Pueden ser **internos o externos**. Son **entrada** de muchos procesos, sobre todo de planificación. Pueden ampliar o recortar opciones.
+No se eligen: se **identifican** y se planifica **dentro** de ellos. El equipo no decide si hay conectividad irregular en la comunidad; sí decide si el inventario permite carga por lotes. No equivalen al «clima laboral» en sentido coloquial: son el conjunto de condiciones en las que el proyecto opera.
 
-No equivalen al «clima laboral» en sentido coloquial: son el sistema completo en el que el proyecto opera.
+Error frecuente: listar EEF («hay ley de datos», «hay donantes») sin decir **qué cambia en el plan** (roles de acceso, hitos de reporte). La lista sola no demuestra análisis.
 
-#### EEF internos (lámina 4)
+#### EEF internos
 
 - cultura, estructura y gobernanza de la organización
 - distribución geográfica de instalaciones y recursos
@@ -525,7 +535,7 @@ No equivalen al «clima laboral» en sentido coloquial: son el sistema completo 
 - disponibilidad de recursos
 - capacidad de los empleados
 
-#### EEF externos (lámina 4)
+#### EEF externos
 
 - condiciones de mercado
 - influencias sociales y culturales
@@ -536,46 +546,51 @@ No equivalen al «clima laboral» en sentido coloquial: son el sistema completo 
 - consideraciones financieras
 - elementos ambientales físicos
 
-**Definición. OPA (*Organizational Process Assets*).** Planes, procesos, políticas, procedimientos y bases de conocimiento de la organización ejecutora, que el equipo **sí puede usar** (plantillas, lecciones aprendidas, repositorios).
+**Definición. OPA (*Organizational Process Assets*).** Planes, procesos, políticas, procedimientos y bases de conocimiento de la organización ejecutora, que el equipo **sí puede usar**: plantillas de acta, lecciones de proyectos anteriores, repositorios, calendarios oficiales.
 
-#### Tres focos narrativos de la clase
+Diferencia con EEF: el EEF **restringe o dirige** y no se modifica en este proyecto (la ley de privacidad, la cultura de la empresa). El OPA **se aprovecha** y a veces se actualiza al cierre (se guarda una lección aprendida). Una plantilla de enunciado de alcance es OPA. Una ley de protección de datos es EEF.
+
+#### Tres focos: organización, regulación y tecnología
 
 1. Entorno organizacional  
 2. Regulaciones gubernamentales  
 3. Avances tecnológicos y estándares de la industria  
 
-### 4.2 Entorno organizacional
+### 3.2 Entorno organizacional
 
-**Definición.** Conjunto de cultura, valores, estructura y políticas en el que vive el proyecto. Puede facilitar o bloquear la integración (IL1.3).
+**Definición. Entorno organizacional.** Conjunto de cultura, valores, estructura y políticas **internas** en el que se ejecuta el proyecto. Forma parte de los EEF internos. Puede facilitar la integración (información fluye, hay PMO) o bloquearla (nadie aprueba cambios, cada área trabaja aislada).
 
-- **Cultura:** ambiente que permite reportar malas noticias o que las oculta.
-- **Estructura:** funcional, matricial o proyectizada; determina autoridad del director de proyecto y flujo de información.
-- **Políticas y procedimientos:** quién aprueba un gasto, cómo se pide un ambiente en la nube.
+- **Cultura:** normas no escritas de cómo se trabaja. Colaboración y comunicación abierta impulsan el plan; ocultar malas noticias lo frena (los riesgos llegan tarde).
+- **Estructura:** define roles, responsabilidades y flujo de información (funcional, matricial o proyectizada). Determina cuánta autoridad real tiene la directora del proyecto. En una estructura funcional, el equipo «pertenece» a jefaturas de área; la directora negocia recursos. En una proyectizada, el equipo reporta al proyecto.
+- **Políticas y procedimientos:** reglas internas escritas: quién aprueba un gasto, cómo se pide un ambiente en la nube.
 
-**Caso 7.** Empresa social + inversores de impacto + subsidio + *partner* tecnológico. No es un equipo de tres personas sin rendición de cuentas. Un plan «ágil de garage» sin gobernanza de reporte a donantes **no se integra**.
+**Ejemplo (Kiran).** Empresa social + inversores de impacto + subsidio + *partner* tecnológico. Hay rendición de cuentas a donantes. Un plan que ignore esa gobernanza (sin hitos de reporte, sin roles de acceso) no se puede integrar: la organización no lo puede usar. El análisis del entorno sirve para **alinear** el plan con esas reglas, no para ignorarlas.
 
-### 4.3 Regulaciones gubernamentales
+### 3.3 Regulaciones gubernamentales
 
-**Definición.** Marco legal y normativo externo (EEF) que el proyecto debe cumplir. Incluye, entre otros, privacidad de datos, seguridad y conformidad. Cumplir no es solo evitar sanciones: es condición de **confianza** de usuarios e inversores.
+**Definición. Regulaciones gubernamentales.** Marco legal y normativo **externo** (EEF) que el proyecto debe cumplir. Incluye, entre otros, privacidad de datos, seguridad y conformidad sectorial.
 
-La clase insiste: las regulaciones no son solo obstáculos; abordadas de forma proactiva, orientan una operación íntegra.
+Cumplir no es solo evitar sanciones: es condición de **confianza** de usuarios y financiadores. Las regulaciones no son un anexo al final del plan: si el piloto guarda datos de hogares, el enunciado de alcance y la EDT deben incluir el trabajo de roles, minimización y resguardo. Abordadas de forma temprana, orientan una operación íntegra y pueden ser ventaja competitiva (el financiador elige quien demuestra control). Tres focos: cumplimiento legal, privacidad de datos, seguridad y conformidad.
 
-#### ISO/IEC 27701 (lámina 15)
+#### ISO/IEC 27701
 
-**Definición.** Extensión de gestión de **información de privacidad** sobre las normas de seguridad de la información (familia ISO/IEC 27000). Permite demostrar un sistema de gestión de información personal.
+**Definición. ISO/IEC 27701.** Extensión de **gestión de información de privacidad** sobre las normas de seguridad de la información (familia ISO/IEC 27000). Permite demostrar un sistema de gestión de información personal (PIMS, *Privacy Information Management System*).
 
-Ideas que hay que poder enunciar:
+No es una ley. Es un **estándar** voluntario que ayuda a **demostrar** prácticas. Tampoco reemplaza la ley local: si Chile o un donante europeo exigen algo, eso sigue siendo EEF legal. La norma sirve para organizar controles (qué datos, con qué fin, quién accede) de forma auditable.
+
+Aportes que conviene poder explicar:
 
 - se integra con las normas principales de seguridad de la información
-- genera confianza en la gestión de datos personales
-- apoya el cumplimiento de leyes y requisitos de privacidad
+- demuestra un nivel alto de protección de datos
+- genera confianza en la gestión de información personal
+- apoya el cumplimiento de leyes, reglamentos y requisitos de privacidad
 - es flexible a particularidades jurisdiccionales (Chile ≠ India ≠ un donante europeo)
-- aporta transparencia entre interesados
-- facilita acuerdos comerciales cuando los procesos están alineados
+- aporta transparencia entre interesados (confianza y respeto mutuo)
+- facilita acuerdos comerciales cuando los procesos de sistemas están alineados
 
-**Aplicación al Caso 7 (sin inventar leyes específicas):** el piloto trata datos de hogares en India, con posibles inversores internacionales. En el plan hay que declarar **qué datos** se guardan, **dónde** (nube), **quién** accede (soporte local) y **qué** sale hacia donantes. En el oral basta: «privacidad de hogares y reportes a terceros son EEF legales; el plan incluye minimización de datos y roles de acceso». No es necesario recitar números de leyes que no están en el caso.
+**Aplicación a Kiran:** el piloto trata datos de hogares, con posibles financiadores internacionales. El plan declara **qué datos** se guardan, **dónde** (nube), **quién** accede (soporte local) y **qué** sale hacia donantes. Privacidad y reportes a terceros son EEF legales: minimización de datos y roles de acceso. No hace falta inventar leyes que el caso no nombra.
 
-### 4.4 Avances tecnológicos
+### 3.4 Avances tecnológicos
 
 Cada avance es oportunidad o restricción (EEF tecnológico):
 
@@ -583,81 +598,79 @@ Cada avance es oportunidad o restricción (EEF tecnológico):
 - **Computación en la nube:** escala y acceso; implica dependencia de conectividad y costos variables.
 - **Tecnologías emergentes:** obligan a adaptar el plan.
 
-Cierre de la introducción de 1.2: el entorno no se espera de forma pasiva; se analiza y se arma plan B.
+El entorno no se espera de forma pasiva: se analiza y se arma un plan B.
 
-### 4.5 Estándares de la industria
+### 3.5 Estándares de la industria
 
-**Definición. Estándar.** Documento establecido por consenso que provee reglas, pautas o características para uso común. En esta clase se usan como **lentes**, no como receta única.
+**Definición. Estándar.** Documento establecido por **consenso** de un organismo reconocido, que provee reglas, pautas o características para uso común y repetido.
 
-#### PMBOK 6.ª (bibliografía del ramo)
+No es una ley (la ley obliga; el estándar se adopta). No es «la forma única» de dirigir el proyecto: se **elige el que responde la pregunta**. PMBOK responde cómo dirigir **este** proyecto; CMMI, qué tan maduros son los **procesos de la organización**; ITIL, cómo operar el **servicio** cuando ya está en marcha; COBIT, quién **gobierna** TI. Usar los cuatro a la vez, sin criterio, diluye el plan.
 
-**Definición.** Guía de fundamentos para la dirección de proyectos. En la 6.ª edición se organiza en **cinco grupos de procesos** (inicio, planificación, ejecución, monitoreo y control, cierre) y **diez áreas de conocimiento** (integración, alcance, cronograma, costos, calidad, recursos, comunicaciones, riesgos, adquisiciones, interesados).
+#### PMBOK 6.ª
 
-Puntos clave de la clase 1.2: integración (que las piezas no se contradigan), gestión del alcance, tiempo y costos. Integrar PMBOK implica un enfoque metódico, basado en datos y alineado a objetivos de la organización.
+**Definición. PMBOK 6.ª (*A Guide to the Project Management Body of Knowledge*).** Guía de fundamentos para la **dirección de proyectos**. En la 6.ª edición se organiza en **cinco grupos de procesos** (inicio, planificación, ejecución, monitoreo y control, cierre) y **diez áreas de conocimiento** (integración, alcance, cronograma, costos, calidad, recursos, comunicaciones, riesgos, adquisiciones, interesados).
+
+No es una metodología prescrita paso a paso ni una certificación de la organización. Es un **cuerpo de conocimiento**: describe procesos, entradas, herramientas y salidas. Integrarlo implica un enfoque metódico (alcance-tiempo-costo coherentes, interesados identificados) alineado a objetivos de la organización. Puntos clave en esta unidad: integración (que las piezas del plan no se contradigan) y gestión de alcance, tiempo y costos.
 
 #### CMMI (*Capability Maturity Model Integration*)
 
-**Definición.** Modelo para evaluar y mejorar la **madurez de los procesos** de una organización. No pregunta solo si *este* proyecto salió bien: pregunta qué tan sistemática es la forma de trabajar.
+**Definición. CMMI (*Capability Maturity Model Integration*).** Modelo para **evaluar y mejorar la madurez de los procesos** de una organización. No pregunta solo si *este* proyecto salió bien: pregunta qué tan **sistemática** es la forma de trabajar (si el resultado depende de personas concretas o de procesos repetibles).
 
-Puntos clave: madurez de procesos, mejora continua, calidad y eficiencia.
+No dirige el cronograma de un piloto. Un equipo puede tener un Gantt impecable (PMBOK) y aun así estar en nivel 1 de CMMI si cada vez se improvisa el proceso. Puntos clave: madurez de procesos, mejora continua, calidad y eficiencia.
 
-**Nutrición (niveles clásicos de CMMI-DEV; no es lámina obligatoria, sí sirve si preguntan «qué es madurez»):**
+**Niveles clásicos de CMMI-DEV** (para entender «madurez»):
 
 | Nivel | Idea |
 |---|---|
-| 1. Inicial | El resultado depende de individuos («héroes») |
+| 1. Inicial | El resultado depende de individuos, no de procesos repetibles |
 | 2. Gestionado | El proyecto se planifica y se controla |
 | 3. Definido | Los procesos están estandarizados en la organización |
 | 4. Gestionado cuantitativamente | Se miden y se controlan con datos |
 | 5. En optimización | Mejora continua basada en medición |
 
-CMMI mira **la organización**, no solo el Gantt de este semestre.
+CMMI mira **la organización**, no solo el Gantt de un proyecto.
 
-#### COBIT e ITIL (comparativa de la clase)
+#### COBIT e ITIL (comparativa)
 
-**Definición. COBIT.** Marco de **gobierno y control de TI**: quién decide, cómo se controla la información, cómo se rinde cuentas ante el negocio.
+**Definición. COBIT.** Marco de **gobierno y control de TI**: quién decide sobre la información y la tecnología, cómo se controla y cómo se rinde cuentas ante el negocio.
 
-**Definición. ITIL 4.** Conjunto de prácticas para la **gestión de servicios** (operación, incidentes, problemas, cambios, mejora continua). No está pensado como guía de *proyectos*, sino de *servicio en operación*.
+No es una guía para armar la EDT. Entra cuando hay que responder a dirección o inversores: ¿quién autoriza accesos?, ¿cómo se traza un dato de hogar hasta el reporte?
 
-Lectura de la tabla de clase (verde = cubre; rojo = no es su foco; NA = no aplica):
+**Definición. ITIL 4.** Conjunto de prácticas para la **gestión de servicios** en operación: incidentes, problemas, cambios, niveles de servicio, mejora continua. No está pensado como guía de *proyectos*, sino de *servicio cuando ya está en uso*.
 
-| Pregunta | Quién brilla |
-|---|---|
-| ¿Es para **proyectos**? | PMBOK, CMMI, COBIT. ITIL: NA (es de **servicio**). |
-| ¿Operación del **servicio**? | CMMI, COBIT, ITIL. PMBOK no es su fuerte. |
-| ¿**Infraestructura**? | ITIL. PMBOK no. |
-| ¿**Desarrollo**? | PMBOK, CMMI, COBIT. ITIL: NA. |
-| ¿Gestión de **incidencias** y métricas de proceso? | CMMI, COBIT, ITIL. PMBOK NA o débil. |
-| ¿Definir operativa concreta de procesos? | ITIL. |
-| ¿**Mejora continua**, seguimiento, ciclo de producto, cambio? | Los cuatro. |
-| ¿Compatible ISO 9001 e ISO 20000? | Los cuatro (según la tabla). |
-| ¿Certifica a la **organización** por sí solo? | La tabla marca NA en los cuatro (otra cosa es evaluarse en CMMI o certificarse PMP). |
+El módulo de tickets de Kiran, una vez en producción, se parece más a gestión de incidentes (ITIL) que a un paquete de la EDT. El **proyecto** construye ese módulo (PMBOK); la **operación** lo usa (ITIL).
 
-**Uso en el Caso 7 (sin recitar la tabla):**
+Comparativa (sí = cubre; no = no es su foco; NA = no aplica):
+
+| Característica (clase) | PMBOK | CMMI | COBIT | ITIL |
+|---|---|---|---|---|
+| Operación del **servicio** | No | Sí | Sí | Sí |
+| Enfoque a **proyectos** | Sí | Sí | Sí | NA |
+| Gestión de **procesos** | Sí | Sí | Sí | Sí |
+| Enfoque a **desarrollo** | Sí | Sí | Sí | NA |
+| Enfoque a **infraestructura** | No | NA | NA | Sí |
+| Ciclo de **producto** | Sí | Sí | Sí | Sí |
+| Gestión del **cambio** | Sí | Sí | Sí | Sí |
+| Gestión de **incidencias** | NA | Sí | Sí | Sí |
+| **Métricas** de proceso | NA | Sí | Sí | Sí |
+| Operativa concreta de procesos | No | No | NA | Sí |
+| Seguimiento de actividades | Sí | Sí | Sí | Sí |
+| **Mejora continua** como objetivo | Sí | Sí | Sí | Sí |
+| Certifica por sí solo a la **organización** | NA | NA | NA | NA |
+| Compatible ISO 9001 e ISO 20000 | Sí | Sí | Sí | Sí |
+
+Para recordar: ITIL no es guía de proyectos; PMBOK no es fuerte en operación de servicio ni en infraestructura; la operativa detallada de procesos la cubre ITIL; ninguno de los cuatro certifica a la organización por el solo hecho de usarlo.
+
+**Uso en Kiran:**
 
 - **PMBOK:** planificar el piloto (alcance, tiempo, costo, interesados).
 - **CMMI:** no depender de que una persona «se acuerde» de cargar el Excel.
-- **ITIL:** cuando el piloto pase a operación (tickets, incidentes, cambios). Conecta con la Unidad 2 y con la transición a operaciones.
+- **ITIL:** cuando el piloto pase a operación (tickets, incidentes, cambios). Conecta con la transición a operaciones.
 - **COBIT:** gobierno de TI si los inversores piden trazabilidad de la información.
 
 No se usa **un** estándar para todo. Se **elige el lente** según la pregunta.
 
-### 4.6 Actividad 1.2.2
-
-Equipos, 2 h, entrega + presentación, evalúa **IL1.2**.
-
-1. Identificar factores ambientales relevantes.  
-2. Métodos para analizar el **impacto** (no basta listar).  
-3. Ejemplos en proyectos de software previos.  
-4. Documentar y presentar.
-
-Métodos simples de impacto:
-
-- matriz factor × efecto (alcance / plazo / costo / calidad / riesgo)
-- semáforo (alto / medio / bajo) + dueño del factor
-- «si este factor empeora, ¿qué actividad de la ruta crítica se mueve?»
-
-### 4.7 Mapa de factores del Caso 7
+### 3.6 Ejemplo: factores en Kiran
 
 | Factor | Interno / externo | Impacto en el plan |
 |---|---|---|
@@ -670,11 +683,11 @@ Métodos simples de impacto:
 | Estándar PMBOK | Industria | Acta, EDT, ruta crítica, interesados. |
 | ITIL (tickets) | Industria / operación | El módulo de mantención es gestión de incidentes, no solo un formulario. |
 
-### 4.8 Síntesis exigida 1.2
+### 3.7 Para recordar
 
 > Los EEF son condiciones **fuera del control del equipo** que entran a la planificación. Se clasifican en internos y externos. Los OPA sí se usan. PMBOK dirige **el proyecto**; CMMI madura **procesos**; ITIL opera **el servicio**; COBIT gobierna **TI**. En un caso real hay que enunciar el **impacto**, no la lista. Privacidad y seguridad son requisito de confianza, no un anexo.
 
-Preguntas de reflexión de la clase:
+Para pensar:
 
 1. ¿Qué factores ambientales influyen más en proyectos de software?  
 2. ¿Cómo asegurar cumplimiento de estándares en *este* proyecto?  
@@ -682,81 +695,101 @@ Preguntas de reflexión de la clase:
 
 ---
 
-## 5. Bloque 1.3 — Estrategias de planificación (IL1.3)
+## 4. Estrategias de planificación
 
-**Material:** PPT 1.3.1 · Actividad 1.3.2 (equipos, 2 h)
+Un proyecto de software sin **estrategia de planificación** tiene trabajo, pero no tiene criterio para decidir *cómo* se planifica: qué se detalla al inicio, qué se deja para iterar y con qué herramientas se sostiene eso. Predictivo y adaptativo no son «el bueno y el malo»: son enfoques distintos, adecuados a **distintos grados de certeza** sobre requisitos y entorno.
 
-La clase ilustra el riesgo de construir **sin plano**. Un proyecto de software sin estrategia de planificación es esa construcción.
+### 4.1 Por qué planificar (también en ágil)
 
-### 5.1 Por qué planificar (también en ágil)
-
-| Aporte (clase) | Definición operativa |
+| Aporte | Qué significa |
 |---|---|
 | Fundamento del éxito | Reduce la improvisación en lo que ya se puede anticipar |
 | Visión clara | Objetivos y expectativas compartidos |
 | Gestión de riesgos | Problemas visibles **antes** de producción |
 | Optimización de recursos | Evita sobrecarga de personas, plazo y presupuesto |
 
-**Definición.** Ágil **no** es «no planificar». Es planificar en **ciclos cortos** y volver a planificar cuando cambia el contexto. Eso es el enfoque adaptativo.
+**Definición. Enfoque adaptativo (en relación con el plan).** Ágil **no** es «no planificar». Es planificar en **ciclos cortos** y volver a planificar cuando cambia el contexto. El plan de alto nivel existe; el detalle se completa en cada ciclo.
 
-### 5.2 Enfoque predictivo
+Error frecuente: citar «somos ágiles» para no escribir exclusiones, techo de costo ni hitos de financiamiento. Eso no es adaptativo: es ausencia de plan.
 
-**Definición.** Enfoque **secuencial y estructurado** en el que una fase se completa antes de iniciar la siguiente (la familia clásica «cascada» pertenece aquí). Alcance, tiempo y costo se detallan de forma temprana; los cambios se controlan de forma formal.
+### 4.2 Enfoque predictivo
 
-**Características:** requisitos claros al inicio; control por fases; pocos cambios; entorno relativamente estable.
+**Definición. Enfoque predictivo.** Forma de desarrollar el proyecto **secuencial y estructurada**: una fase se completa (o se controla) antes de avanzar de lleno a la siguiente. La familia clásica «cascada» pertenece aquí. Alcance, tiempo y costo se **detallan de forma temprana**; los cambios pasan por un control **formal**.
 
-**Beneficios:** predecible; fácil de supervisar por hitos.  
+Se usa cuando los requisitos se pueden conocer con suficiente certeza al inicio y el entorno es relativamente estable. Cada fase tiene entradas y salidas definidas; el progreso se verifica por hitos.
+
+**No es** «lo antiguo» ni «lo burocrático» por sí mismo. Es el enfoque correcto cuando un cambio tardío cuesta caro (datos maestros, privacidad, formato de reporte a un donante que ya firmó).
+
+**Características:** claridad de requisitos al inicio; estructura y control por fases; minimización de cambios; entorno relativamente estable.
+
+**Beneficios:** predecible y confiable; fácil de supervisar por hitos.  
 **Desventajas:** rígido; un cambio tardío es costoso.
 
-**Caso de la clase:** sistema de contabilidad corporativo, requisitos estrictos, cronograma detallado.
+**Ejemplo típico:** sistema de contabilidad para una gran corporación, requisitos claros y estrictos, cronograma detallado, pocos cambios inesperados.
 
-**Caso 7 — dónde calza:** inventario de kits (estados finitos), estructura de reporte a donantes, cumplimiento de privacidad. Eso no debe «descubrirse» cada *sprint* como si fuera una red social.
+**En Kiran aplica así:** inventario de kits (estados finitos), estructura de reporte a donantes, cumplimiento de privacidad. Eso no debe redefinirse cada *sprint* como si fuera una red social.
 
-Herramientas asociadas en la clase: **Microsoft Project**, diagramas de Gantt.
+Herramientas asociadas: **Microsoft Project**, diagramas de Gantt, Project Libre.
 
-### 5.3 Enfoque adaptativo
+### 4.3 Enfoque adaptativo
 
-**Definición.** Enfoque **iterativo e incremental** que ajusta requisitos y solución con la retroalimentación. Plan de alto nivel al inicio y replanificación frecuente. La clase lo ilustra con la metáfora del GPS: se recablea cuando el camino cambia.
+**Definición. Enfoque adaptativo.** Forma de desarrollar el proyecto **iterativa e incremental**: se entrega un incremento usable, se recoge retroalimentación y se ajustan requisitos y solución. Hay un plan de **alto nivel** al inicio y **replanificación frecuente**.
 
-**Características:** adaptación a cambios; colaboración continua con interesados.
+Se usa cuando el entorno o los requisitos **no** se pueden fijar con certeza (interfaz que el técnico debe validar, flujo de tickets que se conoce al usarlo). El cambio no es una excepción: es un insumo del siguiente ciclo.
 
-**Beneficios:** el producto se acerca a lo que el cliente **ahora** necesita.  
-**Desventajas:** sin gestión, el alcance se desvía («siempre una cosa más»).
+**No es** ausencia de alcance ni de techo de costo. El enunciado sigue existiendo; lo que cambia es **cuánto detalle** se congela al día uno.
 
-**Caso de la clase:** plataforma en un mercado rápido.
+**Características:** flexibilidad ante cambios de requisitos o entorno; ciclos con revisión; colaboración continua con interesados.
 
-**Caso 7 — dónde calza:** UX del tablero en terreno, qué ticket es útil para el técnico local, cómo medir impacto sin un indicador vanidoso.
+**Beneficios:** las entregas se acercan a lo que el interesado **ahora** necesita; sirve en entornos volátiles.  
+**Desventajas:** si no se gestiona el *backlog*, aparecen **desvíos de tiempo y recursos** («siempre una cosa más»: *scope creep* con otro nombre).
 
-Herramientas asociadas: **Jira**, **Trello**, **Asana**.
+**Ejemplo típico:** plataforma de **redes sociales** en un mercado que cambia rápido; iteraciones cortas y *feedback* constante.
 
-#### Nutrición SBOK / Scrum (biblio oficial)
+**En Kiran aplica así:** diseño de la interfaz del tablero para uso en terreno, qué campos de un ticket son útiles para el técnico local, cómo medir impacto sin un indicador que se vea bien y no informe nada.
 
-**Definición. Scrum.** Marco adaptativo con roles, eventos y artefactos para entregar incrementos de valor en ciclos cortos.
+Herramientas asociadas: **Jira** (*sprints* y Kanban), **Trello**, **Asana**.
+
+#### Scrum
+
+**Definición. Scrum.** Marco **adaptativo** con roles, eventos y artefactos definidos para entregar **incrementos de valor** en ciclos cortos (*sprints*). Es un marco de trabajo, no una metodología que cubra toda la dirección de proyectos (no reemplaza acta, presupuesto ni EEF).
 
 | Pieza | Definición |
 |---|---|
-| *Product Owner* | Maximiza valor; ordena el *backlog* |
-| *Scrum Master* | Cuida el proceso; quita impedimentos |
-| *Developers* | Construyen el incremento |
-| *Product backlog* | Lista viva y priorizada de trabajo |
-| *Sprint* | Ciclo corto de planificación y entrega |
-| Incremento | Resultado usable al final del ciclo |
-| Daily / Review / Retro | Inspeccionar y adaptar |
+| *Product Owner* | Responsable de maximizar el valor del producto; ordena el *backlog* |
+| *Scrum Master* | Cuida que se siga el proceso; identifica y ayuda a quitar impedimentos |
+| *Developers* | Quienes construyen el incremento en el *sprint* |
+| *Product backlog* | Lista viva y priorizada de trabajo pendiente sobre el producto |
+| *Sprint* | Ciclo de duración fija (suele ser 1–4 semanas) con plan, ejecución y entrega |
+| Incremento | Resultado **usable** al final del ciclo, que suma al producto |
+| Daily / Review / Retro | Eventos para inspeccionar el trabajo y adaptar el plan o el proceso |
 
-No es obligatorio montar Scrum de libro en un equipo de cuatro. Sí lo es el **espíritu**: entregar algo usable, inspeccionar, ajustar.
+No hace falta montar Scrum «de libro» en un equipo de cuatro. Sí el **criterio**: entregar algo usable, inspeccionar con interesados, ajustar el siguiente ciclo.
 
-### 5.4 Enfoque híbrido
+#### Cuándo usar cada uno
 
-**Definición. Hibridación (clase 1.3).** Combinar de forma **deliberada** elementos predictivos y adaptativos según el contexto. No es «un poco de cada uno sin criterio»: se congela lo que exige certeza y se itera lo que exige aprendizaje.
+| | Predictivo | Adaptativo |
+|---|---|---|
+| Ventajas | Claridad, control, previsibilidad | Flexibilidad, adaptación, innovación |
+| Desventajas | Rigidez frente al cambio | Desvío de plazo y recursos si no se cuida |
+| Terreno de uso | Requisitos estables y claros | Entorno incerto o requisitos que se descubren al usar |
 
-Estrategias de adaptación que lista la clase:
+El híbrido aparece **después**, en las estrategias: no es un cuarto enfoque suelto, es la decisión de combinar los dos según el contexto.
 
-1. **Análisis del contexto** — ¿el entorno es estable o volátil?  
+### 4.4 Enfoque híbrido
+
+**Definición. Hibridación (enfoque híbrido).** Combinar de forma **deliberada** elementos predictivos y adaptativos según el **contexto** del mismo proyecto. Se detalla y se controla de forma formal lo que exige certeza (cumplimiento, datos maestros, hitos de financiamiento) y se itera lo que exige aprendizaje (interfaz, flujo de uso).
+
+**No es** «un poco de cada uno sin criterio» ni un tercer enfoque independiente. Es una **decisión**: qué partes del trabajo se planifican con CPM e hitos, y qué partes entran a un *backlog* por ciclo.
+
+Las mejores estrategias **no son fijas de una vez**: se revisan si el contexto cambia.
+
+1. **Análisis del contexto** — ¿el entorno y los requisitos son estables o volátiles?  
 2. **Hibridación** — predictivo donde hay certeza; adaptativo donde hay aprendizaje.  
-3. **Participación de interesados** — sin ellos no hay destino que ajustar.  
-4. **Evaluación continua** — el plan no se talla en piedra.
+3. **Participación de interesados** — sin revisión con quien usa o financia, el ajuste no tiene rumbo.  
+4. **Evaluación continua** — el plan se actualiza con control de cambios o con replanificación de ciclo; no se deja inmóvil si la evidencia lo contradice.
 
-**Recomendación defendible para el Caso 7 (IL1.3):**
+**En Kiran, un híbrido defendible:**
 
 ```
 CAPA PREDICTIVA (cumplimiento y datos maestros)
@@ -768,9 +801,9 @@ CAPA ADAPTATIVA (aprendizaje de terreno)
 
 Eso es un plan **contextualizado**: no «somos ágiles» ni «somos cascada».
 
-### 5.5 Herramientas según enfoque (puente a IL1.4)
+### 4.5 Herramientas según enfoque
 
-| Enfoque | Herramientas de la clase | Uso en el Caso 7 |
+| Enfoque | Herramientas | Uso en Kiran |
 |---|---|---|
 | Predictivo | MS Project, Gantt | Ruta crítica del piloto, hitos de subsidio |
 | Adaptativo | Jira, Trello, Asana | *Backlog* del tablero y de tickets |
@@ -778,21 +811,13 @@ Eso es un plan **contextualizado**: no «somos ágiles» ni «somos cascada».
 
 La herramienta **sigue** a la estrategia, no al revés.
 
-### 5.6 Actividad 1.3.2
+**Definición. Tailoring (adaptación de la dirección).** Ajustar **cuánto** proceso, documento y rigor se aplica según el tamaño, riesgo y contexto del proyecto. Un piloto de cuatro personas no copia todos los procesos de un programa corporativo; tampoco se queda en cero. El criterio es: lo suficiente para gobernar, no el máximo de plantillas.
 
-Equipos, 2 h, entrega + presentación, evalúa **IL1.3**.
+### 4.6 Para recordar
 
-1. Identificar enfoques (predictivo, adaptativo, **híbrido**).  
-2. Analizar necesidades del proyecto **y de la organización**.  
-3. Desarrollar estrategias con herramientas y técnicas.  
-4. Aplicarlas al caso.  
-5. Documentar y presentar.
+> Planificar es el soporte de la ejecución, también en ágil. **Predictivo** = requisitos estables, control por fases, Gantt/Project. **Adaptativo** = iteración, interesados cerca, Jira/Kanban. **Híbrido** = se detalla lo regulado y se itera lo que se aprende. La estrategia se argumenta con el **contexto de la organización**, no con la moda del equipo.
 
-### 5.7 Síntesis exigida 1.3
-
-> Planificar es la columna vertebral, también en ágil. **Predictivo** = requisitos estables, control por fases, Gantt/Project. **Adaptativo** = iteración, interesados cerca, Jira/Kanban. **Híbrido** = se congela lo regulado y se itera lo que se aprende. La estrategia se argumenta con el **contexto de la organización**, no con la moda del equipo.
-
-Preguntas de reflexión de la clase:
+Para pensar:
 
 1. ¿Cómo integrar predictivo y adaptativo en un solo proyecto?  
 2. ¿Qué papel juegan las herramientas tecnológicas?  
@@ -800,43 +825,126 @@ Preguntas de reflexión de la clase:
 
 ---
 
-## 6. Bloque 1.4 — Selección de herramientas (IL1.4)
+## 5. Selección de herramientas
 
-**Material en carpeta:** no está el PPT 1.4 ni la actividad 1.4.2.  
-**Material que sí obliga:** Programa (Act 1.4, 6 h), rúbrica Eva 1, herramientas nombradas en 1.3.1 y en la pauta.
+Elegir herramienta es una **decisión de planificación**, no de marca. Si no cubre el enfoque elegido (ruta crítica, o tablero de flujo, o ambos) o el equipo no puede operarla, el plan queda en un archivo que nadie actualiza. No se trata de reconocer logotipos: se trata de **usar** una y **justificar** por qué es la adecuada para *esta* organización.
 
-IL1.4 no pide reconocer logotipos. Pide **usar** la herramienta y **justificarla** según características y necesidades de la organización.
+**Definición. Selección de herramientas.** Proceso de identificar necesidades, comparar alternativas con criterios medibles, elegir e **implementar** el software (o el análogo) con el que se planifica y se sigue el trabajo.
 
-### 6.1 Qué pide Duoc
+### 5.1 Cinco pasos para elegir
 
-Recursos de la Eva 1: Office 365, **Microsoft Project**, **Project Libre**, etc. El pitch es **analógico** (pizarra, kraft, muro).
+No se parte por el logo. Se parte por el negocio.
 
-Criterio de rúbrica (nivel 100%): demuestra uso **y** justifica la selección. El oral vuelve a preguntar el «por qué».
+| # | Paso | Pregunta en Kiran |
+|---|---|---|
+| 1 | Definir las **necesidades del negocio** | ¿Hay que defender hitos a donantes *y* un flujo de tickets en terreno? |
+| 2 | Considerar la **facilidad de uso** | ¿El equipo puede operarla esta semana, sin una curva imposible? |
+| 3 | Evaluar la **capacidad de integración** | ¿Habla con Trello, Office y el XML de Project Libre, o queda aislada? |
+| 4 | Considerar **seguridad y privacidad** | ¿Dónde viven los datos de hogares? ¿Quién tiene cuenta? |
+| 5 | Evaluar **costo y retorno** | ¿La licencia de MS Project se come el techo del piloto, o Project Libre alcanza? |
 
-### 6.2 Menú y criterio de elección
+Elegir y **implementar** van juntos: una herramienta que nadie usa no cuenta.
 
-| Herramienta | En qué brilla | Límite | Argumento Caso 7 |
+### 5.2 Evaluar: razones claras, objetivas y medibles
+
+Evaluar una herramienta es conectarla con los **objetivos del proyecto**. Si no hay criterio, la elección es gusto.
+
+Criterios habituales:
+
+- facilidad de uso
+- costo
+- soporte técnico
+- capacidad de integración
+- personalización
+
+**Comparar** es mirar rendimiento **y** alineación con los objetivos. No «cuál es más famosa».
+
+Conviene mostrar **cómo** se decidió, no solo el nombre final. Más abajo: Project Libre + Trello + Office en Kiran.
+
+Nueve capacidades frecuentes en un software de gestión (no todas hacen falta en un piloto):
+
+1. Crear proyectos  
+2. Añadir tareas  
+3. Asignar tareas a personas  
+4. Ver avance  
+5. Calendario de tareas  
+6. Asignar recursos  
+7. Compartir archivos  
+8. Integrarse con otras herramientas  
+9. Ser escalable  
+
+Si una candidata no permite ver avance ni asignar recursos, no sirve para la línea base. Si no se integra, rompe el híbrido.
+
+### 5.3 Familias de herramientas
+
+Hay **tres familias**. No hay que usar una de cada una: hay que elegir la que cubre la necesidad del plan (cronograma, visualización de datos ya existentes, o comunicación del equipo).
+
+#### Gestión de proyectos (planificar y seguir el trabajo)
+
+| Herramienta | Para qué sirve | Límite | En Kiran |
 |---|---|---|---|
-| **Microsoft Project** | CPM, recursos, línea base, reportes a gerencia | Licencia y curva de aprendizaje | Si la empresa social o el *partner* ya lo usa |
-| **Project Libre** | Gantt, red, recursos, sin licencia comercial cara | Menos ecosistema corporativo | Si el piloto es de impacto y el presupuesto es acotado |
-| **Excel / Office 365** | EDT, presupuesto, diccionario, RACI simple | Se rompe con muchas dependencias | Complemento; insuficiente como única herramienta de ruta crítica |
-| **Jira** | *Backlog*, *sprints*, tickets | No reemplaza un Gantt de hitos para donantes | Capa adaptativa (tablero + mantención) |
-| **Trello / Asana** | Kanban simple, equipo pequeño | Poca ruta crítica, poca línea base | Equipo de cuatro que aún no necesita Jira |
-| **Pizarra / kraft** | Pitch de 15 min, entendimiento común | No es el plan oficial | **Obligatorio** en Eva 1 |
+| **Microsoft Project** | Tareas, recursos y cronogramas. Pensada para proyectos grandes y complejos. | Licencia y curva de aprendizaje | Si la organización ya la paga |
+| **Project Libre** | Misma familia (Gantt, red, recursos) sin licencia comercial cara. | Menos integraciones y comunidad que MS Project | Línea base del piloto |
+| **Asana** | Colaboración y transparencia en equipos chicos/medianos; interfaz simple para tareas. | Poca ruta crítica | Posible Kanban; el equipo ya usa Trello |
+| **Trello** | Tableros visuales; organizar y priorizar con flexibilidad. | No calcula CPM | Capa Scrum (backlog y sprint) |
+| **Jira** | *Sprints*, Kanban y tickets. | Puede ser exceso para un equipo muy chico | Si el flujo de tickets crece |
 
-### 6.3 Plantilla de justificación (informe)
+En el mercado también aparecen Basecamp y Wrike. Existen; no hace falta elegirlas si no cubren la necesidad o el enfoque del plan.
 
-> Se elige **Project Libre** para la línea base predictiva (EDT, precedencias, ruta crítica, recursos y costos del piloto) porque el equipo no cuenta con licencia de MS Project y el patrocinador exige ver hitos de subsidio. Se complementa con **tablero Kanban** (Trello o Jira) para la capa adaptativa del tablero y los tickets, porque el flujo de mantención se descubrirá en terreno. Office 365 queda para el diccionario de la EDT y el presupuesto. El kraft se usa en el pitch, no como fuente de verdad.
+#### Visualización de datos (entender números)
 
-Eso cubre IL1.4 y la pregunta 6 del banco oral.
+| Herramienta | Para qué sirve | En un piloto como Kiran |
+|---|---|---|
+| **Tableau** | Datos complejos → visuales interactivos para decidir | Útil cuando ya hay **operación y datos reales**, no para el plan vacío. |
+| **Power BI** | Paneles de Microsoft para monitorear rendimiento | Igual: monitoreo. Una hoja de cálculo alcanza para el plan preliminar. |
 
-### 6.4 Síntesis exigida 1.4
+Elegir Tableau «porque se ve profesional» sin dato de kits es un output vacío. El valor de Kiran es kit con estado verdadero.
 
-> La herramienta óptima es la que la **organización puede usar de verdad** y que cubre el enfoque elegido. En híbrido suele haber **dos** herramientas (línea base + flujo ágil), más el análogo para comunicar. Justificar es decir **contexto + restricción + para qué sirve cada una**, no «es la más popular».
+#### Colaboración (hablarse)
+
+Zoom, Microsoft Teams y Slack cubren la **colaboración**. La idea: sin coordinación el proyecto se cae; casi todos los equipos dependen de alguna herramienta para hablarse.
+
+En Kiran, las reuniones cortas caben en Teams. Eso no reemplaza Project Libre ni Trello: son familias distintas (comunicación frente a modelo de programación frente a flujo de trabajo).
+
+### 5.4 Implementar no es instalar y listo
+
+Métodos de implementación:
+
+1. **Capacitar** al equipo (quién abre el XML, quién mueve la tarjeta).  
+2. **Adaptar** procesos que ya existen (no inventar un ritual nuevo por cada app).  
+3. **Probar en pequeño** (un sprint, un Gantt) antes de declarar la herramienta oficial.
+
+Adopción: incentivos de uso y hábitos de actualización. Una licencia sin reuniones de seguimiento es **costo hundido**.
+
+La clase cierra: implementar bien es **invertir en la capacidad del equipo**, no en el logo.
+
+### 5.5 Ejemplo: cómo se decide en Kiran
+
+Aplicar los cinco pasos:
+
+1. **Negocio:** hitos a donantes (predictivo) + tickets de terreno (adaptativo).  
+2. **Facilidad:** equipo pequeño, sin curva de MS Project.  
+3. **Integración:** XML de Project Libre + tablero Trello + Word/Excel.  
+4. **Privacidad:** no subir bases de hogares a la nube de la herramienta; roles en Kiran (paquete 6.1).  
+5. **Costo/retorno:** Project Libre cubre CPM sin licencia; Trello alcanza para el Kanban.
+
+Plantilla para el informe:
+
+> Se elige **Project Libre** para la línea base predictiva (EDT, precedencias, ruta crítica, recursos y costos) porque no hay licencia de MS Project y hay que ver hitos de financiamiento. Se complementa con **Trello** para la capa adaptativa (tablero y tickets), porque el flujo de mantención se descubre en terreno. Una hoja de cálculo queda para el diccionario de la EDT y el presupuesto. Tableau o Power BI se dejan para cuando haya dato real de kits.
+
+### 5.6 Para recordar
+
+> La herramienta óptima es la que la **organización puede usar de verdad** y que cubre el enfoque elegido. Se elige con cinco criterios (negocio, uso, integración, privacidad, costo). Se evalúa con razones medibles. Se implementa con capacitación, adaptación y prueba piloto. En híbrido suele haber **dos** herramientas (línea base + flujo ágil), más el análogo para comunicar. Visualizar datos y colaborar son familias distintas: no se justifica Tableau si el problema era la ruta crítica.
+
+Para pensar:
+
+1. ¿Qué herramientas de planificación son más útiles para *este* proyecto de software?  
+2. ¿Cómo asegurar que el equipo las **elija y las use**?  
+3. ¿Qué desafíos aparecen al evaluar y seleccionar, y cómo se resuelven?
 
 ---
 
-## 7. El plan preliminar como sistema
+## 6. El plan como sistema
 
 ```
                     NECESIDAD DE NEGOCIO / CASO DE NEGOCIO
@@ -864,27 +972,24 @@ Eso cubre IL1.4 y la pregunta 6 del banco oral.
                      PLAN PRELIMINAR DEFENDIBLE
 ```
 
-Si una pieza falta, la rúbrica lo registra:
+Si una pieza falta, el plan no se sostiene:
 
 - sin exclusiones → alcance incompleto  
 - sin EDT → cronograma sin base  
 - sin ruta crítica → el plazo no tiene criterio técnico  
 - sin EEF → plan de laboratorio, no de industria  
-- sin enfoque → herramientas huérfanas  
-- sin justificación de herramienta → IL1.4 insuficiente  
+- sin enfoque → las herramientas no tienen criterio de selección  
+- sin justificación de herramienta → la elección no se puede defender  
 
 ---
 
-## 8. Caso 7 · síntesis aplicada
+## 7. Ejemplo aplicado: Kiran
 
-**Nombre del caso:** Provisión de energía sostenible en comunidades desfavorecidas.  
-**Producto del equipo:** **Kiran**.  
-**Equipo:** Giannina Guerrero (dirección y frontend), Nicolás Barra (backend), Ari Araya (infraestructura y nube), Skarlett Tropan (calidad e impacto).  
-**Contexto:** región desfavorecida de India, sin energía confiable; potencial solar; infraestructura débil. Financiamiento mixto (inversores de impacto, subsidios, *partners* tecnológicos).
+**Contexto.** Una empresa social impulsa un piloto de kits solares en una comunidad sin energía confiable. Financiamiento mixto (inversores de impacto, subsidios, *partners* tecnológicos). **Producto:** **Kiran**.
 
 **Problemas de negocio (no son el software):** falta de acceso a energía, desarrollo económico limitado, dependencia de fósiles.
 
-**Solución de software (proyecto GPY1102):** plataforma para registrar kits de una comunidad piloto, monitorear estado, gestionar mantención y generar reportes para la dirección e inversores. El software **no** resuelve por sí solo los tres problemas de negocio: los hace **operables** en un piloto.
+**Solución de software:** plataforma para registrar kits de una comunidad piloto, monitorear estado, gestionar mantención y generar reportes para la dirección e inversores. El software **no** resuelve por sí solo los problemas de negocio: los hace **operables** en un piloto.
 
 **Funcionalidades pedidas:**
 
@@ -893,18 +998,18 @@ Si una pieza falta, la rúbrica lo registra:
 3. Monitoreo y mantención (rendimiento + tickets + soporte local).  
 4. Impacto social y ambiental (informes periódicos a inversores y donantes).
 
-### 8.1 Borrador de enunciado de alcance
+### 7.1 Enunciado de alcance
 
 - **Producto:** Kiran, sistema web (con posible apoyo móvil o carga sin conexión) de operación de kits solares del piloto.
 - **Criterios de aceptación (ejemplos):** cada kit tiene hogar asociado y estado; un ticket se abre desde un kit en falla; un reporte periódico exportable llega a patrocinadores.
-- **Entregables:** módulos 1–4, capacitación breve al soporte local, documento de roles y privacidad, plan preliminar (esta Eva).
+- **Entregables:** módulos 1–4, capacitación breve al soporte local, documento de roles y privacidad, plan preliminar.
 - **Exclusiones:** fabricación e instalación de paneles, microfinanzas, expansión a otras regiones, aplicación ciudadana masiva.
 - **Restricciones:** presupuesto de piloto, conectividad, equipo de cuatro personas, fecha del primer reporte a donantes.
 - **Supuestos:** hay comunidad piloto identificada; hay al menos un técnico local; los inversores aceptan indicadores simples en esta fase.
 
-No inventar montos de subsidio, leyes indias ni datos de hogares que no estén en el caso.
+No se inventan montos de subsidio, leyes locales ni datos de hogares que el caso no entrega.
 
-### 8.2 EDT de primer nivel (ejemplo)
+### 7.2 EDT de primer nivel
 
 ```
 0. Kiran — piloto de operación de kits solares
@@ -919,176 +1024,102 @@ No inventar montos de subsidio, leyes indias ni datos de hogares que no estén e
 
 Los paquetes de trabajo viven debajo (p. ej. `2.1 Modelo de datos`, `2.2 Carga inicial`, `2.3 Estados del kit`).
 
-### 8.3 Lógica de ruta crítica (no son números finales)
+### 7.3 Lógica de la ruta crítica
 
 Camino largo probable:
 
 **datos maestros (inventario) → tablero que lee esos datos → tickets sobre kits reales → reporte de impacto que usa operación real.**
 
-Si el inventario se atrasa, el resto es una demostración vacía. Equivale, en lógica, al B–D–E–G del PPT.
+Si el inventario se atrasa, el resto es una demostración vacía. Es la misma lógica que B–D–E–G en el ejemplo de ruta crítica.
 
-### 8.4 Estrategia híbrida
+### 7.4 Estrategia híbrida
 
 Predictivo en inventario, privacidad y reportes (2, 6 y 5). Adaptativo en tablero y tickets (3 y 4). La dirección del proyecto (1) usa PMBOK 6 para integrar.
 
-### 8.5 Valor e interesados (lenguaje Eva 1; etiquetar PMBOK 7.ª)
+### 7.5 Valor e interesados (PMBOK 7.ª)
 
 Valor = kits observables + fallas atendibles + reportes creíbles.  
 No es valor = pantallas si el técnico no las usa o el donante no entiende el indicador.
 
 ---
 
-## 9. Eva Parcial 1 — de la unidad a la nota
-
-**Nombre:** Planificando un proyecto de software  
-**Cuándo:** semana 5 (el caso se elige en semana 4)  
-**Tiempo:** 5 horas · Sala de Proyectos  
-**Equipos:** sugeridos de 3; este grupo tiene 4 → **los cuatro hablan**  
-**Ponderación:** 30% del bloque de parciales (≈ 18% de la nota final)
-
-### 9.1 Dos dimensiones
-
-| Dimensión | Peso dentro de la Eva 1 | Carácter |
-|---|---|---|
-| Informe grupal (resumen ejecutivo) | **30%** | Grupal |
-| Presentación-defensa oral | **70%** | **Individual** (preguntas a cada integrante sobre **todas** las temáticas) |
-
-Formato informe: PDF, Arial o Times 12, interlineado 1.5, márgenes 2.5 cm, **máximo 7 planas**, citas **APA**. Apoyo del pitch: **analógico**.
-
-### 9.2 Contenido del informe (los cuatro IL)
-
-1. Alcance, recursos, cronograma; contexto y necesidades; plan inicial con herramientas de industria.  
-2. Factores ambientales y estándares; impacto en el caso; influencia del contexto organizacional.  
-3. Estrategias de planificación e integración **contextualizadas**.  
-4. Herramientas usadas en cada sección, **justificadas**.
-
-### 9.3 Niveles de logro
-
-| Nivel | % | Significado |
-|---|---|---|
-| Muy buen desempeño | 100 | Precisión y detalle técnico en todos los aspectos |
-| Buen desempeño | 80 | Claro, con omisiones o errores menores |
-| Aceptable | 60 | Básico; omisiones notables |
-| Incipiente | 30 | Errores graves; no competente |
-| No logrado | 0 | Ausente o incorrecto |
-
-### 9.4 Banco de preguntas del pitch
-
-1. ¿Cuál es el contexto y las necesidades de la organización?  
-2. ¿Cómo se determinaron alcance y recursos?  
-3. ¿Con qué criterio técnico se definió el cronograma?  
-4. ¿Qué beneficios dan las estrategias de planificación e integración?  
-5. ¿Qué elementos del contexto organizacional se incorporaron?  
-6. ¿Qué herramientas se usaron y por qué se eligieron?
-
-### 9.5 Lo que el oral mira (≈ 70%)
-
-- dominio de los componentes del plan **y** del contexto de la organización  
-- **aporte personal** a las estrategias (no «lo hizo el grupo»)  
-- justificación de herramientas según necesidades de la organización  
-- el visual **refuerza**; no es un dibujo decorativo  
-
----
-
-## 10. Glosario de la Unidad 1
+## 8. Glosario
 
 | Término | Definición de estudio |
 |---|---|
-| **Acta de constitución** | Documento que autoriza el proyecto y nombra al director o directora |
-| **Actividad** | Trabajo programable derivado, en general, de un paquete de trabajo |
-| **Adaptativo** | Enfoque iterativo e incremental; replanificación frecuente |
-| **Adelanto (*lead*)** | Solapamiento entre actividades |
-| **Alcance del producto** | Características y funciones del resultado |
-| **Alcance del proyecto** | Trabajo para entregar el producto, incluida la gestión |
-| **Caso de negocio** | Justificación de la inversión |
-| **CMMI** | Modelo de madurez de procesos de la organización |
-| **COBIT** | Marco de gobierno y control de TI |
-| **Contingencia** | Reserva para riesgos identificados |
-| **Costo directo / indirecto** | Atribuible a este proyecto / compartido entre varios |
-| **Costo fijo / variable** | Independiente / dependiente del volumen (en un rango) |
-| **Costo hundido** | Ya gastado; no debe decidir el futuro |
-| **Costo de oportunidad** | Valor de la alternativa no elegida |
-| **CPM** | Método de la ruta crítica; camino más largo |
-| **Criterios de aceptación** | Condiciones para dar por bueno un entregable |
-| **Cronograma** | Modelo de fechas planificadas e hitos |
-| **Cuenta de control** | Punto de medición integrada de alcance, plazo y costo |
-| **Descomposición** | Dividir el trabajo en partes manejables |
-| **Diagrama de red** | Representación de dependencias entre actividades |
-| **Diccionario de la EDT** | Ficha de cada componente (criterio, recursos, costo, hitos) |
-| **EDT / WBS** | Árbol del 100% del trabajo acordado |
-| **EEF** | Factor ambiental que el equipo no controla |
-| **Elaboración progresiva** | Detallar el plan cuando hay más información |
+| **Acta de constitución** | Documento que autoriza formalmente el proyecto, nombra al director o directora y le da autoridad para usar recursos |
+| **Actividad** | Trabajo programable (duración, predecesoras, recursos), derivado en general de un paquete de trabajo |
+| **Adaptativo** | Enfoque iterativo e incremental: plan de alto nivel y replanificación frecuente; no es ausencia de plan |
+| **Adelanto (*lead*)** | La sucesora puede empezar antes de que termine la predecesora (solapamiento permitido) |
+| **Alcance del producto** | Características y funciones del resultado (qué es el software o el bien) |
+| **Alcance del proyecto** | Todo el trabajo para entregar ese producto, incluida la gestión |
+| **Caso de negocio** | Justificación de la inversión: necesidad, opciones, costos, beneficios, recomendación |
+| **CMMI** | Modelo de madurez de **procesos de la organización**, no de un solo cronograma |
+| **COBIT** | Marco de gobierno y control de TI: quién decide y cómo se rinde cuentas |
+| **Control de cambios** | Proceso formal para aprobar o rechazar modificaciones a la línea base |
+| **Contingencia** | Reserva de dinero o tiempo para riesgos **identificados** |
+| **Costo directo / indirecto** | Atribuible a este proyecto / compartido entre varios proyectos |
+| **Costo fijo / variable** | Independiente / dependiente del volumen (dentro de un rango) |
+| **Costo hundido** | Ya gastado; no debe decidir si continuar |
+| **Costo de oportunidad** | Valor de la mejor alternativa no elegida |
+| **CPM** | Método que calcula la duración mínima y el camino más largo (ruta crítica), sin limitar recursos en el cálculo clásico |
+| **Criterios de aceptación** | Condiciones verificables para dar por bueno un entregable |
+| **Cronograma** | Modelo de fechas planificadas e hitos, no solo un dibujo de barras |
+| **Cuenta de control** | Punto de la EDT donde se miden juntos alcance, plazo y costo |
+| **Descomposición** | Dividir el trabajo en partes más pequeñas hasta poder estimar y asignar |
+| **Diagrama de red** | Representación de dependencias entre actividades; base del CPM |
+| **Diccionario de la EDT** | Ficha de cada componente: criterio, recursos, costo, hitos, responsable |
+| **EDT / WBS** | Descomposición jerárquica del 100% del trabajo acordado; lo que no está, no se hace |
+| **EEF** | Condición que el equipo no controla e influye en el proyecto (interna o externa) |
+| **Elaboración progresiva** | Detallar el plan cuando hay más información, **dentro** del alcance acordado |
 | **Enunciado del alcance** | Descripción de qué entra, qué no, criterios, supuestos y restricciones |
-| **Entregable** | Resultado verificable |
+| **Entregable** | Resultado verificable de un proceso, una fase o el proyecto |
 | **Exclusión** | Trabajo que explícitamente no se hará |
-| **Gantt** | Barras de tiempo para el equipo |
-| **Gobernanza** | Marco de autoridad y decisión (organización o proyecto) |
+| **Gantt** | Barras de tiempo para el equipo; una representación del modelo, no el modelo entero |
+| **Gobernanza** | Marco de autoridad y decisión (de toda la organización o de este proyecto) |
 | **Grupos de procesos (PMBOK 6)** | Inicio, planificación, ejecución, monitoreo y control, cierre |
-| **Híbrido** | Combinación deliberada de predictivo y adaptativo |
+| **Híbrido** | Combinación **deliberada** de predictivo y adaptativo según el contexto |
 | **Hito** | Evento significativo de duración cero |
-| **Holgura** | Tiempo que una actividad puede atrasarse sin mover el fin |
-| **Hundido** | Costo ya incurrido |
-| **Interesado** | Quien afecta o se percibe afectado |
-| **ISO/IEC 27701** | Extensión de privacidad sobre seguridad de la información |
-| **ITIL** | Prácticas de gestión de **servicio** |
-| **OPA** | Activos de proceso de la organización (plantillas, lecciones) |
-| **Outcome / output** | Efecto / producto del trabajo |
+| **Holgura** | Tiempo que una actividad puede atrasarse sin mover la fecha de término |
+| **Hundido** | Costo ya incurrido (ver costo hundido) |
+| **Interesado** | Quien afecta, es afectado o se percibe afectado por el proyecto |
+| **ISO/IEC 27701** | Estándar de gestión de privacidad, extensión de la familia ISO 27000; no es una ley |
+| **ITIL** | Prácticas de gestión de **servicio en operación**, no de dirección de proyectos |
+| **OPA** | Activos internos que el equipo sí usa: plantillas, lecciones, repositorios |
+| **Outcome / output** | Efecto en el uso / producto observable del trabajo |
 | **Paquete de planificación** | Trabajo conocido sin actividades aún detalladas |
-| **Paquete de trabajo** | Nivel más bajo de la EDT, estimable y asignable |
-| **PERT** | (O + 4M + P) / 6; desviación (P − O) / 6 |
-| **PMBOK 6.ª** | Guía oficial del ramo para dirigir el proyecto |
-| **Predictivo** | Plan detallado al inicio; fases secuenciales |
-| **Presupuesto** | Suma autorizada para ejecutar el trabajo |
-| **Proyecto** | Esfuerzo temporal para un resultado único |
-| **RBS** | Estructura de desglose de recursos |
-| **Requisito** | Condición o capacidad que debe cumplirse |
-| **Restricción** | Límite obligatorio (presupuesto, plazo, ley, tecnología) |
-| **Retraso (*lag*)** | Espera entre actividades |
-| **Ruta crítica** | Camino más largo; manda la fecha de término |
-| **Scope creep** | Crecimiento de alcance sin control de cambios |
-| **Scrum / SBOK** | Marco / guía adaptativos (biblio oficial del ramo) |
-| **Supuesto** | Factor dado por cierto; si falla, hay riesgo |
-| **Tailoring** | Ajustar el rigor de la gestión al contexto (idea; no citar 8.ª en el informe) |
-| **Técnica Delphi** | Consenso anónimo de expertos por rondas |
-| **Triple restricción** | Alcance, tiempo y costo (calidad transversal) |
-| **Valor** | Beneficio real ponderado; no se agota en el entregable |
+| **Paquete de trabajo** | Nivel más bajo de la EDT: estimable, asignable, con duración y costo |
+| **PERT** | Duración esperada (O + 4M + P) / 6; desviación (P − O) / 6; para incertidumbre |
+| **PMBOK 6.ª** | Guía de fundamentos para dirigir **el proyecto** (procesos y áreas de conocimiento) |
+| **Predictivo** | Plan detallado al inicio; fases secuenciales; cambios con control formal |
+| **Presupuesto** | Suma **autorizada** para ejecutar el trabajo (la estimación aprobada) |
+| **Proyecto** | Esfuerzo temporal para un resultado único; termina; no es operación |
+| **RBS** | Desglose de recursos: primero tipo, después cantidad y disponibilidad |
+| **Retorno de la inversión (ROI)** | Si el costo de la herramienta (o del proyecto) se justifica con el beneficio |
+| **Requisito** | Condición o capacidad verificable que debe cumplirse |
+| **Restricción** | Límite obligatorio sobre el trabajo que sí entra (plazo, presupuesto, ley) |
+| **Retraso (*lag*)** | Espera impuesta entre el fin de una actividad y el inicio de otra |
+| **Ruta crítica** | Camino más largo; determina la fecha de término |
+| **Scope creep** | Crecimiento de alcance sin control de cambios ni ajuste de triple restricción |
+| **Scrum** | Marco adaptativo de roles, eventos y artefactos para incrementos en ciclos cortos |
+| **Supuesto** | Factor dado por cierto para planificar; si falla, hay riesgo |
+| **Tailoring** | Ajustar el rigor de la gestión al contexto (no copiar todos los procesos «por si acaso») |
+| **Técnica Delphi** | Consenso anónimo de expertos por rondas, para reducir sesgo de autoridad |
+| **Triple restricción** | Relación entre alcance, tiempo y costo (calidad transversal) |
+| **Valor** | Beneficio real ponderado frente a costo, tiempo y riesgo; no se agota en el entregable |
 
 ---
 
-## 11. Banco corto de respuestas orales
+## 9. Autoevaluación
 
-Practicar **en voz alta**. Sustituir números cuando el equipo tenga Gantt real. No leer en la Eva.
-
-**1. Contexto y necesidades.**  
-«Es una empresa social que impulsa un piloto de kits solares en una comunidad de India sin energía confiable. El software no instala paneles: opera inventario, tablero, mantención y reportes de impacto para inversores y donantes.»
-
-**2. Alcance y recursos.**  
-«El alcance se descompuso en EDT: inventario, tablero, tickets, impacto, privacidad y capacitación. Se excluyen fabricación e instalación. Recursos: equipo de desarrollo reducido, soporte local, nube y reserva de contingencia. Cada paquete del diccionario tiene responsable y criterio de aceptación.»
-
-**3. Criterio del cronograma.**  
-«De la EDT salieron actividades y precedencias. El inventario alimenta el tablero, los tickets y el reporte; ese es el camino más largo, la ruta crítica. Se usa lógica CPM; donde hay incertidumbre de terreno, PERT. A gerencia se muestran hitos; al equipo, Gantt.»
-
-**4. Beneficios de la estrategia.**  
-«Híbrido: se congelan datos maestros, privacidad y calendario de donantes (predictivo) para no fallar cumplimiento. Se iteran tablero y tickets (adaptativo) porque el técnico local corregirá el flujo. Así el plan se integra a una organización que debe ser flexible en terreno y estricta con financiamiento de terceros.»
-
-**5. Contexto organizacional incorporado.**  
-«Financiamiento mixto implica hitos de reporte. Distancia geográfica y cultura comunitaria implican supuestos de conectividad y una interfaz simple. La gobernanza de inversores entra al plan de interesados y de comunicaciones, no al final.»
-
-**6. Herramientas.**  
-«Project Libre o MS Project para línea base y ruta crítica, porque hay que defender el plazo del piloto. Kanban para el trabajo semanal adaptativo. Office para diccionario y costos. Kraft solo para explicar en quince minutos. La elección responde a licencia, tamaño del equipo y doble audiencia: donantes y desarrollo.»
-
----
-
-## 12. Autoevaluación (sin apuntes)
-
-Si una respuesta no sale en 60 segundos, volver al bloque.
+Si una respuesta no sale, volver al apartado.
 
 1. Nombre los seis mínimos del enunciado de alcance.  
 2. Diferencie paquete de trabajo, paquete de planificación y cuenta de control.  
-3. ¿Qué cubre el diccionario de la EDT que el árbol no cubre?  
+3. ¿Qué cubre el diccionario de la EDT que la estructura jerárquica sola no cubre?  
 4. En el ejemplo de clase, ¿cuál es la ruta crítica y cuánto dura el proyecto?  
 5. Calcule PERT con O = 4, M = 7, P = 16.  
-6. Fórmulas de EF, LS y holgura según la lámina.  
+6. Fórmulas de EF, LS y holgura.  
 7. Seis tipos de costo, con un ejemplo cada uno.  
 8. EEF interno frente a externo: tres de cada lado.  
 9. EEF frente a OPA, en una frase.  
@@ -1096,13 +1127,16 @@ Si una respuesta no sale en 60 segundos, volver al bloque.
 11. Según la tabla de clase: ¿ITIL se enfoca en proyectos? ¿PMBOK en operación de servicio?  
 12. Tres aportes de ISO/IEC 27701.  
 13. Predictivo frente a adaptativo: una ventaja y una desventaja de cada uno.  
-14. Proponga el híbrido del Caso 7 en dos capas.  
+14. Proponga el híbrido de Kiran en dos capas.  
 15. ¿Qué documento autoriza el proyecto?  
-16. Output frente a outcome frente a valor, con el Caso 7.  
-17. Nombre cinco tipos de interesado del Caso 7.  
-18. ¿Por qué el oral vale 70% y qué ocurre si solo se estudió «la parte propia»?  
+16. Output frente a outcome frente a valor, con Kiran.  
+17. Nombre cinco tipos de interesado de Kiran.  
+18. ¿Por qué no basta con un Gantt si faltan exclusiones o EEF?  
 19. Justifique una herramienta para **esta** organización, no en abstracto.  
-20. ¿Qué queda **fuera** del Caso 7 y por qué hay que escribirlo?
+20. ¿Qué queda **fuera** de Kiran y por qué hay que escribirlo?  
+21. En el RBS, ¿qué se hace primero: el tipo o la cantidad?  
+22. ¿Cuándo predictivo y cuándo adaptativo?  
+23. Nombre los cinco pasos para elegir una herramienta y un criterio de evaluación.
 
 ### Clave breve
 
@@ -1123,13 +1157,16 @@ Si una respuesta no sale en 60 segundos, volver al bloque.
 15. Acta de constitución.  
 16. Plataforma / kits atendibles / energía e informes creíbles.  
 17. Inversores, subsidio, comunidad, soporte local, equipo, dirección, *partner* tecnológico.  
-18. La rúbrica evalúa dominio **individual** de **toda** la unidad.  
+18. El plan queda incompleto: el Gantt no reemplaza alcance, EDT ni entorno.  
 19. Licencia + audiencia (donantes frente a desarrollo) + enfoque híbrido.  
-20. Fabricar e instalar paneles: si no se excluye, el alcance se infla.
+20. Fabricar e instalar paneles: si no se excluye, el alcance se infla.  
+21. Primero el tipo; después la cantidad, que se suma hacia arriba.  
+22. Predictivo: requisitos estables. Adaptativo: entorno incerto o innovador.  
+23. Negocio, facilidad de uso, integración, privacidad, costo/retorno. Criterio: uso, costo, soporte, integración o personalización.
 
 ---
 
-## 13. Referencias (clases + programa)
+## 10. Referencias
 
 1. Project Management Institute. (2017). *Guía de los fundamentos para la dirección de proyectos (Guía del PMBOK)* (6.ª ed.).  
 2. Wysocki, R. K. (2019). *Effective project management: Traditional, agile, extreme, hybrid* (8th ed.). Wiley.  
@@ -1137,10 +1174,10 @@ Si una respuesta no sale en 60 segundos, volver al bloque.
 4. Peters, L. J. (2024). *Software project management: Methods and techniques*. CRC Press.  
 5. SCRUMstudy. (2023). *Guía SBOK* (4.ª ed., español).  
 6. Baud, J.-L. (2020). *ITIL 4: Entender el enfoque y adoptar las buenas prácticas*. ENI.  
-7. PMI. (2021). *Guía del PMBOK* (7.ª ed.) — solo el extracto de valor e interesados usado en Eva 1.
+7. PMI. (2021). *Guía del PMBOK* (7.ª ed.) — valor e interesados.
 
 ---
 
-## 14. Cierre
+## 11. Cierre
 
-Planificar un proyecto de software en este ramo es producir un plan que la **organización pueda usar**: autorizado (acta), limitado (alcance y exclusiones), descompuesto (EDT), fechado con criterio (ruta crítica), costoso de forma honesta (tipos de costo y contingencia), situado en su entorno (EEF y estándares), con una forma de avanzar (predictivo, adaptativo o híbrido) y con una herramienta justificada. El Caso 7 es ese plan, no un relato sobre paneles solares. La Eva 1 se gana en la pizarra, con dominio individual de toda la unidad.
+Planificar un proyecto de software es producir un plan que la **organización pueda usar**: autorizado (acta), limitado (alcance y exclusiones), descompuesto (EDT), fechado con criterio (ruta crítica), costoso de forma honesta (tipos de costo y contingencia), situado en su entorno (EEF y estándares), con una forma de avanzar (predictivo, adaptativo o híbrido) y con una herramienta justificada. Kiran es ese plan aplicado: no un relato sobre paneles solares.

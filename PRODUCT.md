@@ -1,7 +1,8 @@
 # PRODUCT.md — Kiran
 
 **Producto:** Kiran  
-**Asignatura:** GPY1102 Gestión de Proyectos de Software · Duoc UC
+**Asignatura:** GPY1102 Gestión de Proyectos de Software · Duoc UC  
+**Docente:** Juan Bautista Sáez Fernández
 
 ## Job to be done
 
@@ -54,7 +55,9 @@ KPI de valor (más adelante): tiempo entre falla reportada y ticket cerrado, y u
 Híbrido:
 
 - **Predictivo:** inventario, estados, privacidad, calendario de reportes
-- **Adaptativo:** tablero y flujo de tickets (se aprende en terreno)
+- **Adaptativo (Scrum):** Sprint 0 (habilitador) + S1–S4 de tablero y tickets, con 20 % de capacidad sin comprometer
+
+La receta no se improvisa. La forma de servirla, sí. El margen de fallo no se pega a la ruta crítica: es holgura en caminos paralelos, PERT en terreno y alcance que flexiona. Detalle: `evaluaciones/eva-01/planificacion/capa-scrum.md`.
 
 ## Glossary
 

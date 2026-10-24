@@ -4,7 +4,7 @@
 |---|---|---|---|---|
 | Giannina Guerrero | Directora del proyecto y frontend | ninnarouge | Alcance, tablero, repo | Dueña del repositorio |
 | Nicolás Barra | Backend | _pendiente_ | Datos, inventario, tickets | Invitar cuando tenga usuario |
-| Ari Araya | Infraestructura y nube | _pendiente_ | Ambientes, despliegue, hosting | Invitar cuando tenga usuario |
+| Ari Araya | Infraestructura y nube | KhanIvall | Ambientes, despliegue, hosting | Colaborador con Write |
 | Skarlett Tropan | Calidad e impacto | _pendiente_ | Pruebas, reportes, capacitación | Invitar cuando tenga usuario |
 
 ## Cómo invitar (dueña del repo)

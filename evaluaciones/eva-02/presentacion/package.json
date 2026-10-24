@@ -1,0 +1,12 @@
+{
+  "name": "presentacion",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.28 present .",
+    "studio": "npx --yes hyperframes@0.8.28 preview",
+    "check": "npx --yes hyperframes@0.8.28 check",
+    "snapshot": "npx --yes hyperframes@0.8.28 snapshot",
+    "publish": "npx --yes hyperframes@0.8.28 publish"
+  }
+}

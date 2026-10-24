@@ -9,6 +9,7 @@ Resumen operativo para el equipo. La rúbrica oficial vive en Canvas / maleta di
 | Semana | 5 (el caso se elige en la 4) |
 | Tiempo | 5 horas, Sala de Proyectos |
 | Equipo | 3 sugeridas; somos 4 → **los cuatro hablan** en el oral |
+| Docente | Juan Bautista Sáez Fernández |
 | Peso | 30% del bloque de parciales (≈ 18% de la nota final del ramo) |
 
 ## Qué se entrega
@@ -38,12 +39,14 @@ Dentro de la Eva 1: informe **30%** · oral **70%**.
 
 ## Archivos de entrega en este repo
 
-Carpeta `evaluaciones/eva-01/`:
+Carpeta `evaluaciones/eva-01/` (única fuente; no uses `Eva 01/` en la raíz):
 
 - `informe/`: documentos propios del informe ejecutivo (`Informe-Ejecutivo-Eva01.docx`, alcance/EDT).
-- `planificacion/`: `Cronograma-Kiran.xml` (Project Libre), Gantt HTML y CSV.
+- `informe/insumos/`: textos del equipo para armar el Word (un archivo por pedazo).
+- `planificacion/`: `Cronograma-Kiran.xml` (Project Libre), Gantt HTML, CSV y capa Scrum.
 - `marca/`: identidad visual de Kiran y recursos para el pitch.
 - `pitch/`: guion de las 6 preguntas del oral.
+- `presentacion/`: deck interactivo del oral.
 
 El material oficial de Duoc se mantiene en `material-oficial/`, carpeta local
 ignorada por Git. No se publica la rúbrica ni material de la maleta didáctica.
