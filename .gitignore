@@ -63,3 +63,7 @@ evaluaciones/eva-01/marca/publicidad-kiran-foto-v2.png
 ~$*
 *.tmp
 *.bak
+
+evaluaciones/eva-03/Contexto/
+# Respaldos locales de versiones previas
+**/_anteriores/

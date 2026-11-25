@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiran · Evaluación III · Láminas 1 y 3 · Giannina Guerrero</title>
+<style>
+/* Sistema visual Kiran Signal (mismo de la Evaluación II). Tipografías locales: funciona sin conexión. */
+@font-face{font-family:'IBM Plex Mono';font-weight:400;font-display:block;src:url('assets/fonts/IBMPlexMono-d196e8.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Mono';font-weight:500;font-display:block;src:url('assets/fonts/IBMPlexMono-a7544c.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Sans';font-weight:400 600;font-display:block;src:url('assets/fonts/IBMPlexSans-a68a20.woff2') format('woff2');}
+@font-face{font-family:'Montserrat';font-weight:500 800;font-display:block;src:url('assets/fonts/Montserrat-e56e84.woff2') format('woff2');}
+:root{
+  --navy:#10263d; --navy-deep:#0a1520; --amber:#e59a24; --amber-ink:#8a5208;
+  --paper:#f7f3ea; --ivory:#f3eee4; --surface:#fbf8f2; --muted:#5a6b79;
+  --line:#d2c6b4; --line-soft:#e4d9c8; --amber-soft:#f3e2c0; --tint:rgba(16,38,61,.045);
+  --ok-ink:#2c6650; --alert-ink:#93432f; --r:2px;
+  --shadow:0 1px 0 rgba(16,38,61,.04),0 18px 36px -28px rgba(16,38,61,.42);
+  --font-display:"Montserrat","Segoe UI",sans-serif; --font-body:"IBM Plex Sans","Segoe UI",sans-serif; --font-data:"IBM Plex Mono","Consolas",monospace;
+  --fit:1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--navy-deep);overflow:hidden}
+body{font-family:var(--font-body);color:var(--navy);-webkit-font-smoothing:antialiased}
+.deck{position:fixed;inset:0;display:grid;place-items:center}
+.slide{position:absolute;left:50%;top:50%;width:1920px;height:1080px;margin:-540px 0 0 -960px;transform:scale(var(--fit));background:var(--paper);display:none;overflow:hidden}
+.slide.on{display:block}
+.frame{position:absolute;inset:0;display:flex;flex-direction:column;padding:44px 88px 68px}
+.topline{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line);color:var(--muted);font:500 16px/1 var(--font-data);letter-spacing:.16em;text-transform:uppercase;margin-bottom:32px}
+.section-tag{display:inline-flex;align-items:center;gap:16px;color:var(--navy)}
+.section-tag::before{content:"";width:32px;height:2px;background:var(--amber)}
+.tl-right{display:inline-flex;align-items:center;gap:18px}
+.tl-k{width:26px;height:26px}
+h2{font:700 48px/1.12 var(--font-display);letter-spacing:-.026em;color:var(--navy);max-width:1600px;margin-bottom:30px}
+.presenter{position:absolute;left:96px;bottom:30px;color:rgba(16,38,61,.55);font:500 15px/1 var(--font-data);letter-spacing:.16em;text-transform:uppercase}
+.caption{margin-top:14px;color:var(--muted);font:400 18px/1.35 var(--font-body)}
+.capno{font-weight:600;color:var(--navy);margin-right:10px}
+.ki{display:inline-flex;flex:0 0 auto;width:26px;height:26px;color:var(--amber-ink)}
+.ki svg{width:100%;height:100%;overflow:visible}
+.ki svg>*{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Lámina 1: mapa de integración ---------- */
+.map{position:relative;width:1744px;height:748px;flex:0 0 auto}
+.wires{position:absolute;left:0;top:0;overflow:visible;z-index:1}
+.wires .a{fill:none;stroke:var(--navy);stroke-width:2}
+.wires .amb{stroke:var(--amber)}
+.wires .thick{stroke-width:3}
+.wires .dash{stroke-dasharray:7 6}
+.wires .frontier{fill:none;stroke:var(--amber-ink);stroke-width:2;stroke-dasharray:3 6;stroke-linecap:round}
+.lab{position:absolute;left:0;width:184px;display:flex;flex-direction:column;justify-content:center;gap:6px;padding-left:16px;border-left:2px solid var(--line)}
+.lab strong{font:700 21px/1.1 var(--font-display);letter-spacing:-.01em;color:var(--navy)}
+.lab span{font:500 13px/1.25 var(--font-data);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.lab.core{border-left-color:var(--amber)}
+.lab.core strong{letter-spacing:.14em;text-transform:uppercase}
+.lane-band{position:absolute;background:var(--tint);border-radius:var(--r);z-index:0}
+.node{position:absolute;z-index:2;background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);box-shadow:var(--shadow);padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.n-head{display:flex;align-items:center;gap:10px}
+.n-head strong{font:700 20px/1.15 var(--font-display);letter-spacing:-.015em;color:var(--navy)}
+.n-head .ki{width:24px;height:24px}
+.node p{font:400 17px/1.36 var(--font-body);color:var(--muted)}
+.n-num{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fbf8f2;display:grid;place-items:center;font:700 15px/1 var(--font-display)}
+.n-num.sm{width:26px;height:26px;font-size:13px}
+.node.field{background:#fffdf8}
+.node.field .n-head strong{font-size:19px}
+.node.core{border:2px solid var(--amber);background:#fffaf0;padding:18px 18px}
+.node.core .n-num{background:var(--amber);color:var(--navy-deep)}
+.node.core .n-head strong{font-size:22px}
+.node.core p{color:#3d4f5e}
+.node.org{background:var(--surface);border-left:4px solid var(--navy);justify-content:center;gap:8px}
+.node.org .ki{color:var(--navy)}
+.node.org.ind{border-left-style:dashed}
+.tool{position:absolute;z-index:2;display:flex;align-items:center;gap:14px;padding:0 18px;background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r)}
+.tool .ki{width:28px;height:28px;color:var(--navy)}
+.tool strong{display:block;font:700 19px/1.15 var(--font-display);color:var(--navy);white-space:nowrap}
+.tool span{display:block;font:400 15px/1.3 var(--font-body);color:var(--muted);margin-top:4px}
+.hitos{position:absolute;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:0 4px}
+.hitos .k{display:inline-flex;align-items:center;gap:10px;font:500 14px/1 var(--font-data);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hitos .k .ki{width:22px;height:22px}
+.hrow{display:flex;gap:8px}
+.hrow em{flex:1;font:600 16px/1 var(--font-data);font-style:normal;text-align:center;padding:10px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--navy)}
+.hrow em.end{background:var(--navy);color:#fbf8f2;border-color:var(--navy)}
+.base{position:absolute;z-index:2;display:flex;align-items:center;gap:12px;padding:0 18px;background:var(--navy);color:#e7edf1;border-radius:var(--r)}
+.base .n-num{background:var(--amber);color:var(--navy-deep)}
+.base .ki{width:22px;height:22px;color:var(--amber)}
+.base strong{font:700 19px/1 var(--font-display);color:#fbf8f2;margin-right:22px;white-space:nowrap}
+.base span{font:500 15px/1 var(--font-data);letter-spacing:.06em;color:#c5d0d8;padding:0 22px;border-left:1px solid rgba(255,255,255,.22);white-space:nowrap}
+.node.trans{border:2px solid var(--navy);background:var(--surface)}
+.node.trans .n-head strong{font-size:21px}
+.tl{list-style:none;display:flex;flex-direction:column;gap:0;margin-top:2px}
+.tl li{position:relative;padding:12px 0 12px 22px;border-top:1px solid var(--line-soft)}
+.tl li::before{content:"";position:absolute;left:2px;top:19px;width:9px;height:9px;border-radius:1px;background:var(--amber)}
+.tl strong{display:block;font:700 18px/1.2 var(--font-display);color:var(--navy)}
+.tl span{display:block;font:400 16px/1.35 var(--font-body);color:var(--muted);margin-top:4px}
+.node.ops{background:var(--navy);border-color:var(--navy);justify-content:center}
+.node.ops .n-head strong{color:#fbf8f2;font-size:22px}
+.node.ops .ki{color:var(--amber)}
+.node.ops p{color:#d7dfe5}
+.atag{position:absolute;z-index:3;font:500 14px/1 var(--font-data);letter-spacing:.06em;color:var(--navy);background:var(--paper);padding:3px 6px;white-space:nowrap}
+.atag.left{transform:translateX(-100%)}
+.atag.front{color:var(--amber-ink);background:var(--paper)}
+
+/* ---------- Lámina 3: plantilla de lecciones ---------- */
+.l3{flex:1 1 auto;display:grid;grid-template-columns:1fr 640px;gap:32px;min-height:0}
+.l3-left{display:flex;flex-direction:column;gap:24px;min-height:0}
+.l3-right{display:flex;flex-direction:column;gap:16px;min-height:0}
+.kick{display:inline-flex;align-items:center;gap:12px;font:500 16px/1.25 var(--font-data);letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+.kick.plain{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);box-shadow:var(--shadow);padding:24px 28px}
+.results{display:flex;flex-direction:column;gap:14px}
+.res-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.res{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;background:var(--tint);border-radius:var(--r)}
+.res strong{display:block;font:700 20px/1.15 var(--font-display);color:var(--navy)}
+.res span{display:block;margin-top:6px;font:400 17px/1.35 var(--font-body);color:var(--muted)}
+.cols{flex:1 1 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;min-height:0}
+.col{display:flex;flex-direction:column;gap:14px}
+.col .kick{padding-bottom:14px;border-bottom:1px solid var(--line-soft);font-size:15px;letter-spacing:.1em;white-space:nowrap}
+.col.ok .kick{color:var(--ok-ink)} .col.ok .ki{color:var(--ok-ink)}
+.col.no .kick{color:var(--alert-ink)} .col.no .ki{color:var(--alert-ink)}
+.col.imp .kick{color:var(--amber-ink)}
+.guide{font:400 italic 17px/1.4 var(--font-body);color:#8693a0}
+.ln{display:block;height:0;border-bottom:1px dashed var(--line);margin-top:34px}
+.col .ln:first-of-type{margin-top:18px}
+.people{flex:1 1 auto;display:grid;grid-template-rows:repeat(4,1fr);gap:12px;min-height:0}
+.person{display:flex;flex-direction:column;gap:8px;padding:16px 22px;box-shadow:none}
+.person .who{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.person .who strong{font:700 19px/1.1 var(--font-display);color:var(--navy)}
+.person .who span{font:500 12px/1 var(--font-data);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.person .ln{margin-top:22px}
+.person .guide{font-size:15px}
+.person.filled{border-left:4px solid var(--amber);background:#fffaf0}
+.mine{font:400 16.5px/1.4 var(--font-body);color:var(--navy)}
+
+/* ---------- Navegación y modos ---------- */
+.nav{position:fixed;right:24px;bottom:20px;display:flex;align-items:center;gap:10px;font:500 13px/1 var(--font-data);letter-spacing:.12em;text-transform:uppercase;color:#c5d0d8;z-index:10}
+.nav button{width:34px;height:34px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#e7edf1;font-size:20px;border-radius:2px;cursor:pointer}
+html.solo .nav{display:none}
+@media print{
+  @page{size:1920px 1080px;margin:0}
+  html,body{overflow:visible;background:var(--paper);height:auto}
+  .deck{position:static;display:block}
+  .slide{position:relative;left:auto;top:auto;margin:0;transform:none;display:block!important;page-break-after:always;break-after:page}
+  .nav{display:none}
+}
+
+.write{flex:1 1 auto;min-height:40px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 39px,var(--line) 39px,var(--line) 40px);background-position:0 6px;opacity:.9;
+  -webkit-mask:repeating-linear-gradient(to right,#000 0 6px,transparent 6px 10px);mask:repeating-linear-gradient(to right,#000 0 6px,transparent 6px 10px)}
+.person .write{background:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--line) 31px,var(--line) 32px)}
+.l3{grid-template-columns:1fr 620px}
+.base span{padding:0 18px}
+
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide" id="l1" data-n="1" aria-label="Lámina 1. Gestión de la integración">
+  <div class="frame">
+    <div class="topline"><span class="section-tag">01 · Integración</span><span class="tl-right">Gestión de la integración del proyecto<img src="assets/kiran-isotipo.svg" alt="" class="tl-k"></span></div>
+    <h2>Kiran une el terreno con las decisiones de la empresa social.</h2>
+    <div class="map">
+      <div class="lab" style="top:0px;height:104px"><strong>Dirección del proyecto</strong><span>1 · Control</span></div><div class="lab" style="top:140px;height:150px"><strong>Terreno</strong><span>Soporte y técnico local</span></div><div class="lab core" style="top:334px;height:170px"><strong>Kiran</strong><span>Software del piloto</span></div><div class="lab" style="top:548px;height:118px"><strong>Organización</strong><span>Quién decide y recibe</span></div><div class="lab" style="top:694px;height:54px"><strong>Base técnica</strong></div>
+      <svg class="wires" viewBox="0 0 1744 748" width="1744" height="748" aria-hidden="true"><defs><marker id="m-navy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#10263d"/></marker><marker id="m-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#e59a24"/></marker></defs><path class="a amb thick" d="M491 419.0 L523 419.0" marker-end="url(#m-amber)"/><path class="a amb thick" d="M796 419.0 L828 419.0" marker-end="url(#m-amber)"/><path class="a amb thick" d="M1101 419.0 L1133 419.0" marker-end="url(#m-amber)"/><path class="a amb thick" d="M1406 419.0 L1442 419.0" marker-end="url(#m-amber)"/><path class="a" d="M356.5 292 L356.5 328" marker-end="url(#m-navy)"/><path class="a" d="M661.5 332 L661.5 296" marker-end="url(#m-navy)"/><path class="a" d="M932.5 332 L932.5 296" marker-end="url(#m-navy)"/><path class="a" d="M1000.5 292 L1000.5 328" marker-end="url(#m-navy)"/><path class="a" d="M1271.5 292 L1271.5 328" marker-end="url(#m-navy)"/><path class="a" d="M661.5 506 L661.5 542" marker-end="url(#m-navy)"/><path class="a dash" d="M966.5 506 L966.5 542" marker-end="url(#m-navy)"/><path class="a" d="M1271.5 506 L1271.5 542" marker-end="url(#m-navy)"/><path class="a amb dash" d="M212 52.0 H200 V419.0 H218" marker-end="url(#m-amber)"/><path class="a navy thick" d="M1492 506 L1492 542" marker-end="url(#m-navy)"/><path class="frontier" d="M1448 526.0 H1744"/></svg>
+      <div class="tool" style="left:224px;top:14px;width:265px;height:76px"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 3.5v17"/><path d="M6.5 7h8"/><path d="M9 12h9.5"/><path d="M12 17h6"/></svg></i><div><strong>Project Libre</strong><span>Fechas, ruta crítica e hitos</span></div></div><div class="tool" style="left:529px;top:14px;width:265px;height:76px"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M9.2 4v16"/><path d="M14.8 4v16"/><path d="M5.6 8h1.6"/><path d="M11.2 8h1.6"/><path d="M11.2 11.5h1.6"/><path d="M16.8 8h1.6"/></svg></i><div><strong>Trello</strong><span>Sprint, trabajo en curso y bloqueos</span></div></div><div class="tool" style="left:834px;top:14px;width:265px;height:76px"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M3.5 9h17"/><path d="M3.5 14.5h17"/><path d="M9.5 4v16"/></svg></i><div><strong>Excel financiero</strong><span>Gasto quincenal e indicadores</span></div></div><div class="tool" style="left:1139px;top:14px;width:265px;height:76px"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><path d="M6 8v3a4 4 0 0 0 4 4h8"/><path d="M15 12l3 3-3 3"/><path d="M6 8v12"/></svg></i><div><strong>Registro de cambios</strong><span>Evaluado antes de construir</span></div></div><div class="lane-band ctl" style="left:212px;top:0px;width:1208px;height:104px"></div><div class="hitos" style="left:1448px;top:0px;width:296px;height:104px"><span class="k"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.5 21V3.5"/><path d="M5.5 4.5h11.5l-2.4 4 2.4 4H5.5"/></svg></i>Hitos cumplidos</span><div class="hrow"><em>19 oct</em><em>9 nov</em><em>4 dic</em><em class="end">9 dic</em></div></div><div class="node field" style="left:224px;top:140px;width:265px;height:150px"><div class="n-head"><strong>Registra el estado del kit</strong></div><p>Activo, en falla o de baja. Carga por lotes cuando no hay señal.</p></div><div class="node field" style="left:529px;top:140px;width:265px;height:150px"><div class="n-head"><strong>Prioriza lo que está caído</strong></div><p>El soporte local ve cada kit y su estado en el tablero.</p></div><div class="node field" style="left:834px;top:140px;width:265px;height:150px"><div class="n-head"><strong>Atiende el ticket asignado</strong></div><p>El técnico va al kit en falla y registra el cierre.</p></div><div class="node field" style="left:1139px;top:140px;width:265px;height:150px"><div class="n-head"><strong>Valida los datos en terreno</strong></div><p>La prueba en terreno confirma lo que llega al informe.</p></div><div class="node core" style="left:224px;top:334px;width:265px;height:170px"><div class="n-head"><b class="n-num">2</b><strong>Inventario de kits</strong></div><p>Cada kit con hogar, responsable y estado. La baja lo saca del activo.</p></div><div class="node core" style="left:529px;top:334px;width:265px;height:170px"><div class="n-head"><b class="n-num">3</b><strong>Tablero operativo</strong></div><p>Vista general y por kit, con los indicadores de la comunidad.</p></div><div class="node core" style="left:834px;top:334px;width:265px;height:170px"><div class="n-head"><b class="n-num">4</b><strong>Tickets y mantención</strong></div><p>El ticket nace de un kit en falla y se asigna al soporte local.</p></div><div class="node core" style="left:1139px;top:334px;width:265px;height:170px"><div class="n-head"><b class="n-num">5</b><strong>Impacto y reportes</strong></div><p>Indicadores e informe exportable con datos de operación real.</p></div><div class="node org" style="left:224px;top:548px;width:570px;height:118px"><div class="n-head"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="7" width="17" height="12.5" rx="2"/><path d="M8.5 7V5h7v2"/><path d="M3.5 12.5h17"/></svg></i><strong>Dirección de la empresa social</strong></div><p>Decide dónde intervenir con un inventario vivo, sin kits fantasma.</p></div><div class="node org ind" style="left:834px;top:548px;width:265px;height:118px"><div class="n-head"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11l8-6.8 8 6.8"/><path d="M6.2 9.4V20h11.6V9.4"/><path d="M10 20v-5.2h4V20"/></svg></i><strong>Hogares</strong></div><p>Menos horas sin energía cuando la mantención se prioriza.</p></div><div class="node org" style="left:1139px;top:548px;width:265px;height:118px"><div class="n-head"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12h.01"/></svg></i><strong>Inversores y donantes</strong></div><p>Reciben un informe que se sostiene en la operación.</p></div><div class="base" style="left:224px;top:694px;width:1180px;height:54px"><b class="n-num sm">6</b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5l7 2.8v5.2c0 4.3-2.9 7.7-7 9.5-4.1-1.8-7-5.2-7-9.5V6.3z"/><path d="M9 12l2.1 2.1L15.2 10"/></svg></i><strong>Privacidad, accesos y despliegue</strong><span>Roles de acceso</span><span>Datos mínimos del hogar</span><span>Ambiente en la nube</span></div><div class="node trans" style="left:1448px;top:140px;width:296px;height:364px"><div class="n-head"><b class="n-num">7</b><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 6.2a3.2 3.2 0 0 1 0 5.6"/><path d="M17.5 14.4a5.5 5.5 0 0 1 3 5.1"/></svg></i><strong>Capacitación y traspaso</strong></div><ol class="tl"><li><strong>Material</strong><span>Guía breve para el soporte local.</span></li><li><strong>Taller</strong><span>Uso del tablero y de los tickets en la comunidad.</span></li><li><strong>Traspaso operativo</strong><span>La empresa social queda a cargo de Kiran.</span></li></ol></div><div class="node ops" style="left:1448px;top:548px;width:296px;height:200px"><div class="n-head"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.6 4.2v3.6H16"/><path d="M9.3 12.2l1.9 1.9 3.6-3.8"/></svg></i><strong>Operación</strong></div><p>El técnico atiende tickets todos los días. Desde aquí es operación, no proyecto.</p></div>
+      <span class="atag " style="left:368.5px;top:302px">Estado</span><span class="atag left" style="left:649.5px;top:302px">Kits por estado</span><span class="atag left" style="left:920.5px;top:302px">Asignación</span><span class="atag " style="left:1012.5px;top:302px">Cierre</span><span class="atag " style="left:1283.5px;top:302px">Datos validados</span><span class="atag " style="left:673.5px;top:516px">Inventario vivo</span><span class="atag " style="left:978.5px;top:516px">Efecto indirecto</span><span class="atag " style="left:1283.5px;top:516px">Informe mensual</span><span class="atag front" style="left:1506px;top:515.0px">Fin del proyecto · 9 dic</span>
+    </div>
+    <p class="caption"><span class="capno">Figura 1.</span>Integración de Kiran en la operación de la empresa social. Los números corresponden a las cuentas de la EDT del plan.</p>
+  </div>
+  <p class="presenter">Giannina Guerrero</p>
+</section>
+
+<section class="slide" id="l3" data-n="3" aria-label="Lámina 3. Resultados y lecciones aprendidas">
+  <div class="frame">
+    <div class="topline"><span class="section-tag">03 · Lecciones</span><span class="tl-right">Resultados y lecciones del equipo<img src="assets/kiran-isotipo.svg" alt="" class="tl-k"></span></div>
+    <h2>Lo que aprendimos al gestionar Kiran.</h2>
+    <div class="l3">
+      <div class="l3-left">
+        <div class="results"><span class="kick plain">Resultados del proceso de gestión</span><div class="res-row"><div class="res"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.5 21V3.5"/><path d="M5.5 4.5h11.5l-2.4 4 2.4 4H5.5"/></svg></i><div><strong>Cuatro hitos en fecha</strong><span>Del inventario del 19 de octubre al cierre del 9 de diciembre.</span></div></div><div class="res"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.4c-.5-.9-1.5-1.4-2.6-1.4-1.5 0-2.6.8-2.6 2s1.1 1.7 2.6 2 2.6.8 2.6 2-1.1 2-2.6 2c-1.1 0-2.1-.5-2.6-1.4"/><path d="M12 6.4V8"/><path d="M12 16v1.6"/></svg></i><div><strong>Avance y gasto</strong><span>100 % del plan con US$ 18.810, igual a la base y sin desviación.</span></div></div><div class="res"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><path d="M6 8v3a4 4 0 0 0 4 4h8"/><path d="M15 12l3 3-3 3"/><path d="M6 8v12"/></svg></i><div><strong>Control de cambios</strong><span>Seis solicitudes evaluadas. El canal de asistencia pasó a segunda fase.</span></div></div></div></div>
+        <div class="cols"><div class="card col ok"><span class="kick"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.3l2.5 2.5 4.9-5.2"/></svg></i>Fortalezas</span><p class="guide">Lo que el equipo hizo bien y conviene repetir.</p><div class="write"></div></div><div class="card col no"><span class="kick"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M10 9v6"/><path d="M14 9v6"/></svg></i>Debilidades</span><p class="guide">Lo que nos costó o nos frenó durante la gestión.</p><div class="write"></div></div><div class="card col imp"><span class="kick"><i class="ki" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.6 4.2v3.6H16"/><path d="M9.3 12.2l1.9 1.9 3.6-3.8"/></svg></i>Procedimientos a mejorar</span><p class="guide">Qué cambiaríamos en un próximo proyecto y cómo.</p><div class="write"></div></div></div>
+      </div>
+      <div class="l3-right">
+        <span class="kick plain">Lección de cada integrante</span>
+        <div class="people"><div class="card person filled"><div class="who"><strong>Giannina Guerrero</strong><span>Directora del proyecto y frontend</span></div><p class="mine">Dirigir y construir el tablero al mismo tiempo me dejó sobre mi capacidad en esa fase. En el próximo proyecto separo desde la línea base las horas de dirección y las de desarrollo, y reviso la carga por rol antes de aceptar un cambio.</p></div><div class="card person"><div class="who"><strong>Nicolás Barra</strong><span>Backend e inventario</span></div><p class="guide">Su lección en primera persona y cómo la aplicaría.</p><div class="write"></div></div><div class="card person"><div class="who"><strong>Skarlett Tropan</strong><span>Calidad e impacto</span></div><p class="guide">Su lección en primera persona y cómo la aplicaría.</p><div class="write"></div></div><div class="card person"><div class="who"><strong>Ari Araya</strong><span>Infraestructura y nube</span></div><p class="guide">Su lección en primera persona y cómo la aplicaría.</p><div class="write"></div></div></div>
+      </div>
+    </div>
+  </div>
+  <p class="presenter">Equipo Kiran</p>
+</section>
+</main>
+<nav class="nav" aria-label="Navegación de láminas"><button type="button" id="prev" aria-label="Lámina anterior">‹</button><span id="count">Lámina 1</span><button type="button" id="next" aria-label="Lámina siguiente">›</button></nav>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var q=new URLSearchParams(location.search);
+  var i=0;
+  var want=q.get('slide')||location.hash.replace('#','');
+  slides.forEach(function(s,k){ if(s.dataset.n===want) i=k; });
+  var solo=q.has('solo');
+  if(solo) document.documentElement.classList.add('solo');
+  function fit(){
+    var s=Math.min(window.innerWidth/1920, window.innerHeight/1080);
+    document.documentElement.style.setProperty('--fit', s);
+  }
+  function show(k){
+    i=(k+slides.length)%slides.length;
+    slides.forEach(function(s,n){ s.classList.toggle('on', n===i); });
+    document.getElementById('count').textContent='Lámina '+slides[i].dataset.n;
+    history.replaceState(null,'','#'+slides[i].dataset.n);
+  }
+  document.getElementById('prev').onclick=function(){show(i-1);};
+  document.getElementById('next').onclick=function(){show(i+1);};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ') { e.preventDefault(); show(i+1); }
+    if(e.key==='ArrowLeft'||e.key==='PageUp') { e.preventDefault(); show(i-1); }
+  });
+  window.addEventListener('resize',fit); fit(); show(i);
+})();
+</script>
+</body>
+</html>
