@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Publicidad de Kiran: si no se ve, se apaga</title>
+  <desc id="desc">Campaña wallpaper. La K de marca se vuelve luz sobre la casa: visibilidad que mantiene la energía activa.</desc>
+  <image href="publicidad-kiran-foto.png" x="0" y="0" width="1920" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <defs>
+    <linearGradient id="brandCol" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#10263D" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#10263D" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="1080" fill="url(#brandCol)"/>
+
+  <g transform="translate(78 52) scale(.5)">
+    <rect x="50" y="28" width="42" height="184" rx="10" fill="#FFFFFF"/>
+    <path d="M91 120L198 38V96L99 118Z" fill="#E59A24"/>
+    <path d="M91 120L198 202V144L99 122Z" fill="#E59A24"/>
+    <circle cx="92" cy="120" r="9" fill="#E59A24"/>
+  </g>
+  <g font-family="'Montserrat','Arial',sans-serif" fill="#FFFFFF">
+    <text x="210" y="154" font-size="56" font-weight="700" letter-spacing="12">KIRAN</text>
+    <text x="212" y="192" fill="#D7DFE5" font-size="20" font-weight="500">Visibilidad que mantiene la energía activa.</text>
+  </g>
+  <rect x="96" y="872" width="104" height="6" rx="3" fill="#E59A24"/>
+  <text x="96" y="934" fill="#F7F3EA" font-family="'Montserrat','Arial',sans-serif" font-size="40" font-weight="700" letter-spacing="8">SI NO SE VE, SE APAGA.</text>
+</svg>

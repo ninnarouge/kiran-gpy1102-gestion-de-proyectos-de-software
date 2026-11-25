@@ -2,8 +2,8 @@
 
 ## Concepto
 
-La **K** nace de un punto de observación y proyecta dos haces de luz. El símbolo
-une iluminación y tecnología sin afirmar que Kiran fabrica o instala paneles.
+La **K** nace de un punto de luz ámbar y proyecta dos haces. El símbolo une
+iluminación y tecnología sin afirmar que Kiran fabrica o instala paneles.
 
 ## Promesa de marca
 
@@ -40,6 +40,7 @@ Arial como reemplazo.
 - Tamaño mínimo del isotipo: **24 px** en digital y **8 mm** en impresión.
 - Tamaño mínimo del logo completo: **180 px** en digital y **45 mm** impreso.
 - No estirar, rotar, agregar sombras, cambiar colores ni separar los haces.
+- El origen es un punto ámbar de luz, no un hueco blanco.
 - En tamaños pequeños usar solo el isotipo, sin eslogan.
 - El eslogan se escribe siempre: **“Visibilidad que mantiene la energía activa.”**
 

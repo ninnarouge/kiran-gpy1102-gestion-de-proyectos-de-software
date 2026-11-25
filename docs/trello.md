@@ -14,12 +14,18 @@ Sin ese login, no puedo tocar tableros.
 
 ## Qué vamos a usar
 
-Un tablero **Kiran · piloto** con listas de flujo, por ejemplo:
+Un tablero **Kiran · piloto** con listas de Scrum (capa adaptativa de tablero y tickets):
 
-- Backlog
+- Product backlog
+- Sprint actual
 - En curso
-- En revisión
-- Listo
+- Listo para review
+- Incremento (Done)
+
+La línea base (hitos, ruta crítica, holgura de red) sigue en Project Libre. Trello no la reemplaza.
+Sprint 0 usa las mismas listas (el sprint actual es el habilitador).
+Cada sprint compromete ~80 % de la capacidad: lo que no alcanza vuelve a Product backlog.
+Sprints, reserva de tiempo, roles y Definition of Done: [`evaluaciones/eva-01/planificacion/capa-scrum.md`](../evaluaciones/eva-01/planificacion/capa-scrum.md).
 
 ## Si no aparece Trello en el chat
 
